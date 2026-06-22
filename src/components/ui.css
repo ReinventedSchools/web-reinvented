@@ -1,0 +1,55 @@
+/* ---------- FAQ ---------- */
+.faq { max-width: 880px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 22px 4px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.faq-icon {
+  width: 34px; height: 34px; flex: none;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.faq-a {
+  padding: 0 4px 24px 54px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  animation: fade .25s ease;
+}
+
+/* ---------- Contact form ---------- */
+.cform { display: flex; flex-direction: column; gap: 16px; }
+.cform-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cform input, .cform textarea {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,.85);
+  color: var(--ink);
+  resize: vertical;
+  width: 100%;
+}
+.cform input::placeholder, .cform textarea::placeholder { color: #9aa0ab; }
+.cform input:focus, .cform textarea:focus { outline: 2px solid rgba(255,255,255,.9); }
+
+/* ---------- Feature tile ---------- */
+.feat { display: flex; flex-direction: column; gap: 12px; }
+.feat h4 { font-size: 17px; color: var(--ink); font-weight: 600; }
+.feat p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+@media (max-width: 600px) {
+  .cform-row { grid-template-columns: 1fr; }
+}
