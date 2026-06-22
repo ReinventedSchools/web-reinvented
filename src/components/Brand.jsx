@@ -1,20 +1,11 @@
+import schools1 from '../assets/Schools1.webp'
+
 // Reusable brand pieces: the "ReinventED Schools" wordmark, the smiley mark,
 // and the small arrow used inside section badges.
 
-export function Logo({ size = 18 }) {
+export function Logo({ height = 40 }) {
   return (
-    <span className="logo" style={{ fontSize: size }}>
-      <span className="l1">Reinvent<b>ED</b></span>
-      <span className="l2">
-        Schools
-        <span className="dots">
-          <i style={{ background: '#2bae8c' }} />
-          <i style={{ background: '#f4c20d' }} />
-          <i style={{ background: '#e0492f' }} />
-          <i style={{ background: '#5277bd' }} />
-        </span>
-      </span>
-    </span>
+    <img src={schools1} alt="ReinventED Schools" style={{ height, width: 'auto', display: 'block' }} />
   )
 }
 

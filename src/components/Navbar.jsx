@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <Link to="/" className="nav-logo"><Logo size={17} /></Link>
+        <Link to="/" className="nav-logo"><Logo height={40} /></Link>
 
         <button className="nav-burger" onClick={() => setMobile(m => !m)} aria-label="Menú">
           <span /><span /><span />

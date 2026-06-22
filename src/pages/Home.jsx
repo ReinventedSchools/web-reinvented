@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
+import imgSchoolJoy from '../assets/schoolJoy.webp'
+import imgPersonal from '../assets/personal.webp'
+import imgAcademic from '../assets/academic.webp'
+import imgPuembo from '../assets/Puembo.webp'
+import imgSantaClara from '../assets/Santa Clara.webp'
+import imgRimac from '../assets/Rimac.webp'
+import imgIDV from '../assets/IDV.webp'
 import './home.css'
 
 const campusDots = [
-  { name: 'Puembo', color: '#2bae8c', to: '/colegios/puembo' },
-  { name: 'Santa Clara', color: '#9fc131', to: '/colegios/santa-clara' },
-  { name: 'Rímac', color: '#4fa3d1', to: '/colegios/rimac' },
-  { name: 'IDV', color: '#e5007e', to: '/colegios/idv' },
+  { name: 'Puembo', color: '#2bae8c', to: '/colegios/puembo', img: imgPuembo },
+  { name: 'Santa Clara', color: '#9fc131', to: '/colegios/santa-clara', img: imgSantaClara },
+  { name: 'Rímac', color: '#4fa3d1', to: '/colegios/rimac', img: imgRimac },
+  { name: 'IDV', color: '#e5007e', to: '/colegios/idv', img: imgIDV },
 ]
 
 const stats = [
@@ -33,7 +40,7 @@ export default function Home() {
         <div className="container hero-content">
           <h1 className="display hero-title">every student succeeds</h1>
         </div>
-        <div className="container hero-tabs-wrap">
+        <div className="hero-tabs-wrap">
           <div className="hero-tabs">
             <Link to="/transforma" className="htab">
               <Badge /> Sistema ReinventED
@@ -52,15 +59,11 @@ export default function Home() {
       <section className="section conoce">
         <div className="container">
           <SectionHead title="Conoce la red" align="center" />
-          <div className="conoce-logo"><Logo size={26} /></div>
+          <div className="conoce-logo"><Logo height={40} /></div>
           <div className="campus-row">
             {campusDots.map(c => (
               <Link to={c.to} key={c.name} className="campus-link">
-                <Smiley className="smiley" />
-                <span style={{ fontWeight: 700 }}>
-                  Reinvent<span style={{ color: c.color }}>ED</span>
-                </span>
-                <strong style={{ color: c.color }}>{c.name}</strong>
+                <img src={c.img} alt={`ReinventED ${c.name}`} className="campus-logo-img" />
               </Link>
             ))}
           </div>
@@ -105,9 +108,9 @@ export default function Home() {
           <h2 className="display formula-title">every student succeeds</h2>
           <p className="formula-sub">Cónoce nuestra fórmula</p>
           <div className="formula-cards">
-            {formula.map((f, i) => (
+            {[imgSchoolJoy, imgPersonal, imgAcademic].map((img, i) => (
               <div className="formula-card" key={i}>
-                <div className="img-ph" style={{ aspectRatio: '1 / 1.05' }} />
+                <img src={img} alt={formula[i].t} style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
               </div>
             ))}
           </div>

@@ -19,30 +19,41 @@
   line-height: 1;
 }
 .hero-tabs-wrap {
-  position: absolute; left: 0; right: 0; bottom: -34px;
+  position: absolute; left: 0; right: 0; bottom: 0;
 }
 .hero-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background: rgba(82,119,189,.82);
-  backdrop-filter: blur(6px);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: end;
+  width: 100%;
 }
 .htab {
   display: flex; align-items: center; justify-content: center; gap: 10px;
-  padding: 22px 14px;
-  color: rgba(255,255,255,.85);
+  padding: 24px 20px;
+  background: var(--blue);
+  color: rgba(255,255,255,.8);
   font-size: 15px;
-  transition: background .2s;
+  font-weight: 400;
+  transition: background .2s, color .2s;
 }
-.htab .badge { background: rgba(255,255,255,.18); width: 30px; height: 30px; }
-.htab:hover { background: rgba(255,255,255,.12); }
-.htab.active { background: rgba(255,255,255,.16); color: #fff; font-weight: 500; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform: scale(1.04); border-radius: 16px; }
+.htab:first-child { border-radius: 0 0 0 0; }
+.htab:last-child  { border-radius: 0 0 0 0; }
+.htab .badge { background: rgba(255,255,255,.22); width: 30px; height: 30px; flex: none; }
+.htab:hover { background: var(--blue-dark); color: #fff; }
+.htab.active {
+  background: #3b5ca3;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 44px;
+  border-radius: 20px 20px 0 0;
+  box-shadow: -8px 0 24px rgba(30,40,70,.18), 8px 0 24px rgba(30,40,70,.18);
+  position: relative;
+  z-index: 2;
+}
+.htab.active .badge { background: rgba(255,255,255,.28); color: #fff; }
 
 /* ---------------- CONOCE LA RED ---------------- */
-.conoce { padding-top: 80px; }
+.conoce { padding-top: 100px; }
 .conoce-logo { display: flex; justify-content: center; margin-bottom: 36px; }
 .campus-row {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
@@ -54,6 +65,7 @@
 }
 .campus-link:hover { transform: translateY(-4px); }
 .campus-link .smiley { color: #3a3f4a; }
+.campus-logo-img { width: 100%; max-width: 180px; height: auto; object-fit: contain; }
 
 /* ---------------- REDEFINIENDO ---------------- */
 .redefine { position: relative; max-width: 900px; margin: 0 auto; }
