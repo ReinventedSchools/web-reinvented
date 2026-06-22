@@ -1,0 +1,146 @@
+/* ---------------- HERO ---------------- */
+.hero { position: relative; }
+.hero-img {
+  height: 560px;
+  border-radius: 0;
+  width: 100%;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(40,55,90,.15) 0%, rgba(40,55,90,.45) 100%);
+}
+.hero-content {
+  position: absolute; left: 0; right: 0; bottom: 150px;
+}
+.hero-title {
+  color: #fff;
+  font-size: clamp(40px, 7vw, 92px);
+  text-shadow: 0 4px 24px rgba(0,0,0,.3);
+  line-height: 1;
+}
+.hero-tabs-wrap {
+  position: absolute; left: 0; right: 0; bottom: -34px;
+}
+.hero-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: rgba(82,119,189,.82);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.htab {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 22px 14px;
+  color: rgba(255,255,255,.85);
+  font-size: 15px;
+  transition: background .2s;
+}
+.htab .badge { background: rgba(255,255,255,.18); width: 30px; height: 30px; }
+.htab:hover { background: rgba(255,255,255,.12); }
+.htab.active { background: rgba(255,255,255,.16); color: #fff; font-weight: 500; box-shadow: 0 10px 30px rgba(0,0,0,.18); transform: scale(1.04); border-radius: 16px; }
+
+/* ---------------- CONOCE LA RED ---------------- */
+.conoce { padding-top: 80px; }
+.conoce-logo { display: flex; justify-content: center; margin-bottom: 36px; }
+.campus-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.campus-link {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: var(--ink); font-size: 17px;
+  transition: transform .2s;
+}
+.campus-link:hover { transform: translateY(-4px); }
+.campus-link .smiley { color: #3a3f4a; }
+
+/* ---------------- REDEFINIENDO ---------------- */
+.redefine { position: relative; max-width: 900px; margin: 0 auto; }
+.redefine-img { height: 360px; }
+.redefine-card {
+  background: var(--blue);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 34px 40px;
+  max-width: 560px;
+  margin: -90px auto 0;
+  position: relative;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+.redefine-card h3 { font-size: 26px; margin-bottom: 12px; }
+.redefine-card p { margin: 0; color: rgba(255,255,255,.9); }
+
+/* ---------------- STATS ---------------- */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+.stats::before {
+  content: ''; position: absolute; top: 50px; left: 8%; right: 8%;
+  height: 2px; background: var(--line); z-index: 0;
+}
+.stat { display: flex; flex-direction: column; align-items: center; gap: 14px; position: relative; z-index: 1; }
+.stat-circle {
+  width: 100px; height: 100px; border-radius: 50%;
+  background: var(--bg-gray-2);
+  border: 2px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; font-weight: 600; color: var(--ink-soft);
+}
+.stat span { color: var(--blue); font-weight: 500; }
+
+/* ---------------- FÓRMULA ---------------- */
+.formula-sec { background: var(--bg-gray); border-radius: 40px; margin: 0 16px; }
+.formula-title {
+  text-align: center; color: var(--blue);
+  font-size: clamp(34px, 5vw, 60px);
+}
+.formula-sub { text-align: center; font-size: 26px; color: var(--ink); font-weight: 600; margin: 4px 0 34px; }
+.formula-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 760px; margin: 0 auto; }
+.formula-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+.formula-labels {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-top: 24px; font-weight: 600; font-size: 18px;
+}
+.formula-labels i { color: var(--yellow); font-style: normal; font-size: 22px; }
+
+/* ---------------- ALIADOS ---------------- */
+.allies {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;
+  align-items: center; justify-items: center;
+  padding: 14px 0;
+}
+.ally {
+  color: #6a7180; font-weight: 700; text-align: center; font-size: 14px;
+  letter-spacing: 1px; line-height: 1.3;
+}
+
+/* ---------------- APLICA ---------------- */
+.apply-band {
+  background: var(--blue);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+}
+.apply-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 720px; margin: 0 auto; }
+.apply-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); transition: transform .2s; }
+.apply-card:hover { transform: translateY(-5px); }
+.apply-card-foot { display: flex; align-items: center; gap: 12px; padding: 16px 20px; font-size: 17px; }
+.apply-cta { text-align: center; color: #fff; margin-top: 34px; font-size: clamp(22px, 3.5vw, 34px); }
+
+/* ---------------- IMPLEMENTA ---------------- */
+.implementa { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.implementa .cform input, .implementa .cform textarea { background: var(--bg-gray); }
+.implementa-img { height: 100%; min-height: 380px; }
+
+@media (max-width: 900px) {
+  .campus-row, .stats, .allies { grid-template-columns: repeat(2, 1fr); }
+  .stats::before { display: none; }
+  .formula-cards { grid-template-columns: 1fr; max-width: 360px; }
+  .implementa { grid-template-columns: 1fr; }
+  .hero-img { height: 420px; }
+  .hero-content { bottom: 120px; }
+}
+@media (max-width: 600px) {
+  .hero-tabs { grid-template-columns: 1fr; }
+  .apply-cards { grid-template-columns: 1fr; }
+  .campus-row { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip show *)",
+      "Bash(pip install *)",
+      "Bash(python -c ' *)",
+      "Bash(mkdir -p slices)",
+      "Bash(npm --version)",
+      "PowerShell(npm install 2>&1)",
+      "PowerShell($env:BROWSER='none'; npm run dev 2>&1 | Out-File -FilePath dev.log -Encoding utf8)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
