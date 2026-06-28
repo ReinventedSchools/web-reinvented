@@ -10,10 +10,14 @@ const colegios = [
   { to: '/colegios/rimac', label: 'ReinventED Rímac' },
 ]
 
+const conocenos = [
+  { to: '/conocenos', label: 'Historia' },
+  { to: '/transforma', label: 'Sistema ReinventED' },
+]
+
 const transforma = [
-  { to: '/transforma', label: '¿Por qué repensar la educación?' },
-  { to: '/transforma/colegio', label: 'En tu colegio' },
-  { to: '/transforma/club', label: 'En tu club deportivo' },
+  { to: '/transforma/colegio', label: 'Asesorias para colegios' },
+  { to: '/transforma/club', label: 'Colegios para clubes deportivos' },
 ]
 
 export default function Navbar() {
@@ -34,7 +38,13 @@ export default function Navbar() {
         </button>
 
         <nav className={`nav-links ${mobile ? 'show' : ''}`}>
-          <NavLink to="/conocenos" className="nav-item">Conócenos</NavLink>
+          <Dropdown
+            id="conocenos"
+            label="Conócenos"
+            items={conocenos}
+            open={open}
+            setOpen={setOpen}
+          />
 
           <Dropdown
             id="red"

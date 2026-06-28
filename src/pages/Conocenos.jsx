@@ -2,13 +2,17 @@ import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
 import { schools } from '../data/schools.js'
 import { Link } from 'react-router-dom'
+import imgPuembo from '../assets/Puembo.webp'
+import imgIDV from '../assets/IDV.webp'
+import imgSantaClara from '../assets/Santa Clara.webp'
+import imgRimac from '../assets/Rimac.webp'
 import './pages.css'
 
 const sedes = [
-  { slug: 'puembo', name: 'Puembo', ed: '#2bae8c', since: 'Desde 2020' },
-  { slug: 'idv', name: 'IDV', ed: '#4fa3d1', nm: '#e5007e', since: 'Desde 2021' },
-  { slug: 'santa-clara', name: 'Santa Clara', ed: '#9fc131', since: 'Desde 2022' },
-  { slug: 'rimac', name: 'Rímac', ed: '#f4c20d', nm: '#4fa3d1', since: 'Desde 2024' },
+  { slug: 'puembo',      name: 'Puembo',      logo: imgPuembo,     since: 'Desde 2020' },
+  { slug: 'idv',         name: 'IDV',          logo: imgIDV,        since: 'Desde 2021' },
+  { slug: 'santa-clara', name: 'Santa Clara',  logo: imgSantaClara, since: 'Desde 2022' },
+  { slug: 'rimac',       name: 'Rímac',        logo: imgRimac,      since: 'Desde 2024' },
 ]
 
 const jobs = [
@@ -79,11 +83,8 @@ export default function Conocenos() {
             <div className="sedes-line" />
             {sedes.map(s => (
               <Link to={`/colegios/${s.slug}`} className="sede" key={s.slug}>
-                <div className="sede-card img-ph dark">
-                  <span className="sede-logo">
-                    Reinvent<span style={{ color: s.ed }}>ED</span><br/>
-                    <b style={{ color: s.nm || '#cfd3da' }}>{s.name}</b>
-                  </span>
+                <div className="sede-card">
+                  <img src={s.logo} alt={`ReinventED ${s.name}`} className="sede-logo-img" />
                 </div>
                 <span className="sede-since">{s.since}</span>
               </Link>
@@ -93,7 +94,7 @@ export default function Conocenos() {
       </section>
 
       {/* Trabaja con nosotros */}
-      <section className="band-blue section">
+      {/* <section className="band-blue section">
         <div className="container">
           <div className="heading-row" style={{ justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
@@ -122,7 +123,7 @@ export default function Conocenos() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   )
 }

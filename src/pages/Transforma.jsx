@@ -1,5 +1,16 @@
+import { useState, useEffect } from 'react'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
+import imgSistema from '../assets/sistema/sistema.webp'
+import imgAutonomous from '../assets/habilidades/Autonomous.webp'
+import imgCollaborator from '../assets/habilidades/collaborator.webp'
+import imgCommunicator from '../assets/habilidades/communicator.webp'
+import imgConflict from '../assets/habilidades/conflict.webp'
+import imgLogical from '../assets/habilidades/logical reasoner.webp'
+import imgLoveLearning from '../assets/habilidades/Love for learning.webp'
+import imgRealWorld from '../assets/habilidades/real world.webp'
+import imgWellbeing from '../assets/habilidades/wellbeing.webp'
+import imgPersonal from '../assets/transforma/personal.webp'
 import './pages.css'
 
 const combine = [
@@ -24,7 +35,19 @@ const exito = [
   },
 ]
 
-const skills = ['Logical thinker', 'Propositive collaborator', 'Wellbeing steward', 'Culturally & love for learning']
+const habilidades = [
+  { img: imgAutonomous,    name: 'Autonomous' },
+  { img: imgCollaborator,  name: 'Propositive collaborator' },
+  { img: imgCommunicator,  name: 'Communicator' },
+  { img: imgConflict,      name: 'Conflict resolution' },
+  { img: imgLogical,       name: 'Logical reasoner' },
+  { img: imgLoveLearning,  name: 'Love for learning' },
+  { img: imgRealWorld,     name: 'Real world' },
+  { img: imgWellbeing,     name: 'Wellbeing steward' },
+]
+
+const HAB_PER_PAGE = 4
+const HAB_PAGES = Math.ceil(habilidades.length / HAB_PER_PAGE)
 
 const diff = [
   { t: '1. Sistema innovador', d: 'Operamos bajo un diseño estructurado y coherente que integra las mejores prácticas pedagógicas a nivel mundial dentro de parámetros claros.' },
@@ -34,20 +57,31 @@ const diff = [
 ]
 
 export default function Transforma() {
+  const [habPage, setHabPage] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setHabPage(p => (p + 1) % HAB_PAGES), 3000)
+    return () => clearInterval(id)
+  }, [])
+
+  const habStart = habPage * HAB_PER_PAGE
+  const visibleHab = Array.from({ length: HAB_PER_PAGE }, (_, i) => habilidades[(habStart + i) % habilidades.length])
+
   return (
     <div className="page">
       {/* Hero quote */}
       <section className="hero-school">
-        <div className="img-ph hero-school-img" />
+        <img src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" />
         <div className="hero-school-overlay" />
-        <div className="container">
-          <div className="hero-quote">
-            Según el <b>Foro Económico Mundial</b>, el 65% de los niños que hoy ingresan al
-            colegio trabajarán en profesiones que aún no existen.
-            <strong> ¿Cómo preparamos a nuestros hijos para un mundo tan incierto?</strong>
-          </div>
-        </div>
       </section>
+
+      <div className="hero-quote-outer">
+        <div className="hero-quote">
+          Según el <b>Foro Económico Mundial</b>, el 65% de los niños que hoy ingresan al
+          colegio trabajarán en profesiones que aún no existen.
+          <strong> ¿Cómo preparamos a nuestros hijos para un mundo tan incierto?</strong>
+        </div>
+      </div>
 
       {/* Por qué repensar */}
       <section className="section">
@@ -71,7 +105,7 @@ export default function Transforma() {
             </div>
           </div>
 
-          <h3 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--ink-soft)', fontSize: 'clamp(20px,2.6vw,28px)', margin: '20px 0 36px' }}>
+          <h3 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--ink-soft)', fontSize: 'clamp(28px,3.2vw,38px)', margin: '20px 0 36px' }}>
             En ReinventED diseñamos y operamos sistemas de aprendizaje<br/>
             personalizados y estructurados que combinan:
           </h3>
@@ -91,21 +125,23 @@ export default function Transforma() {
         <div className="container">
           <SectionHead title={<span className="display" style={{ color: 'var(--red)', fontWeight: 600 }}>Every student succeeds</span>} badge="red" light={false} />
           <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <h3 style={{ color: 'var(--blue)', fontSize: 24, marginBottom: 8 }}>Nuestra promesa es clara: Cada estudiante es exitoso</h3>
-            <p style={{ color: 'var(--ink-soft)' }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+            <h3 style={{ color: 'var(--blue)', fontSize: 38, marginBottom: 8 }}>Nuestra promesa es clara: Cada estudiante es exitoso</h3>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 32 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (
               <div className="exito-card" key={i}>
                 <div className="exito-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" strokeWidth="2"><path d="M12 21s-7-5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4-9 9-9 9z"/></svg>
+                  {i === 0 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>}
+                  {i === 1 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1" fill="var(--red)"/><circle cx="12" cy="10" r="1" fill="var(--red)"/><circle cx="15" cy="10" r="1" fill="var(--red)"/></svg>}
+                  {i === 2 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>}
                 </div>
                 <h4 className="display">{e.t}</h4>
                 <p>{e.d}</p>
               </div>
             ))}
           </div>
-          <div className="prose" style={{ textAlign: 'center', marginTop: 36 }}>
+          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 26}}>
             <p><b>Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante.</b> El sistema está diseñado para que todos puedan progresar, no solo quienes se adaptan mejor al modelo tradicional.</p>
             <p><b>No creemos en estudiantes "promedio".</b> Creemos en sistemas que permiten que cada uno avance desde su punto de partida hacia estándares altos y medibles.</p>
           </div>
@@ -116,19 +152,20 @@ export default function Transforma() {
       <section className="section">
         <div className="container" style={{ textAlign: 'center' }}>
           <Badge color="red" />
-          <h2 style={{ color: 'var(--blue)', fontSize: 'clamp(26px,3.6vw,38px)', margin: '14px 0 36px', fontWeight: 600 }}>
+          <h2 style={{ color: 'var(--blue)', fontSize: 'clamp(55px,3.6vw,40px)', margin: '14px 0 36px', fontWeight: 600 }}>
             Conoce las habilidades para la vida<br/>
             <span style={{ color: 'var(--ink-soft)', fontWeight: 300 }}>que desarrollan los estudiantes ReinventED</span>
           </h2>
-          <div className="skills-row">
-            {skills.map((s, i) => (
-              <div className="skill" key={i}>
-                <div className="img-ph" style={{ width: 90, height: 90, borderRadius: 16 }} />
-                <span>{s}</span>
-              </div>
+          <div className="skills-row" key={habPage}>
+            {visibleHab.map((h, i) => (
+              <img src={h.img} alt={h.name} className="skill-img" key={i} />
             ))}
           </div>
-          <div className="dots-row">{[0,1,2,3,4].map(i => <i key={i} className={i===0?'active':''} />)}</div>
+          <div className="dots-row">
+            {Array.from({ length: HAB_PAGES }).map((_, i) => (
+              <i key={i} className={i === habPage ? 'active' : ''} onClick={() => setHabPage(i)} style={{ cursor: 'pointer' }} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -137,10 +174,10 @@ export default function Transforma() {
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 30 }}>
             <Badge color="yellow" />
-            <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(24px,3vw,34px)' }}>Progreso medible</h2>
+            <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Progreso medible</h2>
           </div>
           <div className="medible">
-            <div className="img-ph" style={{ aspectRatio: '4/3', borderRadius: 18 }} />
+            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
             <div>
               <p style={{ color: '#fff', fontWeight: 600, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite

@@ -1,10 +1,13 @@
-// Per-campus content + theming. Hero images are left as placeholders
-// (the owner adds them manually).
+import imgPuemboHero from '../assets/sedes/Puembo jardín.webp'
+import imgPuemboLogo from '../assets/Puembo.webp'
 
 export const schools = {
   puembo: {
     slug: 'puembo',
     name: 'Puembo',
+    heroImg: imgPuemboHero,
+    logoImg: imgPuemboLogo,
+    locImg:  imgPuemboHero,
     ed: '#2bae8c',
     nameColor: '#7d8590',
     band: '#2bae8c',
@@ -86,13 +89,13 @@ export const schools = {
 }
 
 export const stages = [
-  { n: 1, name: 'Playschool', grade: 'Nest, PreK, Kínder', sub: '2 a 5 años' },
-  { n: 2, name: 'Explorers', grade: '1st & 2nd grade', sub: '6 a 8 años' },
-  { n: 3, name: 'Imagineers', grade: '3th & 4th grade', sub: '8 a 10 años' },
-  { n: 4, name: 'Researchers', grade: '5th & 6th grade', sub: '10 a 12 años' },
-  { n: 5, name: 'Creators', grade: '7th & 8th grade', sub: '12 a 14 años' },
-  { n: 6, name: 'Entrepreneurs', grade: '9th & 10th grade', sub: '14 a 16 años' },
-  { n: 7, name: 'Change makers', grade: '11th & 12th grade', sub: '16 a 18 años' },
+  { n: 1, name: 'Playschool',    grade: 'Nest, PreK, Kínder',  sub: '2 a 5 años',   color: '#7b6fcf' },
+  { n: 2, name: 'Explorers',     grade: '1st & 2nd grade',      sub: '6 a 8 años',   color: '#2bae8c' },
+  { n: 3, name: 'Imagineers',    grade: '3th & 4th grade',      sub: '8 a 10 años',  color: '#7b6fcf' },
+  { n: 4, name: 'Researchers',   grade: '5th & 6th grade',      sub: '10 a 12 años', color: '#2bae8c' },
+  { n: 5, name: 'Creators',      grade: '7th & 8th grade',      sub: '12 a 14 años', color: '#2bae8c' },
+  { n: 6, name: 'Entrepreneurs', grade: '9th & 10th grade',     sub: '14 a 16 años', color: '#2bae8c' },
+  { n: 7, name: 'Change makers', grade: '11th & 12th grade',    sub: '16 a 18 años', color: '#cfd3da' },
 ]
 
 export const faqItems = [

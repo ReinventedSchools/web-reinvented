@@ -1,4 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom'
+import imgCamino from '../assets/implementa.webp'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
 import { SectionHead, Gallery, Faq } from '../components/UI.jsx'
 import { schools, stages, faqItems } from '../data/schools.js'
@@ -33,11 +34,14 @@ export default function School() {
     <div className="page">
       {/* Hero */}
       <section className="hero-school">
-        <div className="img-ph hero-school-img" />
+        {s.heroImg
+          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" />
+          : <div className="img-ph hero-school-img" />}
         <div className="hero-school-overlay" />
         <div className="container hero-school-logo">
-          <Smiley className="smiley smiley-lg" />
-          <SchoolLogo ed={s.ed} name={s.name} nameColor="#fff" base="#fff" size={48} />
+          {s.logoImg
+            ? <img src={s.logoImg} alt={`Logo ReinventED ${s.name}`} className="school-hero-logo-img" />
+            : <><Smiley className="smiley smiley-lg" /><SchoolLogo ed={s.ed} name={s.name} nameColor="#fff" base="#fff" size={48} /></>}
         </div>
       </section>
 
@@ -65,7 +69,9 @@ export default function School() {
               </div>
               {s.locText.map((t, i) => <p key={i} style={{ color: 'rgba(255,255,255,.92)' }}>{t}</p>)}
             </div>
-            <div className="img-ph loc-img" />
+            {s.locImg
+              ? <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" />
+              : <div className="img-ph loc-img" />}
           </div>
         </div>
       </section>
@@ -74,13 +80,15 @@ export default function School() {
       <section className="section">
         <div className="container">
           <div className="camino-head">
-            <div className="img-ph" style={{ width: 200, height: 150, borderRadius: 18, flex: 'none' }} />
+            <img src={imgCamino} alt="Tu camino en ReinventED" className="camino-img" />
             <div>
               <SectionHead title={<span style={{ color: 'var(--ink)', fontWeight: 600 }}>Tu camino en ReinventED</span>} light={false} />
               <p style={{ color: 'var(--ink-soft)', maxWidth: 560 }}>
                 En ReinventED, el aprendizaje se organiza en talleres multiedad. Esta estructura
                 permite que los estudiantes avancen según su nivel de desarrollo y no únicamente
                 por su edad cronológica. Fomenta liderazgo, colaboración y aprendizaje entre pares.
+                Permite que cada estudiante encuentre desafíos acordes a su progreso, manteniendo
+                metas claras y estándares definidos.
               </p>
             </div>
           </div>
@@ -89,7 +97,7 @@ export default function School() {
             <div className="timeline-line" />
             {stages.map(st => (
               <div className="tl-stage" key={st.n}>
-                <div className="tl-dot" style={{ background: st.n === 7 ? '#cfd3da' : s.circle }}>{st.n}</div>
+                <div className="tl-dot" style={{ background: st.color }}>{st.n}</div>
                 <strong>{st.name}</strong>
                 <span className="tl-grade">{st.grade}</span>
                 <span className="tl-sub">{st.sub}</span>

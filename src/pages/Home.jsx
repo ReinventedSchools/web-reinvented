@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
@@ -8,7 +9,36 @@ import imgPuembo from '../assets/Puembo.webp'
 import imgSantaClara from '../assets/Santa Clara.webp'
 import imgRimac from '../assets/Rimac.webp'
 import imgIDV from '../assets/IDV.webp'
+import imgImplementa from '../assets/implementa.webp'
+import imgPuemboJardin from '../assets/sedes/Puembo jardín.webp'
+import imgSantaClaraShoot from '../assets/sedes/ReinventEDSantaClaraShoot.webp'
+import imgBeyond from '../assets/aliados/beyond-education.webp'
+import imgCCR from '../assets/aliados/Center-for-Curriculum-Redesign.webp'
+import imgDevMinds from '../assets/aliados/developing minds.webp'
+import imgInnovamat from '../assets/aliados/Innovamat.webp'
+import imgL11 from '../assets/aliados/Learning-one-to-one.webp'
+import imgIAI from '../assets/aliados/Logo_IAI.webp'
+import imgMTC from '../assets/aliados/Mastery-Transcript-Consortium.webp'
+import imgPenGs from '../assets/aliados/pen gs.webp'
+import imgRedSolare from '../assets/aliados/red-solare.webp'
+import imgVeriii from '../assets/aliados/veriii_ac-2-02_0.png.webp'
 import './home.css'
+
+const allies = [
+  { img: imgBeyond, name: 'Beyond Education' },
+  { img: imgCCR, name: 'Center for Curriculum Redesign' },
+  { img: imgDevMinds, name: 'Developing Minds' },
+  { img: imgInnovamat, name: 'Innovamat' },
+  { img: imgL11, name: 'Learning One to One' },
+  { img: imgIAI, name: 'IAI' },
+  { img: imgMTC, name: 'Mastery Transcript Consortium' },
+  { img: imgPenGs, name: 'Pen GS' },
+  { img: imgRedSolare, name: 'Red Solare' },
+  { img: imgVeriii, name: 'Veriii' },
+]
+
+const ALLIES_PER_PAGE = 4
+const ALLIES_PAGES = Math.ceil(allies.length / ALLIES_PER_PAGE)
 
 const campusDots = [
   { name: 'Puembo', color: '#2bae8c', to: '/colegios/puembo', img: imgPuembo },
@@ -31,6 +61,16 @@ const formula = [
 ]
 
 export default function Home() {
+  const [alliesPage, setAlliesPage] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => setAlliesPage(p => (p + 1) % ALLIES_PAGES), 3000)
+    return () => clearInterval(id)
+  }, [])
+
+  const start = alliesPage * ALLIES_PER_PAGE
+  const visibleAllies = Array.from({ length: ALLIES_PER_PAGE }, (_, i) => allies[(start + i) % allies.length])
+
   return (
     <div className="page">
       {/* ---------------- HERO ---------------- */}
@@ -127,15 +167,18 @@ export default function Home() {
       {/* ---------------- ALIADOS ---------------- */}
       <section className="section-tight">
         <div className="container">
-          <SectionHead title={<>Nuestro <b style={{ color: 'var(--ink)', fontWeight: 600 }}>aliados en transformación</b> educativa</>} />
-          <div className="allies">
-            <div className="ally">CURRICULUM<br/>FOUNDATION</div>
-            <div className="ally">MASTERY<br/>TRANSCRIPT<br/>CONSORTIUM</div>
-            <div className="ally" style={{ fontFamily: 'Georgia, serif' }}>LEARNING<br/>One to One</div>
-            <div className="ally" style={{ color: 'var(--red)' }}>RED SOLARE</div>
+          <SectionHead title={<>Nuestros <b style={{ color: 'var(--ink)', fontWeight: 600 }}>aliados en transformación</b> educativa</>} />
+          <div className="allies" key={alliesPage}>
+            {visibleAllies.map((ally, i) => (
+              <div className="ally" key={i}>
+                <img src={ally.img} alt={ally.name} className="ally-img" />
+              </div>
+            ))}
           </div>
           <div className="dots-row">
-            {[0,1,2,3,4].map(i => <i key={i} className={i===0?'active':''} />)}
+            {Array.from({ length: ALLIES_PAGES }).map((_, i) => (
+              <i key={i} className={i === alliesPage ? 'active' : ''} onClick={() => setAlliesPage(i)} style={{ cursor: 'pointer' }} />
+            ))}
           </div>
         </div>
       </section>
@@ -152,8 +195,8 @@ export default function Home() {
               </h2>
             </div>
             <div className="apply-cards">
-              <ApplyCard ed="#2bae8c" name="Puembo" to="/colegios/puembo" />
-              <ApplyCard ed="#9fc131" name="Santa Clara" to="/colegios/santa-clara" />
+              <ApplyCard ed="#2bae8c" name="Puembo" to="/colegios/puembo" img={imgPuemboJardin} logo={imgPuembo} />
+              <ApplyCard ed="#9fc131" name="Santa Clara" to="/colegios/santa-clara" img={imgSantaClaraShoot} logo={imgSantaClara} />
             </div>
             <h3 className="display apply-cta">Aplica a nuestros colegios privados</h3>
           </div>
@@ -175,7 +218,7 @@ export default function Home() {
               </div>
               <ContactForm />
             </div>
-            <div className="img-ph implementa-img" />
+            <img src={imgImplementa} alt="Implementa ReinventED" className="implementa-img" />
           </div>
         </div>
       </section>
@@ -183,15 +226,12 @@ export default function Home() {
   )
 }
 
-function ApplyCard({ ed, name, to }) {
+function ApplyCard({ ed, name, to, img, logo }) {
   return (
     <Link to={to} className="apply-card">
-      <div className="img-ph" style={{ aspectRatio: '16 / 9' }} />
+      <img src={img} alt={`ReinventED ${name}`} className="apply-card-img" />
       <div className="apply-card-foot">
-        <Smiley className="smiley" />
-        <span style={{ fontWeight: 700 }}>
-          Reinvent<span style={{ color: ed }}>ED</span> <span style={{ color: '#7d8590' }}>{name}</span>
-        </span>
+        <img src={logo} alt={`Logo ${name}`} className="apply-card-logo" />
       </div>
     </Link>
   )

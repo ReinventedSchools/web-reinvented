@@ -1,4 +1,9 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
+
+const EMAILJS_SERVICE  = 'service_zsv8mj8'   // reemplaza con tu Service ID de EmailJS
+const EMAILJS_TEMPLATE = 'template_5mtt25b'  // reemplaza con tu Template ID de EmailJS
+const EMAILJS_KEY      = 'FKqtO3aGcxQ1GkgHq'   // reemplaza con tu Public Key de EmailJS
 import { Badge, ArrowDR } from './Brand.jsx'
 
 /* Section heading: arrow badge + light title (optionally bold accent inside) */
@@ -63,19 +68,50 @@ export function Faq({ items }) {
 }
 
 /* Contact form (visual only — placeholders to be wired by the owner) */
-export function ContactForm({ theme = 'blue', accent = 'var(--blue)', btn = 'var(--blue)', btnText = '#fff' }) {
-  const submit = e => { e.preventDefault(); alert('¡Gracias! Nos pondremos en contacto contigo.') }
+export function ContactForm({ btn = 'var(--blue)', btnText = '#fff' }) {
+  const formRef = useRef()
+  const [fields, setFields] = useState({ nombre: '', telefono: '', email: '', comentario: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | ok | error
+
+  const set = key => e => setFields(f => ({ ...f, [key]: e.target.value }))
+
+  const submit = async e => {
+    e.preventDefault()
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE,
+        EMAILJS_TEMPLATE,
+        {
+          from_name:  fields.nombre,
+          telefono:   fields.telefono,
+          reply_to:   fields.email,
+          message:    fields.comentario,
+          to_email:   'torres.thalia31@gmail.com',
+        },
+        EMAILJS_KEY
+      )
+      setStatus('ok')
+      setFields({ nombre: '', telefono: '', email: '', comentario: '' })
+    } catch {
+      setStatus('error')
+    }
+  }
+
   return (
-    <form className="cform" onSubmit={submit}>
+    <form className="cform" onSubmit={submit} ref={formRef}>
       <div className="cform-row">
-        <input type="text" placeholder="Nombre" />
-        <input type="tel" placeholder="Teléfono" />
+        <input type="text"  placeholder="Nombre"    value={fields.nombre}     onChange={set('nombre')}     required />
+        <input type="tel"   placeholder="Teléfono"  value={fields.telefono}   onChange={set('telefono')}   required />
       </div>
-      <input type="email" placeholder="Email" />
-      <textarea placeholder="Comentario" rows={4} />
-      <button className="btn" type="submit" style={{ background: btn, color: btnText, alignSelf: 'flex-end' }}>
-        Enviar
+      <input type="email" placeholder="Email"     value={fields.email}      onChange={set('email')}      required />
+      <textarea           placeholder="Comentario" value={fields.comentario} onChange={set('comentario')} rows={4} />
+      <button className="btn" type="submit" disabled={status === 'sending'}
+        style={{ background: btn, color: btnText, alignSelf: 'flex-end', opacity: status === 'sending' ? .7 : 1 }}>
+        {status === 'sending' ? 'Enviando…' : 'Enviar'}
       </button>
+      {status === 'ok'    && <p style={{ color: 'var(--teal)',     margin: 0 }}>¡Mensaje enviado! Nos pondremos en contacto contigo.</p>}
+      {status === 'error' && <p style={{ color: 'var(--red)',      margin: 0 }}>Hubo un error. Por favor intenta de nuevo.</p>}
     </form>
   )
 }
