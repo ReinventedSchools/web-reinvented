@@ -10,7 +10,7 @@ import imgLogical from '../assets/habilidades/logical reasoner.webp'
 import imgLoveLearning from '../assets/habilidades/Love for learning.webp'
 import imgRealWorld from '../assets/habilidades/real world.webp'
 import imgWellbeing from '../assets/habilidades/wellbeing.webp'
-import imgPersonal from '../assets/transforma/personal.webp'
+import imgPersonal from '../assets/transforma/progresoMedible.webp'
 import './pages.css'
 
 const combine = [
@@ -123,10 +123,10 @@ export default function Transforma() {
       {/* Every student succeeds */}
       <section className="band-soft section">
         <div className="container">
-          <SectionHead title={<span className="display" style={{ color: 'var(--red)', fontWeight: 600 }}>Every student succeeds</span>} badge="red" light={false} />
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <h3 style={{ color: 'var(--blue)', fontSize: 38, marginBottom: 8 }}>Nuestra promesa es clara: Cada estudiante es exitoso</h3>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 32 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+          <SectionHead title={<span className="display" style={{ color: 'var(--ink-soft)', fontWeight: 100 , fontSize: 40}}>Every student succeeds</span>} badge="red" light={false} />
+          <div style={{ textAlign: 'left', marginBottom: 40 }}>
+            <p style={{ color: 'var(--blue)', fontSize: 28,fontWeight: 600  , marginLeft: 45   }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 25, marginLeft: 45 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (
@@ -141,7 +141,7 @@ export default function Transforma() {
               </div>
             ))}
           </div>
-          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 26}}>
+          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 20}}>
             <p><b>Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante.</b> El sistema está diseñado para que todos puedan progresar, no solo quienes se adaptan mejor al modelo tradicional.</p>
             <p><b>No creemos en estudiantes "promedio".</b> Creemos en sistemas que permiten que cada uno avance desde su punto de partida hacia estándares altos y medibles.</p>
           </div>
@@ -152,7 +152,7 @@ export default function Transforma() {
       <section className="section">
         <div className="container" style={{ textAlign: 'center' }}>
           <Badge color="red" />
-          <h2 style={{ color: 'var(--blue)', fontSize: 'clamp(55px,3.6vw,40px)', margin: '14px 0 36px', fontWeight: 600 }}>
+          <h2 style={{ color: 'var(--blue)', fontSize: 'clamp(40px,3.6vw,30px)', margin: '14px 0 36px', fontWeight: 600 }}>
             Conoce las habilidades para la vida<br/>
             <span style={{ color: 'var(--ink-soft)', fontWeight: 300 }}>que desarrollan los estudiantes ReinventED</span>
           </h2>
@@ -177,7 +177,7 @@ export default function Transforma() {
             <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Progreso medible</h2>
           </div>
           <div className="medible">
-            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '3/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
             <div>
               <p style={{ color: '#fff', fontWeight: 600, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite

@@ -10,6 +10,9 @@ import imgSantaClara from '../assets/Santa Clara.webp'
 import imgRimac from '../assets/Rimac.webp'
 import imgIDV from '../assets/IDV.webp'
 import imgImplementa from '../assets/implementa.webp'
+import imgHero from '../assets/home/Foto principal.webp'
+import imgRedefiniendo from '../assets/home/Redefiniendo.webp'
+import imgformulario from '../assets/home/formulario.webp'
 import imgPuemboJardin from '../assets/sedes/Puembo jardín.webp'
 import imgSantaClaraShoot from '../assets/sedes/ReinventEDSantaClaraShoot.webp'
 import imgBeyond from '../assets/aliados/beyond-education.webp'
@@ -55,7 +58,7 @@ const stats = [
 ]
 
 const formula = [
-  { t: 'School Joy', c: '#2bae8c' },
+  { t: 'School Joy', c: '#5277bd' },
   { t: 'Personal Growth', c: '#5277bd' },
   { t: 'Academic Growth', c: '#5277bd' },
 ]
@@ -75,7 +78,7 @@ export default function Home() {
     <div className="page">
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
-        <div className="img-ph hero-img" />
+        <img src={imgHero} alt="ReinventED" className="hero-img" />
         <div className="hero-overlay" />
         <div className="container hero-content">
           <h1 className="display hero-title">every student succeeds</h1>
@@ -115,12 +118,15 @@ export default function Home() {
         <div className="container">
           <SectionHead title="Redefiniendo el éxito" align="center" />
           <div className="redefine">
-            <div className="img-ph redefine-img" />
+            <img src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img" />
             <div className="redefine-card">
               <h3>El mundo se reinventa, la educación también.</h3>
               <p>
-                Somos una red de colegios que combina personalización, autonomía y altos
-                estándares académicos para preparar a niños y jóvenes para el futuro.
+                Somos una red de colegios que combina personalización, autonomía y altos estándares
+                académicos para preparar a niños y jóvenes para el futuro. Nuestro modelo educativo ha
+                sido reconocido internacionalmente y hoy forma parte del Top 10 de los World’s Best
+                School Prizes en la categoría Supporting Healthy Lives, uno de los reconocimientos más
+                prestigiosos de la educación a nivel mundial.
               </p>
             </div>
           </div>
@@ -132,6 +138,12 @@ export default function Home() {
         <div className="container">
           <SectionHead title="Una red en crecimiento" />
           <div className="stats">
+            <svg className="stats-svg" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                d="M 0,15 H 18 Q 25,22 31,15 H 43 Q 50,22 57,15 H 69 Q 75,22 82,15 H 100"
+                fill="none" stroke="#5277bd" strokeWidth="1.5" vectorEffect="non-scaling-stroke"
+              />
+            </svg>
             {stats.map((s, i) => (
               <div className="stat" key={i}>
                 <div className="stat-circle">{s.n}</div>
@@ -189,7 +201,7 @@ export default function Home() {
           <div className="apply-band">
             <div className="heading-row" style={{ marginBottom: 28 }}>
               <Badge color="yellow" />
-              <h2 style={{ color: '#fff', fontWeight: 500, fontSize: 'clamp(22px,3vw,30px)' }}>
+              <h2 style={{ color: '#fff', fontWeight: 500, fontSize: 'clamp(28px,3vw,38px)',marginLeft: 3 }}>
                 Las habilidades del futuro están cambiando.<br/>
                 ¿Tus hijos estarán preparados?
               </h2>
@@ -212,13 +224,13 @@ export default function Home() {
                 <Badge />
                 <h2 className="h-light" style={{ color: 'var(--ink-soft)', fontWeight: 300 }}>
                   Implementa el sistema<br/>
-                  <b style={{ color: 'var(--ink)', fontWeight: 600 }}>ReinventED</b> en tu<br/>
+                  <b style={{ color: 'var(--ink-soft)', fontWeight: 700 }}>ReinventED</b> en tu<br/>
                   club deportivo o colegio
                 </h2>
               </div>
               <ContactForm />
             </div>
-            <img src={imgImplementa} alt="Implementa ReinventED" className="implementa-img" />
+            <img src={imgformulario} alt="Implementa ReinventED" className="implementa-img" />
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
-import imgPuemboHero from '../assets/sedes/Puembo jardín.webp'
-import imgPuemboLogo from '../assets/Puembo.webp'
+import imgPuemboHero from '../assets/sedes/puemboPrincipal.webp'
+import imgPuemboLogo from '../assets/logos/puemboB.png'
+import imgPuemboCampus from '../assets/sedes/puemboJardin.webp'
 
 export const schools = {
   puembo: {
@@ -7,7 +8,7 @@ export const schools = {
     name: 'Puembo',
     heroImg: imgPuemboHero,
     logoImg: imgPuemboLogo,
-    locImg:  imgPuemboHero,
+    locImg:  imgPuemboCampus,
     ed: '#2bae8c',
     nameColor: '#7d8590',
     band: '#2bae8c',
@@ -100,23 +101,27 @@ export const stages = [
 
 export const faqItems = [
   {
-    q: '¿Cómo es el proceso de admisión?',
-    a: 'El proceso inicia con una visita al campus y el formulario en línea. Luego se realiza una entrevista y evaluación familiar, una reunión del comité de admisiones y, finalmente, la notificación de admisión.',
+    q: '¿Qué hace diferente a ReinventED Puembo? ',
+    a: 'ReinventED Puembo es un colegio privado bilingüe que combina aprendizaje personalizado, desarrollo de habilidades para la vida y experiencias de aprendizaje diseñadas para que cada estudiante descubra su potencial y avance a su propio ritmo.',
   },
   {
-    q: '¿Qué hace diferente al Sistema ReinventED?',
-    a: 'Combinamos personalización con estructura y altos estándares académicos. Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante de su progreso.',
+    q: '¿Cómo funciona el aprendizaje personalizado? ',
+    a: 'Cada estudiante sigue un plan de aprendizaje adaptado a sus necesidades, fortalezas e intereses. Además, se establecen metas acordadas entre estudiantes, educadores y familias para acompañar su progreso. Esto permite que el aprendizaje sea más relevante, desafiante y significativo.',
   },
   {
-    q: '¿Qué edades y grados atiende el campus?',
-    a: 'El modelo se organiza en niveles, desde Playschool hasta Change makers, y los grados superiores se abren de forma progresiva según el período.',
+    q: '¿Cómo evalúan el aprendizaje? ',
+    a: 'Evaluamos tanto el crecimiento académico como el desarrollo de habilidades esenciales como la autonomía, la comunicación, el pensamiento crítico y la colaboración mediante evidencias, proyectos y seguimiento continuo. Contamos con nuestra propia plataforma de medición donde se registra constantemente el progreso de los estudiantes.  ',
   },
   {
-    q: '¿Cómo se mide el progreso de los estudiantes?',
-    a: 'A través de una plataforma propia que monitorea el avance en contenidos, habilidades académicas, autonomía, pensamiento crítico, comunicación y hábitos de aprendizaje.',
+    q: '¿El colegio es bilingüe? ',
+    a: 'Sí. Los estudiantes desarrollan competencias en inglés de manera progresiva a través de experiencias auténticas de aprendizaje y comunicación.',
   },
   {
-    q: '¿Puedo agendar una visita?',
-    a: '¡Claro! Puedes agendar una visita a nuestro campus o llenar el formulario en línea y nuestro equipo se pondrá en contacto contigo.',
+    q: '¿Desde qué edad reciben estudiantes? ',
+    a: 'En ReinventED Puembo recibimos estudiantes desde Nest (inicial 1). Nuestro colegio va creciendo año a año. En el periodo 2026-2027 nuestra oferta va hasta 10th grade (1ro de bachillerato). ',
+  },
+  {
+    q: '¿Cómo puedo conocer el colegio? ',
+    a: 'Puedes agendar una visita para recorrer nuestros espacios, conocer nuestra propuesta educativa y conversar con nuestro equipo. ',
   },
 ]
