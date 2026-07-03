@@ -36,9 +36,7 @@ npm run preview  # sirve /dist localmente
 | + Noticias | `/noticias` | `src/pages/Noticias.jsx` |
 | + Buscar | `/buscar` | `src/pages/Buscar.jsx` |
 
-Las 4 sedes (Puembo, IDV, Santa Clara, Rímac) comparten la plantilla
-`School.jsx` y se diferencian por colores/textos definidos en
-`src/data/schools.js`.
+
 
 ## Imágenes
 
