@@ -76,7 +76,7 @@ export default function School() {
       {/* Hero */}
       <section className="hero-school">
         {s.heroImg
-          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" />
+          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" style={{ objectPosition: s.heroPosition || 'center' }} />
           : <div className="img-ph hero-school-img" />}
         <div className="hero-school-overlay" />
         <div className="container hero-school-logo">

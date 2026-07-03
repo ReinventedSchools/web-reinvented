@@ -5,6 +5,18 @@ import imgIdvLogo from '../assets/logos/idcB.png'
 import imgIdvHero from '../assets/sedes/idv/idvPrincipal.webp'
 import imgIdvSection from '../assets/sedes/idv/idv_seccion.webp'
 import imgSantaClaraLogo from '../assets/logos/scb.png'
+import imgSantaClaraHero from '../assets/sedes/santac/principalscl.jpg'
+import imgSantaClaraLoc from '../assets/sedes/santac/ubicado.jpg'
+import imgSC1 from '../assets/sedes/santac/sc1.jpeg'
+import imgSC2 from '../assets/sedes/santac/sc2.jpeg'
+import imgSC3 from '../assets/sedes/santac/sc3.jpeg'
+import imgSC4 from '../assets/sedes/santac/sc4.png'
+import imgSC5 from '../assets/sedes/santac/sc5.jpeg'
+import imgSC6 from '../assets/sedes/santac/sc6.png'
+import imgSC7 from '../assets/sedes/santac/sc7.png'
+import imgSC8 from '../assets/sedes/santac/sc8.png'
+import imgSC9 from '../assets/sedes/santac/sc9.png'
+
 import imgRimacLogo from '../assets/logos/rimacB.png'
 import imgPC1 from '../assets/sedes/puembo/c1.webp'
 import imgPC2 from '../assets/sedes/puembo/c2.webp'
@@ -21,6 +33,7 @@ export const schools = {
     slug: 'puembo',
     name: 'Puembo',
     heroImg: imgPuemboHero,
+    heroPosition: 'bottom',
     logoImg: imgPuemboLogo,
     locImg:  imgPuemboCampus,
     ed: '#2bae8c',
@@ -80,7 +93,10 @@ export const schools = {
   'santa-clara': {
     slug: 'santa-clara',
     name: 'Santa Clara',
+    heroImg: imgSantaClaraHero,
     logoImg: imgSantaClaraLogo,
+    locImg: imgSantaClaraLoc,
+    galleryImgs: [imgSC1, imgSC2, imgSC3, imgSC4, imgSC5, imgSC6, imgSC7, imgSC8, imgSC9],
     ed: '#9fc131',
     nameColor: '#ffffff',
     band: '#9fc131',
