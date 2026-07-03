@@ -1,7 +1,7 @@
 import schools1 from '../assets/Schools1.webp'
 
 // Reusable brand pieces: the "ReinventED Schools" wordmark, the smiley mark,
-// and the small arrow used inside section badges.
+
 
 export function Logo({ height = 40 }) {
   return (
