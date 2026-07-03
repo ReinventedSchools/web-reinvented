@@ -34,7 +34,7 @@ function StudentCarousel({ dotColor, images }) {
         <button style={btn} onClick={() => setPage(p => (p - 1 + PAGES) % PAGES)}>
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
         </button>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, flex: 1 }}>
+        <div className="student-carousel-grid">
           {visible.map((src, i) =>
             typeof src === 'string'
               ? <img key={i} src={src} alt="" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 16, display: 'block' }} />
@@ -121,7 +121,7 @@ export default function School() {
       {s.sectionImg && (
         <section className="band-soft section">
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', marginBottom: 60 }}>
+            <div className="school-extra-grid">
               <img src={s.sectionImg} alt={s.sectionTitle} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
@@ -137,7 +137,7 @@ export default function School() {
                   <Badge color="magenta" />
                   <h2 style={{ fontWeight: 400, fontSize: 'clamp(24px,3vw,36px)', color: 'var(--ink)' }}>Los estudiantes desarrollan</h2>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, textAlign: 'center' }}>
+                <div className="students-develop-grid">
                   {s.studentsDevelop.map((item, i) => (
                     <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
                       <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--magenta)', flexShrink: 0 }} />

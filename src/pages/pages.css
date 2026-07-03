@@ -215,12 +215,12 @@
 .prop-item { display: flex; flex-direction: column; gap: 14px; }
 .prop-item span { color: var(--ink-soft); }
 
-.contacto { align-items: center; }
+.contacto { align-items: center; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
 .contacto-text p { color: rgba(255,255,255,.9); }
 .contacto-text h2 { margin-bottom: 18px; }
 
 .head-split { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
-.person-grid { gap: 24px; }
+.person-grid { gap: 24px; display: grid; grid-template-columns: repeat(4, 1fr); }
 .oferta-head { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
 .oferta-note { grid-column: span 1; background: var(--blue); color: #fff; border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 12px; position: relative; }
 .oferta-note p { margin: 0; font-size: 14px; color: rgba(255,255,255,.92); }
@@ -267,19 +267,50 @@
 .search-tag { background: var(--bg-gray); color: var(--ink-soft); font-size: 12px; padding: 3px 10px; border-radius: 999px; }
 .search-path { color: var(--muted); font-size: 13px; }
 
+/* ---------- Responsive layout helpers (used by School, Transforma, etc.) ---------- */
+.school-extra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 60px; }
+.students-develop-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.student-carousel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1; }
+.tcolegio-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.oferta-4col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px; }
+.oferta-3col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.repensar-shift { margin-left: -200px; }
+.medible-text { padding-left: 60px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .conoce-intro, .repensar, .medible, .club-deport, .contacto, .news-feature { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: repeat(4, 1fr); row-gap: 26px; }
   .timeline-line { display: none; }
   .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .person-grid { grid-template-columns: repeat(2, 1fr); }
-  .loc-band { grid-template-columns: 1fr; }
+  .loc-band { grid-template-columns: 1fr; max-height: none; }
+  .loc-img-real { width: 100%; height: 280px; margin: 16px 0 0; }
   .sedes-line { display: none; }
+  .apply-layout { grid-template-columns: 1fr; }
+  .apply-top-row, .apply-bottom-row { grid-template-columns: repeat(2, 1fr); }
+  .school-extra-grid { grid-template-columns: 1fr; }
+  .students-develop-grid { grid-template-columns: repeat(2, 1fr); }
+  .student-carousel-grid { grid-template-columns: repeat(2, 1fr); }
+  .tcolegio-2col { grid-template-columns: 1fr; }
+  .oferta-4col { grid-template-columns: repeat(2, 1fr); }
+  .oferta-3col { grid-template-columns: 1fr 1fr; }
+  .repensar-shift { margin-left: 0; }
+  .medible-text { padding-left: 0; }
 }
 @media (max-width: 600px) {
   .hero-school-img { height: 340px; }
   .timeline, .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .jobs, .club-gallery, .person-grid { grid-template-columns: 1fr; }
   .conoce-intro { grid-template-columns: 1fr; }
+  .found-band { padding: 24px 22px; font-size: 17px; }
+  .camino-img { height: auto; max-height: 280px; }
+  .apply-top-row, .apply-bottom-row { grid-template-columns: 1fr; }
+  .apply-step { aspect-ratio: auto; }
+  .students-develop-grid { grid-template-columns: 1fr; }
+  .student-carousel-grid { grid-template-columns: repeat(2, 1fr); }
+  .oferta-4col, .oferta-3col { grid-template-columns: 1fr; }
+  .hero-quote { padding: 24px 20px; border-radius: 24px; }
+  .hero-yellow { padding: 18px 22px; }
+  .loc-img-real { height: 200px; }
 }
 
 /* ---------- Propuesta button ---------- */

@@ -94,7 +94,7 @@ export default function Transforma() {
               <p><b>Repensar la educación no es una moda, es una necesidad.</b> Cada estudiante es distinto en intereses, ritmo, fortalezas y desafíos: el sistema no puede seguir tratándolos como si fueran iguales.</p>
               <p>En ReinventED creemos que todos los estudiantes pueden <b>alcanzar altos estándares cuando el aprendizaje está diseñado con intención, estructura y propósito.</b></p>
             </div>
-            <div className="repensar-art" style={{ marginLeft: '-200px' }}>
+            <div className="repensar-art repensar-shift">
               <svg viewBox="0 0 200 200" width="300" height="300" fill="none" stroke="var(--yellow)" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="150" cy="60" r="26" />
                 <rect x="30" y="40" width="46" height="46" rx="4" transform="rotate(-12 53 63)" />
@@ -105,7 +105,7 @@ export default function Transforma() {
             </div>
           </div>
 
-          <h3 style={{ textAlign: 'left', fontWeight: 200, color: 'rgba(80,90,110,0.45)', fontSize: 'clamp(42px,5vw,42px)', margin: '20px 0 36px' }}>
+          <h3 style={{ textAlign: 'left', fontWeight: 200, color: 'rgba(80,90,110,0.45)', fontSize: 'clamp(22px,5vw,42px)', margin: '20px 0 36px' }}>
             En ReinventED diseñamos y operamos sistemas de aprendizaje<br/>
             personalizados y estructurados que combinan:
           </h3>
@@ -125,8 +125,8 @@ export default function Transforma() {
         <div className="container">
           <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 100, fontFamily: "'Aller Display', sans-serif" }}>Every student succeeds</span>} badge="red" />
           <div style={{ textAlign: 'left', marginBottom: 40 }}>
-            <p style={{ color: 'var(--blue)', fontSize: 32, fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 28, marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+            <p style={{ color: 'var(--blue)', fontSize: 'clamp(18px,4vw,32px)', fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 'clamp(16px,3.5vw,28px)', marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (
@@ -141,7 +141,7 @@ export default function Transforma() {
               </div>
             ))}
           </div>
-          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 25, margin: '36px auto 0' }}>
+          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 'clamp(15px,2.5vw,25px)', margin: '36px auto 0' }}>
             <p><b>Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante.</b> El sistema está diseñado para que todos puedan progresar, no solo quienes se adaptan mejor al modelo tradicional.</p>
             <p><b>No creemos en estudiantes "promedio".</b> Creemos en sistemas que permiten que cada uno avance desde su punto de partida hacia estándares altos y medibles.</p>
           </div>
@@ -178,7 +178,7 @@ export default function Transforma() {
           </div>
           <div className="medible">
             <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
-            <div style={{ paddingLeft: 60 }}>
+            <div className="medible-text">
               <p style={{ color: '#fff', fontWeight: 400, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite
                 monitorear tanto el progreso académico como el desarrollo de competencias esenciales.

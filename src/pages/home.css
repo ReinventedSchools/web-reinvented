@@ -95,8 +95,8 @@
   text-align: center;
   box-shadow: var(--shadow-md);
 }
-.redefine-card h3 { font-size: 45px; font-weight: 900; margin-bottom: 12px; }
-.redefine-card p { margin: 0; font-size: 25px; color: rgba(255,255,255,.9); }
+.redefine-card h3 { font-size: clamp(26px, 4vw, 45px); font-weight: 900; margin-bottom: 12px; }
+.redefine-card p { margin: 0; font-size: clamp(16px, 2.5vw, 25px); color: rgba(255,255,255,.9); }
 
 /* ---------------- STATS ---------------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
@@ -153,7 +153,7 @@
 .formula-sec { background: var(--bg-gray); border-radius: 40px; margin: 0 16px; }
 .formula-title {
   text-align: center; color: var(--blue);
-  font-size: clamp(46px, 5.5vw, 68px);
+  font-size: clamp(28px, 5.5vw, 68px);
 }
 .formula-sub { text-align: center; font-size: 29px; color: var(--ink); font-weight: 600; margin: 4px 0 38px; }
 .formula-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 880px; margin: 0 auto; }
@@ -217,4 +217,9 @@
 @media (max-width: 600px) {
   .hero-tabs { grid-template-columns: 1fr; }
   .campus-row { grid-template-columns: 1fr 1fr; }
+  .apply-band .apply-cards { grid-template-columns: 1fr; max-width: 360px; }
+  .apply-band { padding: 28px 20px; }
+  .formula-labels { font-size: 22px; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .formula-sub { font-size: 20px; }
+  .implementa-img { height: auto; max-height: 360px; }
 }

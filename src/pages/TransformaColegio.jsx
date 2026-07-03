@@ -43,7 +43,7 @@ export default function TransformaColegio() {
               <div>
                 <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(26px,3vw,36px)', marginBottom: 20 }}><b>Asesorías para colegios</b></h2>
                 <h3 style={{ color: '#fff', marginBottom: 16 }}>Transformación educativa con estructura</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+                <div className="tcolegio-2col">
                   <div>
                     <p>Muchos colegios reconocen la necesidad de cambiar. Buscan personalización, mayor autonomía en los estudiantes y metodologías más relevantes para el mundo actual.</p>
                     <p>El desafío no suele estar en la intención, sino en el sistema.</p>
@@ -75,7 +75,7 @@ export default function TransformaColegio() {
             <p>En nuestro trabajo con colegios analizamos el contexto institucional, la cultura organizacional y las metas educativas para diseñar un modelo que responda a las necesidades específicas de cada comunidad.</p>
             <p>Esto permite implementar personalización de manera estructurada, considerando:</p>
           </div>
-          <div className="person-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 32, maxWidth: 800, margin: '0 auto' }}>
+          <div className="person-grid" style={{ maxWidth: 800, margin: '0 auto' }}>
             {personaliza.map((p, i) => (
               <div className="feat feat-lg" key={i}>
                 <Badge />
@@ -110,7 +110,7 @@ export default function TransformaColegio() {
             <div style={{ marginBottom: 24 }}>
               <h3 style={{ fontWeight: 600, fontSize: 22 }}>Nuestra propuesta puede incluir:</h3>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginBottom: 24 }}>
+            <div className="oferta-4col">
               {oferta.slice(0, 4).map((o, i) => (
                 <div className="feat feat-lg" key={i}>
                   <Badge color="yellow" />
@@ -118,7 +118,7 @@ export default function TransformaColegio() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+            <div className="oferta-3col">
               {oferta.slice(4).map((o, i) => (
                 <div className="feat feat-lg" key={i + 4}>
                   <Badge color="yellow" />
@@ -136,7 +136,7 @@ export default function TransformaColegio() {
 
       {/* Contacto */}
       <section className="band-blue section">
-        <div className="container contacto" style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gap: 48, alignItems: 'center' }}>
+        <div className="container contacto">
           <ContactForm btn="var(--yellow)" btnText="var(--ink)" />
           <div className="contacto-text">
             <h2 style={{ color: '#fff', fontWeight: 400, fontSize: 'clamp(32px,5vw,52px)', letterSpacing: 2 }}>CONTACTO</h2>
