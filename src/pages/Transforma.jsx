@@ -86,16 +86,16 @@ export default function Transforma() {
       {/* Por qué repensar */}
       <section className="section">
         <div className="container">
-          <SectionHead title="¿Por qué repensar la educación?" badge="red" />
+          <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 300 }}>¿Por qué repensar la educación?</span>} badge="red" />
           <div className="repensar">
-            <div className="prose">
-              <p><b>El mundo cambió.</b> La forma en que aprendemos, trabajamos y nos relacionamos también.</p>
+            <div className="prose" style={{ fontSize: 'clamp(16px, 5vw, 18px)' ,marginLeft: '10%', maxWidth: 600, textAlign: 'justify' }}>
+              <p><b>El mundo cambió. La forma en que aprendemos, trabajamos y nos relacionamos también.</b></p>
               <p>Sin embargo, gran parte del sistema educativo sigue operando bajo una lógica diseñada para otro siglo: estandarización, memorización y avanzar uniforme para todos.</p>
               <p><b>Repensar la educación no es una moda, es una necesidad.</b> Cada estudiante es distinto en intereses, ritmo, fortalezas y desafíos: el sistema no puede seguir tratándolos como si fueran iguales.</p>
-              <p>En ReinventED creemos que todos los estudiantes pueden alcanzar altos estándares cuando el aprendizaje está diseñado con intención, estructura y propósito.</p>
+              <p>En ReinventED creemos que todos los estudiantes pueden <b>alcanzar altos estándares cuando el aprendizaje está diseñado con intención, estructura y propósito.</b></p>
             </div>
-            <div className="repensar-art">
-              <svg viewBox="0 0 200 200" width="220" height="220" fill="none" stroke="var(--yellow)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
+            <div className="repensar-art" style={{ marginLeft: '-200px' }}>
+              <svg viewBox="0 0 200 200" width="300" height="300" fill="none" stroke="var(--yellow)" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="150" cy="60" r="26" />
                 <rect x="30" y="40" width="46" height="46" rx="4" transform="rotate(-12 53 63)" />
                 <polygon points="60,150 90,110 120,150" />
@@ -105,7 +105,7 @@ export default function Transforma() {
             </div>
           </div>
 
-          <h3 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--ink-soft)', fontSize: 'clamp(28px,3.2vw,38px)', margin: '20px 0 36px' }}>
+          <h3 style={{ textAlign: 'left', fontWeight: 200, color: 'rgba(80,90,110,0.45)', fontSize: 'clamp(42px,5vw,42px)', margin: '20px 0 36px' }}>
             En ReinventED diseñamos y operamos sistemas de aprendizaje<br/>
             personalizados y estructurados que combinan:
           </h3>
@@ -123,10 +123,10 @@ export default function Transforma() {
       {/* Every student succeeds */}
       <section className="band-soft section">
         <div className="container">
-          <SectionHead title={<span className="display" style={{ color: 'var(--ink-soft)', fontWeight: 100 , fontSize: 40}}>Every student succeeds</span>} badge="red" light={false} />
+          <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 100, fontFamily: "'Aller Display', sans-serif" }}>Every student succeeds</span>} badge="red" />
           <div style={{ textAlign: 'left', marginBottom: 40 }}>
-            <p style={{ color: 'var(--blue)', fontSize: 28,fontWeight: 600  , marginLeft: 45   }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 25, marginLeft: 45 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+            <p style={{ color: 'var(--blue)', fontSize: 32, fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 28, marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (
@@ -141,7 +141,7 @@ export default function Transforma() {
               </div>
             ))}
           </div>
-          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 20}}>
+          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 25, margin: '36px auto 0' }}>
             <p><b>Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante.</b> El sistema está diseñado para que todos puedan progresar, no solo quienes se adaptan mejor al modelo tradicional.</p>
             <p><b>No creemos en estudiantes "promedio".</b> Creemos en sistemas que permiten que cada uno avance desde su punto de partida hacia estándares altos y medibles.</p>
           </div>
@@ -177,9 +177,9 @@ export default function Transforma() {
             <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Progreso medible</h2>
           </div>
           <div className="medible">
-            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '3/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
-            <div>
-              <p style={{ color: '#fff', fontWeight: 600, marginTop: 0 }}>
+            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+            <div style={{ paddingLeft: 60 }}>
+              <p style={{ color: '#fff', fontWeight: 400, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite
                 monitorear tanto el progreso académico como el desarrollo de competencias esenciales.
               </p>
@@ -201,13 +201,17 @@ export default function Transforma() {
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 34 }}>
             <Badge color="yellow" />
-            <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(24px,3vw,34px)' }}>Nuestros diferenciadores</h2>
+            <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Nuestros diferenciadores</h2>
+
           </div>
           <div className="diff">
             {diff.map((d, i) => (
               <div className="diff-card" key={i}>
                 <div className="diff-icon">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                  {i === 0 && <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--red)" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>}
+                  {i === 1 && <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--red)" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>}
+                  {i === 2 && <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--red)" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>}
+                  {i === 3 && <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="var(--red)" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>}
                 </div>
                 <h4>{d.t}</h4>
                 <p>{d.d}</p>

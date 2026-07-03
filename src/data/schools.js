@@ -1,6 +1,20 @@
 import imgPuemboHero from '../assets/sedes/puemboPrincipal.webp'
 import imgPuemboLogo from '../assets/logos/puemboB.png'
 import imgPuemboCampus from '../assets/sedes/puemboJardin.webp'
+import imgIdvLogo from '../assets/logos/idcB.png'
+import imgIdvHero from '../assets/sedes/idv/idvPrincipal.webp'
+import imgIdvSection from '../assets/sedes/idv/idv_seccion.webp'
+import imgSantaClaraLogo from '../assets/logos/scb.png'
+import imgRimacLogo from '../assets/logos/rimacB.png'
+import imgPC1 from '../assets/sedes/puembo/c1.webp'
+import imgPC2 from '../assets/sedes/puembo/c2.webp'
+import imgPC3 from '../assets/sedes/puembo/c3.webp'
+import imgPC4 from '../assets/sedes/puembo/c4.webp'
+import imgPC5 from '../assets/sedes/puembo/c5.webp'
+import imgPC6 from '../assets/sedes/puembo/c6.webp'
+import imgPC7 from '../assets/sedes/puembo/c7.webp'
+import imgPC8 from '../assets/sedes/puembo/c8.webp'
+import imgPC9 from '../assets/sedes/puembo/c9.webp'
 
 export const schools = {
   puembo: {
@@ -16,20 +30,36 @@ export const schools = {
     arrow: 'purple',
     circle: '#2bae8c',
     since: 'Desde 2020',
+    galleryImgs: [imgPC1, imgPC2, imgPC3, imgPC4, imgPC5, imgPC6, imgPC7, imgPC8, imgPC9],
     intro:
-      'ReinventED Puembo fue el primer campus de la red. Nació en 2020, en medio de la pandemia, como una respuesta estructurada al contexto del momento y a la necesidad de repensar cómo debía diseñarse el aprendizaje. Pese a las restricciones y a un crecimiento sostenido pero intencional, cuidamos siempre lo más importante: proteger la personalización, la estructura del sistema y la calidad del acompañamiento.',
+      'ReinventED Puembo fue el primer campus de la red. Nació en 2020, en un momento que obligó al mundo a cuestionar muchas de sus certezas, incluida la educación. Esta fue la oportunidad de diseñar desde cero un sistema de aprendizaje personalizado, estructurado y conectado con la realidad de cada estudiante. Desde el inicio, hemos crecido de manera intencional, cuidando aquello que define nuestra propuesta: conocer profundamente a cada estudiante, ofrecer experiencias de aprendizaje relevantes a sus intereses y necesidades, y sostener un sistema que combina autonomía, acompañamiento cercano y altos estándares. Porque creemos que la calidad de una experiencia educativa no se mide por cuántos estudiantes alcanza, sino por el impacto que tiene en cada uno de ellos.',
     locTitle: 'Ubicado en Puembo,',
-    locText: [
+    locText: [  
       'el campus está rodeado de naturaleza y espacios abiertos que amplían las posibilidades de aprendizaje.',
       'La naturaleza es recurso pedagógico. El movimiento, la exploración y el contacto con el entorno forman parte de la experiencia diaria.',
       'El espacio físico acompaña al modelo: talleres abiertos, áreas colaborativas y ambientes diseñados para favorecer autonomía y concentración.',
     ],
-    grades:
-      '10th grade se abrirá en el período 2026 - 2027. 11th grade en el período 2027 - 2028 y 12th grade en 2028 - 2029.',
+    grades: [
+      { t: '10th grade', b: true }, { t: ' se abrirá en el período 2026 - 2027. ' },
+      { t: '11th grade', b: true }, { t: ' en el período 2027 - 2028 y ' },
+      { t: '12th grade', b: true }, { t: ' en 2028 - 2029.' },
+    ],
   },
   idv: {
     slug: 'idv',
     name: 'IDV',
+    heroImg: imgIdvHero,
+    logoImg: imgIdvLogo,
+    hideCamino: true,
+    sectionImg: imgIdvSection,
+    sectionTitle: 'Educación y deporte de alto rendimiento',
+    sectionText: 'ReinventED IDV integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
+    studentsDevelop: [
+      'Responsabilidad sobre su proceso académico',
+      'Gestión del tiempo',
+      'Disciplina y planificación',
+      'Competencias académicas con estándares altos',
+    ],
     ed: '#4fa3d1',
     nameColor: '#e5007e',
     band: '#1b4a77',
@@ -50,6 +80,7 @@ export const schools = {
   'santa-clara': {
     slug: 'santa-clara',
     name: 'Santa Clara',
+    logoImg: imgSantaClaraLogo,
     ed: '#9fc131',
     nameColor: '#ffffff',
     band: '#9fc131',
@@ -70,6 +101,8 @@ export const schools = {
   rimac: {
     slug: 'rimac',
     name: 'Rímac',
+    logoImg: imgRimacLogo,
+    hideCamino: true,
     ed: '#f4c20d',
     nameColor: '#4fa3d1',
     band: '#5b87a8',

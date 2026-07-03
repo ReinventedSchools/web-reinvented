@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 
 const EMAILJS_SERVICE  = 'service_zsv8mj8'   // reemplaza con tu Service ID de EmailJS
@@ -18,23 +18,56 @@ export function SectionHead({ title, badge = '', light = true, align = 'left', c
   )
 }
 
-/* Placeholder gallery: a row of empty image cards + carousel dots */
-export function Gallery({ count = 5, dotColor }) {
-  const [active, setActive] = useState(1)
+/* Gallery: real images carousel (3 per page) or placeholder */
+export function Gallery({ images = [], count = 5, dotColor }) {
+  const [page, setPage] = useState(0)
+  const PER_PAGE = 3
+  const pages = images.length ? Math.ceil(images.length / PER_PAGE) : 3
+
+  useEffect(() => {
+    if (!images.length) return
+    const id = setInterval(() => setPage(p => (p + 1) % pages), 3000)
+    return () => clearInterval(id)
+  }, [images.length, pages])
+
+  if (!images.length) {
+    return (
+      <div>
+        <div className="grid" style={{ gridTemplateColumns: `repeat(${count}, 1fr)` }}>
+          {Array.from({ length: count }).map((_, i) => (
+            <div key={i} className="img-ph" style={{ aspectRatio: '4/3' }} />
+          ))}
+        </div>
+        <div className="dots-row">
+          {Array.from({ length: 3 }).map((_, i) => (
+            <i key={i} className={i === 1 ? 'active' : ''} style={i === 1 && dotColor ? { background: dotColor } : {}} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  const visible = images.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE)
+
   return (
     <div>
-      <div className="grid" style={{ gridTemplateColumns: `repeat(${count}, 1fr)` }}>
-        {Array.from({ length: count }).map((_, i) => (
-          <div key={i} className="img-ph" style={{ aspectRatio: '1 / 1' }} />
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+        {visible.map((src, i) => (
+          <img
+            key={page * PER_PAGE + i}
+            src={src}
+            alt=""
+            style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 12, display: 'block' }}
+          />
         ))}
       </div>
-      <div className="dots-row">
-        {Array.from({ length: 5 }).map((_, i) => (
+      <div className="dots-row" style={{ marginTop: 16 }}>
+        {Array.from({ length: pages }).map((_, i) => (
           <i
             key={i}
-            className={i === active ? 'active' : ''}
-            style={i === active && dotColor ? { background: dotColor } : {}}
-            onClick={() => setActive(i)}
+            className={i === page ? 'active' : ''}
+            style={i === page && dotColor ? { background: dotColor } : {}}
+            onClick={() => setPage(i)}
           />
         ))}
       </div>

@@ -1,6 +1,13 @@
 /* ============================================================
    ReinventED Schools — Design System
    ============================================================ */
+@font-face {
+  font-family: 'Aller Display';
+  src: url('https://db.onlinewebfonts.com/t/b857f78dbf8c68c905f67f8e51b97cdf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   /* Brand palette */
   --blue: #5277bd;
@@ -84,7 +91,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
   background: var(--blue);
 }
 .badge svg { width: 20px; height: 20px; }
-.badge.yellow { background: var(--yellow); color: var(--ink); }
+.badge.yellow { background: var(--yellow); color: #fff; }
 .badge.red { background: var(--red); }
 .badge.magenta { background: var(--magenta); }
 .badge.purple { background: var(--purple); }

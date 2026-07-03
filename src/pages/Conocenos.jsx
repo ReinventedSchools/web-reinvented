@@ -7,6 +7,7 @@ import imgIDV from '../assets/logos/idcB.png'
 import imgSantaClara from '../assets/logos/scB.png'
 import imgRimac from '../assets/logos/rimacB.png'
 import imgHistoria1 from '../assets/historia/historia1.webp'
+import imgLogoSchools from '../assets/historia/logo_schools.webp'
 import './pages.css'
 
 const sedes = [
@@ -29,19 +30,8 @@ export default function Conocenos() {
         <div className="container conoce-intro">
           <img src={imgHistoria1} alt="El mundo se reinventa" style={{ aspectRatio: '3/4', borderRadius: 24, width: '100%', objectFit: 'cover' }} />
           <div>
-            <div className="dots-row" style={{ justifyContent: 'flex-start', marginTop: 0, marginBottom: 16 }}>
-              <i style={{ background: '#9aa0ab' }} />
-              <i style={{ background: 'var(--red)' }} />
-              <i style={{ background: 'var(--yellow)' }} />
-              <i style={{ background: 'var(--blue)' }} />
-            </div>
-            <h1 style={{ fontSize: 'clamp(30px,4vw,46px)', fontWeight: 600 }}>
-              Reinvent<span style={{ color: 'var(--ink-soft)' }}>ED</span>Schools
-            </h1>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 18, margin: '8px 0 24px' }}>
-              El mundo se reinventa, la educación también
-            </p>
-            <div className="intro-card">
+            <img src={imgLogoSchools} alt="ReinventED Schools" style={{ height: 120, objectFit: 'contain', display: 'block', marginBottom: 24, marginLeft: 'auto', marginRight: 'auto' }} />
+             <div className="intro-card">
               ReinventED nació del sueño de Ana Cristina Hidalgo y Juan Carlos Pérez de
               transformar la educación desde la autonomía y el propósito. Hoy es una red que
               crece en la región, y demuestra que es posible una educación distinta y

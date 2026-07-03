@@ -13,7 +13,7 @@
 
 /* ---------- School / inner hero ---------- */
 .hero-school { position: relative; }
-.hero-school-img { width: 100%; height: 480px; object-fit: cover; object-position: bottom; display: block; border-radius: 0; }
+.hero-school-img { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; border-radius: 0; }
 
 .hero-school-overlay.light {
   background: linear-gradient(180deg, rgba(30, 40, 70, 0.752), rgba(30,40,70,.15));
@@ -32,7 +32,7 @@
   border-radius: 55px;
   max-width: 860px;
   width: 100%;
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: clamp(16px, 1.8vw, 22px);
   line-height: 1.5;
   backdrop-filter: blur(4px);
 }
@@ -54,7 +54,7 @@
 .found-band {
   border-radius: var(--radius-lg);
   padding: 44px 52px;
-  font-size: 19px;
+  font-size: 22px;
   line-height: 1.75;
 }
 
@@ -62,22 +62,22 @@
 .loc-band {
   border-radius: var(--radius-lg);
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 2.4fr 1fr;
   gap: 0;
   overflow: visible;
   align-items: center;
   position: relative;
+  max-height: 350px;
 }
-.loc-text { padding: 38px 40px; }
+.loc-text { padding: 10px 36px; }
 .loc-text p { margin: 0 0 14px; font-size: 15.5px; }
 .loc-img { min-height: 280px; border-radius: 18px; margin: 20px; }
 .loc-img-real {
-  width: calc(100% - 40px);
-  height: 340px;
+  width: calc(100% + 12px);
+  height: 460px;
   object-fit: cover;
   border-radius: 18px;
-  margin: 20px;
-  margin-top: -50px;
+  margin: -70px 12px -50px -40px;
   box-shadow: 0 8px 32px rgba(0,0,0,.18);
 }
 
@@ -98,24 +98,28 @@
   border: 4px solid #fff; box-shadow: var(--shadow-md);
   margin-bottom: 10px;
 }
-.tl-stage strong { font-size: 14px; color: var(--ink); }
+.tl-stage strong { font-size: 17px; font-weight: 700; color: var(--ink); }
 .tl-grade { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
 .tl-sub { font-size: 11px; color: var(--muted); }
 .grades-note { text-align: center; color: var(--ink-soft); font-size: 14px; margin-top: 30px; }
 .grades-note span { font-weight: 700; }
 
 /* ---------- Cómo aplicar ---------- */
+.apply-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 28px; align-items: start; }
+.apply-cards { display: flex; flex-direction: column; gap: 18px; }
+.apply-top-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.apply-bottom-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .apply-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
 .apply-step {
-  background: #fff; border-radius: var(--radius); padding: 24px 20px;
-  box-shadow: var(--shadow-sm); display: flex; flex-direction: column; gap: 16px;
-  min-height: 150px;
+  background: #fff; border-radius: var(--radius); padding: 28px 26px;
+  box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
+  justify-content: space-between; aspect-ratio: 1 / 1;
 }
 .apply-step-icon {
-  width: 50px; height: 50px; border-radius: 12px;
+  width: 66px; height: 66px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
 }
-.apply-step span { color: var(--ink-soft); font-size: 15px; }
+.apply-step span { color: var(--ink-soft); font-size: 17px; line-height: 1.4; }
 
 /* ---------- Conócenos ---------- */
 .conoce-intro { display: grid; grid-template-columns: 360px 1fr; gap: 50px; align-items: center; }
@@ -158,26 +162,27 @@
 .repensar-art svg { animation: floaty 5s ease-in-out infinite; }
 .combine { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .combine-card {
-  background: var(--bg-gray-2); border-radius: var(--radius); padding: 26px 22px;
-  display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow-sm);
+  background: var(--bg-gray); border-radius: var(--radius); padding: 44px 28px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 18px; box-shadow: var(--shadow-sm); text-align: center; min-height: 180px;
 }
-.combine-card span { color: var(--ink-soft); font-size: 15px; }
+.combine-card span { color: var(--ink); font-size: 20px; font-weight: 400; }
 
-.exito { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+.exito { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; max-width: 900px; margin: 0 auto; }
 .exito-card {
   background: var(--blue); color: #fff; border-radius: var(--radius);
   padding: 48px 32px; position: relative;
   display: flex; flex-direction: column; align-items: center; text-align: center;
   min-height: 440px;
-  box-shadow: 0 10px 40px rgba(30,50,120,.22);
+  box-shadow: 0 16px 56px rgba(30,50,120,.38);
 }
 .exito-icon {
   width: 80px; height: 80px; border-radius: 50%; background: #fff;
   display: flex; align-items: center; justify-content: center; margin-bottom: 28px;
   flex-shrink: 0;
 }
-.exito-card h4 { font-size: clamp(22px, 2.4vw, 30px); margin-bottom: 16px; color: #fff; }
-.exito-card p { margin: 0; color: rgba(255,255,255,.9); font-size: 16px; line-height: 1.65; }
+.exito-card h4 { font-size: clamp(26px, 2.8vw, 36px); margin-bottom: 16px; color: #fff; }
+.exito-card p { margin: 0; color: rgba(255,255,255,.9); font-size: 19px; line-height: 1.65; }
 
 .skills-row { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 10px; animation: allies-fade .4s ease; }
 .skill-img { width: 250px; height: 120px; object-fit: contain; }
@@ -185,13 +190,13 @@
 .medible { display: grid; grid-template-columns: 360px 1fr; gap: 36px; align-items: center; }
 .check-list { list-style: none; padding: 0; margin: 0; }
 .check-list li { color: rgba(255,255,255,.92); padding: 6px 0 6px 26px; position: relative; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--yellow); font-weight: 700; }
+.check-list li::before { content: '•'; position: absolute; left: 0; color: var(--yellow); font-weight: 700; }
 
 .diff { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.diff-card { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); border-radius: var(--radius); padding: 26px 22px; }
-.diff-icon { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.16); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-.diff-card h4 { color: #fff; font-size: 16px; margin-bottom: 10px; }
-.diff-card p { color: rgba(255,255,255,.82); font-size: 14px; line-height: 1.5; margin: 0; }
+.diff-card { background: rgba(255,255,255,.72); border: none; border-radius: var(--radius); padding: 36px 26px; min-height: 360px; display: flex; flex-direction: column; }
+.diff-icon { width: 60px; height: 60px; border-radius: 50%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.1); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+.diff-card h4 { color: var(--ink); font-size: 20px; margin-bottom: 10px; }
+.diff-card p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; margin: 0; }
 
 /* ---------- Club / Colegio transform ---------- */
 .club-intro { align-items: center; }
@@ -201,7 +206,7 @@
 .club-deport { align-items: center; }
 .person { align-items: start; }
 .niveles { display: flex; flex-direction: column; gap: 18px; }
-.nivel { display: flex; gap: 14px; align-items: flex-start; }
+.nivel { display: flex; flex-direction: column; gap: 10px; }
 .nivel div { color: var(--ink-soft); }
 .nivel b { color: var(--ink); }
 
@@ -276,3 +281,24 @@
   .timeline, .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .jobs, .club-gallery, .person-grid { grid-template-columns: 1fr; }
   .conoce-intro { grid-template-columns: 1fr; }
 }
+
+/* ---------- Propuesta button ---------- */
+.btn-propuesta {
+  display: inline-block;
+  padding: 16px 40px;
+  background: var(--red);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-propuesta:hover { background: #b00020; }
+
+/* ---------- Feat card grande ---------- */
+.feat-lg { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.feat-lg .badge { width: 58px; height: 58px; border-radius: 14px; }
+.feat-lg .badge svg { width: 28px; height: 28px; }
+.feat-lg p { font-size: 14px; }

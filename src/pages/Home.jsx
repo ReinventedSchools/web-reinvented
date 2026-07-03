@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
@@ -65,10 +65,34 @@ const formula = [
 
 export default function Home() {
   const [alliesPage, setAlliesPage] = useState(0)
+  const [counts, setCounts] = useState(stats.map(() => 0))
+  const statsRef = useRef(null)
+  const animatedRef = useRef(false)
 
   useEffect(() => {
     const id = setInterval(() => setAlliesPage(p => (p + 1) % ALLIES_PAGES), 3000)
     return () => clearInterval(id)
+  }, [])
+
+  useEffect(() => {
+    const el = statsRef.current
+    if (!el) return
+    const targets = stats.map(s => parseInt(s.n, 10))
+    const obs = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting || animatedRef.current) return
+      animatedRef.current = true
+      const duration = 1800
+      const start = performance.now()
+      const tick = (now) => {
+        const progress = Math.min((now - start) / duration, 1)
+        const eased = 1 - Math.pow(1 - progress, 3)
+        setCounts(targets.map(t => Math.round(t * eased)))
+        if (progress < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    }, { threshold: 0.3 })
+    obs.observe(el)
+    return () => obs.disconnect()
   }, [])
 
   const start = alliesPage * ALLIES_PER_PAGE
@@ -81,7 +105,7 @@ export default function Home() {
         <img src={imgHero} alt="ReinventED" className="hero-img" />
         <div className="hero-overlay" />
         <div className="container hero-content">
-          <h1 className="display hero-title">every student succeeds</h1>
+          <h1 className="hero-title" style={{ fontFamily: "'Aller Display', sans-serif" }}>every student succeeds</h1>
         </div>
         <div className="hero-tabs-wrap">
           <div className="hero-tabs">
@@ -137,7 +161,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <SectionHead title="Una red en crecimiento" />
-          <div className="stats">
+          <div className="stats" ref={statsRef}>
             <svg className="stats-svg" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
               <path
                 d="M 0,15 H 18 Q 25,22 31,15 H 43 Q 50,22 57,15 H 69 Q 75,22 82,15 H 100"
@@ -146,7 +170,7 @@ export default function Home() {
             </svg>
             {stats.map((s, i) => (
               <div className="stat" key={i}>
-                <div className="stat-circle">{s.n}</div>
+                <div className="stat-circle">{counts[i]}</div>
                 <span>{s.label}</span>
               </div>
             ))}
@@ -157,7 +181,7 @@ export default function Home() {
       {/* ---------------- NUESTRA FÓRMULA ---------------- */}
       <section className="section formula-sec">
         <div className="container">
-          <h2 className="display formula-title">every student succeeds</h2>
+          <h2 className="formula-title" style={{ fontFamily: "'Aller Display'", fontWeight: 300 }}>every student succeeds</h2>
           <p className="formula-sub">Cónoce nuestra fórmula</p>
           <div className="formula-cards">
             {[imgSchoolJoy, imgPersonal, imgAcademic].map((img, i) => (
