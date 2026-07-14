@@ -170,9 +170,9 @@ export default function School() {
 
           <div className="timeline">
             <div className="timeline-line" />
-            {stages.map(st => (
+            {stages.map((st, i) => (
               <div className="tl-stage" key={st.n}>
-                <div className="tl-dot" style={{ background: st.color }}>{st.n}</div>
+                <div className="tl-dot" style={{ background: s.stageColors?.[i] ?? st.color }}>{st.n}</div>
                 <strong>{st.name}</strong>
                 <span className="tl-grade">{st.grade}</span>
                 <span className="tl-sub">{st.sub}</span>
@@ -242,7 +242,7 @@ export default function School() {
       <section className="section">
         <div className="container">
           <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--muted)', fontSize: 'clamp(30px,4vw,46px)', marginBottom: 30 }}>FAQ</h2>
-          <Faq items={faqItems} />
+          <Faq items={faqItems} dotColor={s.faqDot} />
         </div>
       </section>
     </div>

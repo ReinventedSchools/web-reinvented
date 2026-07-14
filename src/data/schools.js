@@ -96,6 +96,8 @@ export const schools = {
     heroImg: imgSantaClaraHero,
     logoImg: imgSantaClaraLogo,
     locImg: imgSantaClaraLoc,
+    stageColors: ['#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131'],
+    faqDot: 'var(--magenta)',
     galleryImgs: [imgSC1, imgSC2, imgSC3, imgSC4, imgSC5, imgSC6, imgSC7, imgSC8, imgSC9],
     ed: '#9fc131',
     nameColor: '#ffffff',
