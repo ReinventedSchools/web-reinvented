@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
-import imgCamino from '../assets/implementa.webp'
+// import imgCamino from '../assets/implementa.webp'
+import imgCamino from '../assets/home/Redefiniendo.webp'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
 import { SectionHead, Gallery, Faq } from '../components/UI.jsx'
 import { schools, stages, faqItems } from '../data/schools.js'
@@ -111,7 +112,7 @@ export default function School() {
               {s.locText.map((t, i) => <p key={i} style={{ color: 'rgba(255,255,255,.92)' }}>{t}</p>)}
             </div>
             {s.locImg
-              ? <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" />
+              ? <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" style={s.locImgFit ? { objectFit: s.locImgFit } : {}} />
               : <div className="img-ph loc-img" />}
           </div>
         </div>
@@ -198,7 +199,7 @@ export default function School() {
         <div className="container">
           <div className="apply-layout">
             <div className="apply-head">
-              <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>¿Cómo<br/>aplicar?</span>} badge={s.arrow} />
+              <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>¿Cómo aplicar?</span>} badge={s.arrow} />
             </div>
             <div className="apply-cards">
               <div className="apply-top-row">
@@ -227,7 +228,7 @@ export default function School() {
       </section>}
 
       {/* Estudiantes ReinventED (IDV) */}
-      {s.sectionImg && (
+      {s.sectionImg && !s.hideStudents && (
         <section className="section">
           <div className="container">
             <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--ink)', fontSize: 'clamp(26px,3.5vw,40px)', marginBottom: 36 }}>
@@ -239,12 +240,14 @@ export default function School() {
       )}
 
       {/* FAQ */}
-      <section className="section">
-        <div className="container">
-          <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--muted)', fontSize: 'clamp(30px,4vw,46px)', marginBottom: 30 }}>FAQ</h2>
-          <Faq items={faqItems} dotColor={s.faqDot} />
-        </div>
-      </section>
+      {!s.hideFaq && (
+        <section className="section">
+          <div className="container">
+            <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--muted)', fontSize: 'clamp(30px,4vw,46px)', marginBottom: 30 }}>FAQ</h2>
+            <Faq items={s.faqItems || faqItems} dotColor={s.faqDot} />
+          </div>
+        </section>
+      )}
     </div>
   )
 }

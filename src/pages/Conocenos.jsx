@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
 import { schools } from '../data/schools.js'
@@ -23,6 +24,7 @@ const jobs = [
 ]
 
 export default function Conocenos() {
+  const [expanded, setExpanded] = useState(false)
   return (
     <div className="page">
       {/* Intro */}
@@ -47,62 +49,71 @@ export default function Conocenos() {
           <SectionHead title="Nuestra historia" />
           <div className="prose">
             <p>
-              ReinventED Schools nace de una visión clara y ambiciosa: transformar la educación 
-tradicional para preparar a niños y jóvenes para un mundo que cambia rápidamente. 
-Desde el inicio, la tesis fue contundente: no basta con mejorar el sistema tradicional; 
-es necesario rediseñarlo. La idea surgió en un contexto en el que muchas familias 
-cuestionaban la rigidez de los modelos educativos convencionales y buscaban formas 
+              ReinventED Schools nace de una visión clara y ambiciosa: transformar la educación
+tradicional para preparar a niños y jóvenes para un mundo que cambia rápidamente.
+Desde el inicio, la tesis fue contundente: no basta con mejorar el sistema tradicional;
+es necesario rediseñarlo. La idea surgió en un contexto en el que muchas familias
+cuestionaban la rigidez de los modelos educativos convencionales y buscaban formas
 más personalizadas, exigentes y significativas de aprender
             </p>
             <p>
-              Los fundadores de ReinventED Schools, Ana Cristina Hidalgo y Juan Carlos Pérez 
-Borja, compartían una convicción profunda: la educación debía dejar de ser uniforme 
-para convertirse en una experiencia más intencional y centrada en el estudiante. No 
-se trataba de flexibilizar sin estructura, sino de construir una propuesta sólida, con 
+              Los fundadores de ReinventED Schools, Ana Cristina Hidalgo y Juan Carlos Pérez
+Borja, compartían una convicción profunda: la educación debía dejar de ser uniforme
+para convertirse en una experiencia más intencional y centrada en el estudiante. No
+se trataba de flexibilizar sin estructura, sino de construir una propuesta sólida, con
 claridad y altos estándares académicos.
             </p>
-            <p>
-              La red se estructuró formalmente como organización en 2020, dando vida a su primer 
-campus en Puembo, Ecuador. Las primeras experiencias de aprendizaje se dieron bajo 
-carpas y árboles mientras el proyecto tomaba forma. Esa etapa fundacional reafirmó 
-una idea central: la infraestructura no define la calidad educativa; lo hace el diseño 
+
+            {/* Bloque colapsable */}
+            <div className={`prose-expand ${expanded ? 'prose-expand--open' : ''}`}>
+              <p>
+                La red se estructuró formalmente como organización en 2020, dando vida a su primer
+campus en Puembo, Ecuador. Las primeras experiencias de aprendizaje se dieron bajo
+carpas y árboles mientras el proyecto tomaba forma. Esa etapa fundacional reafirmó
+una idea central: la infraestructura no define la calidad educativa; lo hace el diseño
 pedagógico.
-            </p>
-            <p>
-Fue a partir de la consolidación de Puembo que ReinventED comprendió que no 
-estaba simplemente operando un colegio distinto, sino construyendo algo más 
-profundo: un modelo educativo con sistema, estructura y diseño intencional, capaz de 
-adaptarse y crecer. Desde entonces, la organización asumió con claridad su propósito 
+              </p>
+              <p>
+Fue a partir de la consolidación de Puembo que ReinventED comprendió que no
+estaba simplemente operando un colegio distinto, sino construyendo algo más
+profundo: un modelo educativo con sistema, estructura y diseño intencional, capaz de
+adaptarse y crecer. Desde entonces, la organización asumió con claridad su propósito
 de diseñar y operar sistemas de aprendizaje personalizados y estructurados.
-            </p>
-            <p>
-Una de las etapas más significativas fue la alianza con el club Independiente del Valle, 
-que dio lugar a ReinventED IDV. Este proyecto combina educación académica de 
-calidad con las necesidades específicas de jóvenes deportistas de alto rendimiento, 
-adaptando horarios y metodologías para que el desarrollo académico y deportivo se 
+              </p>
+              <p>
+Una de las etapas más significativas fue la alianza con el club Independiente del Valle,
+que dio lugar a ReinventED IDV. Este proyecto combina educación académica de
+calidad con las necesidades específicas de jóvenes deportistas de alto rendimiento,
+adaptando horarios y metodologías para que el desarrollo académico y deportivo se
 complementen en la formación integral del estudiante.
-            </p>
-            <p>
-              Posteriormente, la red continuó su expansión en Ecuador con la apertura de 
-ReinventED Santa Clara en el Valle de los Chillos, fortaleciendo su presencia local y 
-consolidando un modelo educativo personalizado y estructurado que responde a 
-distintas comunidades, manteniendo intacta su esencia: autonomía, propósito y altos 
+              </p>
+              <p>
+                Posteriormente, la red continuó su expansión en Ecuador con la apertura de
+ReinventED Santa Clara en el Valle de los Chillos, fortaleciendo su presencia local y
+consolidando un modelo educativo personalizado y estructurado que responde a
+distintas comunidades, manteniendo intacta su esencia: autonomía, propósito y altos
 estándares académicos en un entorno bilingüe.
-            </p>
-            <p>
-              La expansión internacional continuó en Perú con ReinventED Rímac, en alianza con 
-Sporting Cristal. Esta apertura confirmó que ReinventED no depende de un entorno 
-específico, sino de la solidez de su diseño. Su propuesta no es un conjunto de 
+              </p>
+              <p>
+                La expansión internacional continuó en Perú con ReinventED Rímac, en alianza con
+Sporting Cristal. Esta apertura confirmó que ReinventED no depende de un entorno
+específico, sino de la solidez de su diseño. Su propuesta no es un conjunto de
 prácticas aisladas, sino un sistema educativo intencional, estructurado y replicable.
-            </p>
-            <p>
-              Desde sus inicios, ReinventED Schools ha sostenido una postura clara frente al 
-modelo tradicional: todos los estudiantes pueden alcanzar altos niveles de desarrollo 
-cuando el sistema está diseñado para reconocer sus diferencias, acompañarlos con 
-estructura y exigirles con propósito. Más que una red de colegios, ReinventED es una 
-red que diseña sistemas educativos para que cada estudiante construya autonomía, 
+              </p>
+              <p>
+                Desde sus inicios, ReinventED Schools ha sostenido una postura clara frente al
+modelo tradicional: todos los estudiantes pueden alcanzar altos niveles de desarrollo
+cuando el sistema está diseñado para reconocer sus diferencias, acompañarlos con
+estructura y exigirles con propósito. Más que una red de colegios, ReinventED es una
+red que diseña sistemas educativos para que cada estudiante construya autonomía,
 propósito y competencias reales para la vida.
-            </p>
+              </p>
+            </div>
+
+            <button className="prose-toggle" onClick={() => setExpanded(e => !e)}>
+              {expanded ? 'Leer menos ↑' : 'Leer más ↓'}
+            </button>
+
             <div style={{ textAlign: 'right' }}><Badge /></div>
           </div>
         </div>

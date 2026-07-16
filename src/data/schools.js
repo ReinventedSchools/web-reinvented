@@ -2,8 +2,17 @@ import imgPuemboHero from '../assets/sedes/puemboPrincipal.webp'
 import imgPuemboLogo from '../assets/logos/puemboB.png'
 import imgPuemboCampus from '../assets/sedes/puemboJardin.webp'
 import imgIdvLogo from '../assets/logos/idcB.png'
-import imgIdvHero from '../assets/sedes/idv/idvPrincipal.webp'
+import imgIdvHero from '../assets/sedes/idv/portadaiv.jpg'
 import imgIdvSection from '../assets/sedes/idv/idv_seccion.webp'
+import imgIDVC1 from '../assets/sedes/idv/c1.jpg'
+import imgIDVC2 from '../assets/sedes/idv/c2.jpg'
+import imgIDVC3 from '../assets/sedes/idv/c3.png'
+import imgIDVC4 from '../assets/sedes/idv/c4.jpg'
+import imgIDVC5 from '../assets/sedes/idv/c5.png'
+import imgIDVC6 from '../assets/sedes/idv/c6.jpg'
+import imgIDVC7 from '../assets/sedes/idv/c7.jpg'
+import imgIDVC8 from '../assets/sedes/idv/c8.jpg'
+import imgIDVC9 from '../assets/sedes/idv/c9.jpg'
 import imgSantaClaraLogo from '../assets/logos/scb.png'
 import imgSantaClaraHero from '../assets/sedes/santac/principalscl.jpg'
 import imgSantaClaraLoc from '../assets/sedes/santac/ubicado.jpg'
@@ -18,13 +27,19 @@ import imgSC8 from '../assets/sedes/santac/sc8.png'
 import imgSC9 from '../assets/sedes/santac/sc9.png'
 
 import imgRimacLogo from '../assets/logos/rimacB.png'
-import imgPC1 from '../assets/sedes/puembo/c1.webp'
-import imgPC2 from '../assets/sedes/puembo/c2.webp'
-import imgPC3 from '../assets/sedes/puembo/c3.webp'
-import imgPC4 from '../assets/sedes/puembo/c4.webp'
-import imgPC5 from '../assets/sedes/puembo/c5.webp'
-import imgPC6 from '../assets/sedes/puembo/c6.webp'
-import imgPC7 from '../assets/sedes/puembo/c7.webp'
+import imgR1 from '../assets/sedes/rimac/r1.jpg'
+import imgR2 from '../assets/sedes/rimac/r2.jpg'
+import imgR3 from '../assets/sedes/rimac/r3.jpg'
+import imgR4 from '../assets/sedes/rimac/r4.jpg'
+import imgR5 from '../assets/sedes/rimac/r5.jpg'
+import imgR6 from '../assets/sedes/rimac/r6.jpg'
+import imgPC1 from '../assets/sedes/puembo/c1.jpg'
+import imgPC2 from '../assets/sedes/puembo/c2.jpg'
+import imgPC3 from '../assets/sedes/puembo/c3.png'
+import imgPC4 from '../assets/sedes/puembo/c4.jpg'
+import imgPC5 from '../assets/sedes/puembo/c5.png'
+import imgPC6 from '../assets/sedes/puembo/c6.jpg'
+import imgPC7 from '../assets/sedes/puembo/c7.jpg'
 import imgPC8 from '../assets/sedes/puembo/c8.webp'
 import imgPC9 from '../assets/sedes/puembo/c9.webp'
 
@@ -36,6 +51,7 @@ export const schools = {
     heroPosition: 'bottom',
     logoImg: imgPuemboLogo,
     locImg:  imgPuemboCampus,
+    stageColors: [null, null, null, null, '#7b6fcf', null, null],
     ed: '#2bae8c',
     nameColor: '#7d8590',
     band: '#2bae8c',
@@ -62,8 +78,15 @@ export const schools = {
     slug: 'idv',
     name: 'IDV',
     heroImg: imgIdvHero,
+    heroFit: 'contain',
+    heroPadding: '40px 100px',
+    heroBg: '#0d1b2e',
     logoImg: imgIdvLogo,
+    locImg: imgIdvHero,
+    locImgFit: 'contain',
+    galleryImgs: [imgIDVC1, imgIDVC2, imgIDVC3, imgIDVC4, imgIDVC5, imgIDVC6, imgIDVC7,imgIDVC8,imgIDVC9],
     hideCamino: true,
+    hideStudents: true,
     sectionImg: imgIdvSection,
     sectionTitle: 'Educación y deporte de alto rendimiento',
     sectionText: 'ReinventED IDV integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
@@ -89,6 +112,13 @@ export const schools = {
     ],
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th, 11th y 12th grade se incorporarán de forma progresiva.',
+    faqItems: [
+      { q: '¿Qué hace diferente a ReinventED IDV?', a: 'ReinventED IDV integra aprendizaje personalizado, excelencia académica y desarrollo deportivo, permitiendo que los estudiantes persigan sus metas sin sacrificar su educación.' },
+      { q: '¿Cómo compatibilizan el deporte y los estudios?', a: 'Nuestra metodología flexible permite que los estudiantes gestionen su tiempo, mantengan el ritmo académico y avancen en sus metas deportivas y personales.' },
+      { q: '¿Qué habilidades desarrollan los estudiantes?', a: 'Además de los aprendizajes académicos, fortalecen autonomía, disciplina, pensamiento crítico, trabajo en equipo, comunicación y bienestar integral.' },
+      { q: '¿Cómo es el acompañamiento de los educadores?', a: 'Los educadores actúan como mentores que acompañan de cerca el progreso académico, personal y emocional de cada estudiante.' },
+      { q: '¿Puedo aplicar a ReinventED IDV?', a: 'ReinventED IDV es exclusivo para los chicos que son parte de las formativas de Independiente del Valle. El colegio no cuenta con un proceso propio de admisión.' },
+    ],
   },
   'santa-clara': {
     slug: 'santa-clara',
@@ -115,12 +145,22 @@ export const schools = {
     ],
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th grade en el período 2027 - 2028, 11th grade en 2028 - 2029 y 12th grade en 2029 - 2030.',
+    faqItems: [
+      { q: '¿Qué hace diferente a ReinventED Santa Clara?', a: 'Somos un colegio bilingüe ubicado en el Valle de los Chillos que combina aprendizaje personalizado, bienestar y desarrollo de habilidades para la vida. Con una comunidad cercana donde cada estudiante es reconocido, acompañado y desafiado a crecer.' },
+      { q: '¿Cómo acompañan el bienestar de los estudiantes?', a: 'Creemos que el bienestar es fundamental para aprender. Por eso trabajamos intencionalmente en el desarrollo socioemocional, las relaciones positivas y la construcción de una cultura de respeto y pertenencia.' },
+      { q: '¿Cómo funciona el aprendizaje personalizado?', a: 'Cada estudiante sigue un plan de aprendizaje adaptado a sus necesidades, fortalezas e intereses. Además, se establecen metas acordadas entre estudiantes, educadores y familias para acompañar su progreso. Esto permite que el aprendizaje sea más relevante, desafiante y significativo.' },
+      { q: '¿Cómo evalúan el aprendizaje?', a: 'Evaluamos tanto el crecimiento académico como el desarrollo de habilidades esenciales como la autonomía, la comunicación, el pensamiento crítico y la colaboración mediante evidencias, proyectos y seguimiento continuo. Contamos con nuestra propia plataforma de medición donde se registra constantemente el progreso de los estudiantes.' },
+      { q: '¿Desde qué edad reciben estudiantes?', a: 'En ReinventED Santa Clara recibimos estudiantes desde Nest (inicial 1). Nuestro colegio va creciendo año a año. En el periodo 2026-2027 nuestra oferta va hasta 9th grade (10mo de básica).' },
+      { q: '¿El colegio es bilingüe?', a: 'Sí. El inglés forma parte integral de la experiencia educativa y se desarrolla en diferentes contextos de aprendizaje.' },
+    ],
   },
   rimac: {
     slug: 'rimac',
     name: 'Rímac',
     logoImg: imgRimacLogo,
     hideCamino: true,
+    hideFaq: true,
+    galleryImgs: [imgR1, imgR2, imgR3, imgR4, imgR5, imgR6],
     ed: '#f4c20d',
     nameColor: '#4fa3d1',
     band: '#5b87a8',
@@ -130,7 +170,7 @@ export const schools = {
     since: 'Desde 2024',
     intro:
       'ReinventED Rímac nace como una propuesta educativa innovadora para los futbolistas del Club Sporting Cristal, proporcionando un espacio con un sistema académico estructurado que les permite continuar su formación mientras desarrollan su carrera deportiva de alto rendimiento. Su apertura marca además la expansión regional de ReinventED desde Ecuador hacia Perú, consolidando un sistema educativo diseñado para adaptarse a nuevos contextos sin perder estructura, estándares ni enfoque en la autonomía.',
-    locTitle: 'Ubicado en la Ciudad Deportiva La Florida,',
+    locTitle: 'Ubicado en Lima, en la Ciudad Deportiva La Florida,',
     locText: [
       'el colegio ofrece un modelo flexible que permite a los jóvenes deportistas adaptarse a sus viajes y competencias, sin que su educación se vea comprometida.',
       'El colegio sigue la propuesta educativa de ReinventED con un enfoque en el desarrollo de habilidades socioemocionales, autonomía y bilingüismo. El colegio se abrió en 2024.',

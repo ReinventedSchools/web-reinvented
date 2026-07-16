@@ -14,7 +14,7 @@ import imgPersonal from '../assets/transforma/progresoMedible.webp'
 import './pages.css'
 
 const combine = [
-  { t: 'Desarrollo de autonomía', badge: 'magenta' },
+  { t: 'Desarrollo de autonomía', badge: 'gray' },
   { t: 'Bienestar en el ambiente escolar', badge: 'yellow' },
   { t: 'Personalización con altos estándares', badge: 'red' },
   { t: 'Desarrollo académico y de habilidades del siglo XXI', badge: '' },
@@ -125,8 +125,8 @@ export default function Transforma() {
         <div className="container">
           <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 100, fontFamily: "'Aller Display', sans-serif" }}>Every student succeeds</span>} badge="red" />
           <div style={{ textAlign: 'left', marginBottom: 40 }}>
-            <p style={{ color: 'var(--blue)', fontSize: 'clamp(18px,4vw,32px)', fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 'clamp(16px,3.5vw,28px)', marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+            <p style={{ color: 'var(--blue)', fontSize: 'clamp(15px,2.2vw,22px)', fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 'clamp(14px,1.8vw,18px)', marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (

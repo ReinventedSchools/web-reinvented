@@ -90,11 +90,12 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
   flex: none;
   background: var(--blue);
 }
-.badge svg { width: 20px; height: 20px; }
+.badge svg { width: 20px; height: 20px; stroke: #fff; }
 .badge.yellow { background: var(--yellow); color: #fff; }
 .badge.red { background: var(--red); }
 .badge.magenta { background: var(--magenta); }
 .badge.purple { background: var(--purple); }
+.badge.gray { background: #9da5b0; }
 
 .heading-row {
   display: flex;
