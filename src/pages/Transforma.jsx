@@ -11,6 +11,10 @@ import imgLoveLearning from '../assets/habilidades/Love for learning.webp'
 import imgRealWorld from '../assets/habilidades/real world.webp'
 import imgWellbeing from '../assets/habilidades/wellbeing.webp'
 import imgPersonal from '../assets/transforma/progresoMedible.webp'
+import imgTransformaArt from '../assets/sistema/transforma.png'
+import imgSchoolJoy from '../assets/schoolJoy.webp'
+import imgPersonalGro from '../assets/Home/personalgro.webp'
+import imgAcademic from '../assets/academic.webp'
 import './pages.css'
 
 const combine = [
@@ -22,18 +26,22 @@ const combine = [
 
 const exito = [
   {
+    img: null,
     t: 'Disfrute escolar',
     d: 'Gusto por aprender, sentirse parte de una comunidad y encontrar propósito en la experiencia educativa.',
   },
   {
+    img: null,
     t: 'Crecimiento personal',
     d: 'Desarrollar autonomía, confianza y las habilidades necesarias para enfrentar los desafíos de la vida real.',
   },
   {
+    img: null,
     t: 'Crecimiento académico',
     d: 'Construir conocimientos sólidos y desarrollar el pensamiento crítico para comprender y transformar el mundo.',
   },
 ]
+const exitoImgs = [imgSchoolJoy, imgPersonalGro, imgAcademic]
 
 const habilidades = [
   { img: imgAutonomous,    name: 'Autonomous' },
@@ -95,13 +103,7 @@ export default function Transforma() {
               <p>En ReinventED creemos que todos los estudiantes pueden <b>alcanzar altos estándares cuando el aprendizaje está diseñado con intención, estructura y propósito.</b></p>
             </div>
             <div className="repensar-art repensar-shift">
-              <svg viewBox="0 0 200 200" width="300" height="300" fill="none" stroke="var(--yellow)" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="150" cy="60" r="26" />
-                <rect x="30" y="40" width="46" height="46" rx="4" transform="rotate(-12 53 63)" />
-                <polygon points="60,150 90,110 120,150" />
-                <path d="M140 120 l30 0 l0 40 l-30 0 z" />
-                <path d="M120 90 q15 -20 30 0" />
-              </svg>
+              <img src={imgTransformaArt} alt="Transforma" style={{ width: '100%', maxWidth: 320, height: 'auto', display: 'block', margin: '0 auto' }} />
             </div>
           </div>
 
@@ -125,23 +127,21 @@ export default function Transforma() {
         <div className="container">
           <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 100, fontFamily: "'Aller Display', sans-serif" }}>Every student succeeds</span>} badge="red" />
           <div style={{ textAlign: 'left', marginBottom: 40 }}>
-            <p style={{ color: 'var(--blue)', fontSize: 'clamp(15px,2.2vw,22px)', fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
-            <p style={{ color: 'var(--ink-soft)', fontSize: 'clamp(14px,1.8vw,18px)', marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
+            <p style={{ color: 'var(--blue)', fontSize: 'clamp(16px,2.2vw,26px)', fontWeight: 600, marginLeft: 50, marginBottom: 6 }}>Nuestra promesa es clara: Cada estudiante es exitoso</p>
+            <p style={{ color: 'var(--ink-soft)', fontSize: 'clamp(16px,1.8vw,26px)', marginLeft: 50, fontWeight: 300, marginTop: 0 }}>Pero el éxito no significa lo mismo para todos.<br/>En ReinventED, el éxito se define como la combinación de:</p>
           </div>
           <div className="exito">
             {exito.map((e, i) => (
               <div className="exito-card" key={i}>
-                <div className="exito-icon">
-                  {i === 0 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>}
-                  {i === 1 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1" fill="var(--red)"/><circle cx="12" cy="10" r="1" fill="var(--red)"/><circle cx="15" cy="10" r="1" fill="var(--red)"/></svg>}
-                  {i === 2 && <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--red)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>}
+                <img src={exitoImgs[i]} alt={e.t} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }} />
+                <div style={{ padding: '24px 28px 32px' }}>
+                  <h4 className="display">{e.t}</h4>
+                  <p>{e.d}</p>
                 </div>
-                <h4 className="display">{e.t}</h4>
-                <p>{e.d}</p>
               </div>
             ))}
           </div>
-          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 'clamp(15px,2.5vw,25px)', margin: '36px auto 0' }}>
+          <div className="prose" style={{ textAlign: 'center', marginTop: 36, fontSize: 'clamp(13px,2.5vw,20px)', margin: '36px auto 0' }}>
             <p><b>Cada estudiante avanza con metas claras, acompañamiento cercano y medición constante.</b> El sistema está diseñado para que todos puedan progresar, no solo quienes se adaptan mejor al modelo tradicional.</p>
             <p><b>No creemos en estudiantes "promedio".</b> Creemos en sistemas que permiten que cada uno avance desde su punto de partida hacia estándares altos y medibles.</p>
           </div>

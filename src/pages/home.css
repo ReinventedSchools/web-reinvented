@@ -36,7 +36,7 @@
   padding: 24px 20px;
   background: var(--blue);
   color: rgba(255,255,255,.8);
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 400;
   transition: background .2s, color .2s;
 }
@@ -156,13 +156,19 @@
   font-size: clamp(28px, 5.5vw, 68px);
 }
 .formula-sub { text-align: center; font-size: 29px; color: var(--ink); font-weight: 600; margin: 4px 0 38px; }
-.formula-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; max-width: 880px; margin: 0 auto; }
-.formula-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
-.formula-labels {
-  display: flex; align-items: center; justify-content: center; gap: 18px;
-  margin-top: 28px; font-weight: 600; font-size: 36px;
+.formula-cards { display: flex; align-items: center; max-width: 1060px; margin: 0 auto; }
+.formula-card { flex: 1; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); position: relative; }
+.formula-card-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: rgba(82, 119, 189, 0.82);
+  color: #fff; text-align: center;
+  font-weight: 600; font-size: clamp(13px, 1.4vw, 17px);
+  padding: 10px 8px;
 }
-.formula-labels i { color: var(--yellow); font-style: normal; font-size: 25px; }
+.formula-plus {
+  font-size: 36px; color: var(--yellow); font-weight: 700;
+  padding: 0 14px; flex-shrink: 0; line-height: 1;
+}
 
 /* ---------------- ALIADOS ---------------- */
 @keyframes allies-fade {
@@ -199,6 +205,20 @@
 .apply-card-foot { display: flex; align-items: center; justify-content: center; padding: 16px 20px; }
 .apply-card-logo { max-height: 48px; max-width: 160px; width: auto; object-fit: contain; }
 .apply-cta { text-align: center; color: #fff; margin-top: 34px; font-size: clamp(16px, 2vw, 22px); }
+
+/* ---------------- BTN SISTEMA ---------------- */
+.btn-conoce-sistema {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 22px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.btn-conoce-sistema:hover { opacity: .85; }
 
 /* ---------------- IMPLEMENTA ---------------- */
 .implementa { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }

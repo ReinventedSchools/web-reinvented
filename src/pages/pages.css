@@ -56,6 +56,7 @@
   font-size: clamp(16px, 1.8vw, 22px);
   line-height: 1.5;
   backdrop-filter: blur(4px);
+  text-align: center;
 }
 .hero-quote strong { display: block; margin-top: 8px; }
 
@@ -179,7 +180,7 @@
 
 /* ---------- Transforma (repensar) ---------- */
 .repensar { display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: center; margin-bottom: 30px; }
-.repensar-art { display: flex; justify-content: center; }
+.repensar-art { display: flex; justify-content: center; align-items: center; align-self: center; }
 .repensar-art svg { animation: floaty 5s ease-in-out infinite; }
 .combine { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .combine-card {
@@ -192,7 +193,7 @@
 .exito { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; max-width: 900px; margin: 0 auto; }
 .exito-card {
   background: var(--blue); color: #fff; border-radius: var(--radius);
-  padding: 48px 32px; position: relative;
+  padding: 0; position: relative; overflow: hidden;
   display: flex; flex-direction: column; align-items: center; text-align: center;
   min-height: 440px;
   box-shadow: 0 16px 56px rgba(30,50,120,.38);

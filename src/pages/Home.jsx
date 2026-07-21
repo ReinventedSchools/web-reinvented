@@ -184,18 +184,20 @@ export default function Home() {
           <h2 className="formula-title" style={{ fontFamily: "'Aller Display'", fontWeight: 300 }}>every student succeeds</h2>
           <p className="formula-sub">Cónoce nuestra fórmula</p>
           <div className="formula-cards">
-            {[imgSchoolJoy, imgPersonal, imgAcademic].map((img, i) => (
-              <div className="formula-card" key={i}>
-                <img src={img} alt={formula[i].t} style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
-              </div>
-            ))}
-          </div>
-          <div className="formula-labels">
-            <span style={{ color: formula[0].c }}>School Joy</span>
-            <i>+</i>
-            <span style={{ color: formula[1].c }}>Personal Growth</span>
-            <i>+</i>
-            <span style={{ color: formula[2].c }}>Academic Growth</span>
+            <div className="formula-card">
+              <img src={imgSchoolJoy} alt="School Joy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <div className="formula-card-label">School Joy</div>
+            </div>
+            <div className="formula-plus">+</div>
+            <div className="formula-card">
+              <img src={imgPersonal} alt="Personal Growth" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <div className="formula-card-label">Personal Growth</div>
+            </div>
+            <div className="formula-plus">+</div>
+            <div className="formula-card">
+              <img src={imgAcademic} alt="Academic Growth" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <div className="formula-card-label">Academic Growth</div>
+            </div>
           </div>
         </div>
       </section>
@@ -235,9 +237,15 @@ export default function Home() {
               <ApplyCard ed="#9fc131" name="Santa Clara" to="/colegios/santa-clara" img={imgSantaClaraShoot} logo={imgSantaClara} />
             </div>
             <h3 className="display apply-cta">Aplica a nuestros colegios privados</h3>
+            
           </div>
         </div>
       </section>
+      <div style={{ textAlign: 'center', marginTop: 20 }}>
+              <Link to="/transforma" className="btn-conoce-sistema">
+                Conoce más del sistema ReinventED
+              </Link>
+            </div>
 
       {/* ---------------- IMPLEMENTA EN TU CLUB ---------------- */}
       <section className="section">
