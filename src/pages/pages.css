@@ -237,7 +237,7 @@
 .prop-item { display: flex; flex-direction: column; gap: 14px; }
 .prop-item span { color: var(--ink-soft); }
 
-.contacto { align-items: center; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+.contacto { align-items: start; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
 .contacto-text p { color: rgba(255,255,255,.9); }
 .contacto-text h2 { margin-bottom: 18px; }
 

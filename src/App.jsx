@@ -11,6 +11,7 @@ import TransformaColegio from './pages/TransformaColegio.jsx'
 import TransformaClub from './pages/TransformaClub.jsx'
 import School from './pages/School.jsx'
 import Noticias from './pages/Noticias.jsx'
+import BlogPost from './pages/BlogPost.jsx'
 import Buscar from './pages/Buscar.jsx'
 
 function ScrollTop() {
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/transforma/club" element={<TransformaClub />} />
           <Route path="/colegios/:slug" element={<School />} />
           <Route path="/noticias" element={<Noticias />} />
+          <Route path="/noticias/:slug" element={<BlogPost />} />
           <Route path="/buscar" element={<Buscar />} />
           <Route path="*" element={<Home />} />
         </Routes>

@@ -3,6 +3,7 @@ import imgPuemboLogo from '../assets/logos/puemboB.png'
 import imgPuemboCampus from '../assets/sedes/puemboJardin.webp'
 import imgIdvLogo from '../assets/logos/idcB.png'
 import imgIdvHero from '../assets/sedes/idv/portadaiv.jpg'
+import imgRedefiniendo from '../assets/home/Redefiniendo.webp'
 import imgIdvSection from '../assets/sedes/idv/idv_seccion.webp'
 import imgIDVC1 from '../assets/sedes/idv/c1.jpg'
 import imgIDVC2 from '../assets/sedes/idv/c2.jpg'
@@ -16,6 +17,7 @@ import imgIDVC9 from '../assets/sedes/idv/c9.jpg'
 import imgSantaClaraLogo from '../assets/logos/scb.png'
 import imgSantaClaraHero from '../assets/sedes/santac/principalscl.jpg'
 import imgSantaClaraLoc from '../assets/sedes/santac/ubicado.jpg'
+import imgSantaClaraJardin from '../assets/sedes/santac/jardine.png'
 import imgSC1 from '../assets/sedes/santac/sc1.jpeg'
 import imgSC2 from '../assets/sedes/santac/sc2.jpeg'
 import imgSC3 from '../assets/sedes/santac/sc3.jpeg'
@@ -26,6 +28,11 @@ import imgSC7 from '../assets/sedes/santac/sc7.png'
 import imgSC8 from '../assets/sedes/santac/sc8.png'
 import imgSC9 from '../assets/sedes/santac/sc9.png'
 
+import imgIdvResponsabilidad from '../assets/sedes/idv/responsabilidad.png'
+import imgIdvTiempo from '../assets/sedes/idv/tiempo.png'
+import imgIdvDiciplina from '../assets/sedes/idv/diciplina.png'
+import imgIdvCompetencia from '../assets/sedes/idv/competencia.png'
+
 import imgRimacLogo from '../assets/logos/rimacB.png'
 import imgR1 from '../assets/sedes/rimac/r1.jpg'
 import imgR2 from '../assets/sedes/rimac/r2.jpg'
@@ -33,15 +40,15 @@ import imgR3 from '../assets/sedes/rimac/r3.jpg'
 import imgR4 from '../assets/sedes/rimac/r4.jpg'
 import imgR5 from '../assets/sedes/rimac/r5.jpg'
 import imgR6 from '../assets/sedes/rimac/r6.jpg'
-import imgPC1 from '../assets/sedes/puembo/c1.jpg'
-import imgPC2 from '../assets/sedes/puembo/c2.jpg'
-import imgPC3 from '../assets/sedes/puembo/c3.png'
-import imgPC4 from '../assets/sedes/puembo/c4.jpg'
-import imgPC5 from '../assets/sedes/puembo/c5.png'
-import imgPC6 from '../assets/sedes/puembo/c6.jpg'
-import imgPC7 from '../assets/sedes/puembo/c7.jpg'
-import imgPC8 from '../assets/sedes/puembo/c8.webp'
-import imgPC9 from '../assets/sedes/puembo/c9.webp'
+import imgPC1 from '../assets/sedes/puembo/c1.jpeg'
+import imgPC2 from '../assets/sedes/puembo/c2.jpeg'
+import imgPC3 from '../assets/sedes/puembo/c3.jpeg'
+import imgPC4 from '../assets/sedes/puembo/c4.jpeg'
+import imgPC5 from '../assets/sedes/puembo/c5.jpeg'
+import imgPC6 from '../assets/sedes/puembo/c6.jpeg'
+import imgPC7 from '../assets/sedes/puembo/c7.jpeg'
+import imgPC8 from '../assets/sedes/puembo/c8.jpeg'
+import imgPC9 from '../assets/sedes/puembo/c9.jpeg'
 
 export const schools = {
   puembo: {
@@ -58,13 +65,14 @@ export const schools = {
     bandText: '#eafff7',
     arrow: 'purple',
     circle: '#2bae8c',
+    propuestaColor: '#7b6fcf',
     since: 'Desde 2020',
     galleryImgs: [imgPC1, imgPC2, imgPC3, imgPC4, imgPC5, imgPC6, imgPC7, imgPC8, imgPC9],
     intro:
       'ReinventED Puembo fue el primer campus de la red. Nació en 2020, en un momento que obligó al mundo a cuestionar muchas de sus certezas, incluida la educación. Esta fue la oportunidad de diseñar desde cero un sistema de aprendizaje personalizado, estructurado y conectado con la realidad de cada estudiante. Desde el inicio, hemos crecido de manera intencional, cuidando aquello que define nuestra propuesta: conocer profundamente a cada estudiante, ofrecer experiencias de aprendizaje relevantes a sus intereses y necesidades, y sostener un sistema que combina autonomía, acompañamiento cercano y altos estándares. Porque creemos que la calidad de una experiencia educativa no se mide por cuántos estudiantes alcanza, sino por el impacto que tiene en cada uno de ellos.',
     locTitle: 'Ubicado en Puembo,',
     locText: [  
-      'el campus está rodeado de naturaleza y espacios abiertos que amplían las posibilidades de aprendizaje.',
+      'El campus está rodeado de naturaleza y espacios abiertos que amplían las posibilidades de aprendizaje.',
       'La naturaleza es recurso pedagógico. El movimiento, la exploración y el contacto con el entorno forman parte de la experiencia diaria.',
       'El espacio físico acompaña al modelo: talleres abiertos, áreas colaborativas y ambientes diseñados para favorecer autonomía y concentración.',
     ],
@@ -77,16 +85,17 @@ export const schools = {
   idv: {
     slug: 'idv',
     name: 'IDV',
-    heroImg: imgIdvHero,
-    heroFit: 'contain',
-    heroPadding: '40px 100px',
-    heroBg: '#0d1b2e',
+    heroImg: imgRedefiniendo,
+    heroPosition: 'bottom',
+    heroHeight: '610px',
+    logoRight: true,
     logoImg: imgIdvLogo,
     locImg: imgIdvHero,
     locImgFit: 'contain',
     galleryImgs: [imgIDVC1, imgIDVC2, imgIDVC3, imgIDVC4, imgIDVC5, imgIDVC6, imgIDVC7,imgIDVC8,imgIDVC9],
     hideCamino: true,
     hideStudents: true,
+    sectionNoBg: true,
     sectionImg: imgIdvSection,
     sectionTitle: 'Educación y deporte de alto rendimiento',
     sectionText: 'ReinventED IDV integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
@@ -96,12 +105,14 @@ export const schools = {
       'Disciplina y planificación',
       'Competencias académicas con estándares altos',
     ],
+    studentsDevelopIcons: [imgIdvResponsabilidad, imgIdvTiempo, imgIdvDiciplina, imgIdvCompetencia],
     ed: '#4fa3d1',
     nameColor: '#e5007e',
     band: '#1b4a77',
     bandText: '#dce8f3',
     arrow: 'magenta',
     circle: '#1b4a77',
+    faqDot: 'var(--magenta)',
     since: 'Desde 2021',
     intro:
       'ReinventED IDV nació a partir de la alianza entre ReinventED Schools y el club Independiente del Valle, con un objetivo claro: integrar un sistema académico personalizado dentro de un entorno de alto rendimiento deportivo. Aquí la exigencia académica y la excelencia deportiva no compiten entre sí, sino que se fortalecen y permiten un desarrollo integral de los estudiantes. ReinventED IDV no es un colegio tradicional adaptado al deporte. Es la implementación del Sistema ReinventED dentro de un contexto de formación profesional, donde disciplina, estructura y autonomía son esenciales.',
@@ -126,6 +137,8 @@ export const schools = {
     heroImg: imgSantaClaraHero,
     logoImg: imgSantaClaraLogo,
     locImg: imgSantaClaraLoc,
+    caminoImg: imgSantaClaraJardin,
+    propuestaColor: '#9fc131',
     stageColors: ['#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131'],
     faqDot: 'var(--magenta)',
     galleryImgs: [imgSC1, imgSC2, imgSC3, imgSC4, imgSC5, imgSC6, imgSC7, imgSC8, imgSC9],
@@ -157,7 +170,12 @@ export const schools = {
   rimac: {
     slug: 'rimac',
     name: 'Rímac',
+    heroImg: imgR3,
+    heroPosition: 'center',
     logoImg: imgRimacLogo,
+    locImg: imgRimacLogo,
+    locImgFit: 'contain',
+    locImgBg: '#f4c20d',
     hideCamino: true,
     hideFaq: true,
     galleryImgs: [imgR1, imgR2, imgR3, imgR4, imgR5, imgR6],
@@ -177,6 +195,11 @@ export const schools = {
     ],
     grades:
       '9th grade abierto. 10th, 11th y 12th grade se incorporarán de forma progresiva según el crecimiento del campus.',
+    sectionNoBg: true,
+    sectionImg: imgR2,
+    sectionTitle: 'Educación y deporte de alto rendimiento',
+    sectionText: 'ReinventED Rimac integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
+    hideStudents: true,
   },
 }
 

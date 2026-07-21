@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
 import imgHero from '../assets/implementa/Jardín.png'
@@ -40,16 +41,16 @@ export default function TransformaColegio() {
           <div className="contacto-text">
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, marginTop: 32 }}>
               <Badge color="yellow" />
-              <div>
-                <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(26px,3vw,36px)', marginBottom: 20 }}><b>Asesorías para colegios</b></h2>
-                <h3 style={{ color: '#fff', marginBottom: 16 }}>Transformación educativa con estructura</h3>
+              <div style={{ flex: 1 }}>
+                <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(26px,3vw,36px)', marginBottom: 20, marginTop: 0 }}><b>Asesorías para colegios</b></h2>
                 <div className="tcolegio-2col">
                   <div>
+                    <h3 style={{ color: '#fff', marginBottom: 16, marginTop: 0 }}>Transformación educativa con estructura</h3>
                     <p>Muchos colegios reconocen la necesidad de cambiar. Buscan personalización, mayor autonomía en los estudiantes y metodologías más relevantes para el mundo actual.</p>
                     <p>El desafío no suele estar en la intención, sino en el sistema.</p>
                   </div>
                   <div>
-                    <p>ReinventED acompaña a instituciones educativas en el rediseño de su modelo, integrando innovación pedagógica con estructura, medición y altos estándares académicos.</p>
+                    <p style={{ marginTop: 0 }}>ReinventED acompaña a instituciones educativas en el rediseño de su modelo, integrando innovación pedagógica con estructura, medición y altos estándares académicos.</p>
                     <p>Más que introducir nuevas actividades, el objetivo es construir un sistema coherente que permita que la transformación sea sostenible.</p>
                   </div>
                 </div>
@@ -86,7 +87,14 @@ export default function TransformaColegio() {
         </div>
       </section>
 
-      {/* Oferta ReinventED */}
+      {/* Btn sistema */}
+      <div style={{ textAlign: 'center', padding: '0 0 56px' }}>
+        <Link to="/transforma" className="btn-conoce-sistema">
+          Conoce el sistema ReinventED
+        </Link>
+      </div>
+
+      {/* Oferta ReinventED + Nuestra propuesta */}
       <section className="section-tight">
         <div className="container">
           <div style={{ background: 'rgba(0,0,0,0.04)', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: 16, padding: '36px 48px' }}>
@@ -99,35 +107,17 @@ export default function TransformaColegio() {
                 ReinventED acompaña a colegios en procesos de transformación educativa mediante asesoría estratégica y diseño de sistemas pedagógicos.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Nuestra propuesta puede incluir */}
-      <section className="section">
-        <div className="container">
-          <div style={{ maxWidth: 800, margin: '0 auto' }}>
-            <div style={{ marginBottom: 24 }}>
-              <h3 style={{ fontWeight: 600, fontSize: 22 }}>Nuestra propuesta puede incluir:</h3>
-            </div>
-            <div className="oferta-4col">
-              {oferta.slice(0, 4).map((o, i) => (
-                <div className="feat feat-lg" key={i}>
-                  <Badge color="yellow" />
-                  <p style={{ color: 'var(--ink-soft)' }}>{o}</p>
-                </div>
-              ))}
-            </div>
-            <div className="oferta-3col">
-              {oferta.slice(4).map((o, i) => (
-                <div className="feat feat-lg" key={i + 4}>
-                  <Badge color="yellow" />
-                  <p style={{ color: 'var(--ink-soft)' }}>{o}</p>
-                </div>
-              ))}
-              <div className="oferta-note">
-                <Badge color="yellow"><LinkIcon /></Badge>
-                <p>Cada proceso se adapta a las necesidades de la institución, manteniendo siempre claridad metodológica y altos estándares.</p>
+            <div style={{ maxWidth: 800, margin: '32px auto 0' }}>
+              <div style={{ marginBottom: 24 }}>
+                <h3 style={{ fontWeight: 600, fontSize: 22 }}>Nuestra propuesta puede incluir:</h3>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 32px' }}>
+                {oferta.map((o, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+                    <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0, marginTop: 6 }} />
+                    <p style={{ color: 'var(--ink-soft)', margin: 0 }}>{o}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

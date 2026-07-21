@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
 // import imgCamino from '../assets/implementa.webp'
-import imgCamino from '../assets/home/Redefiniendo.webp'
+import imgCamino from '../assets/sedes/puembo/c9.jpeg'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
 import { SectionHead, Gallery, Faq } from '../components/UI.jsx'
 import { schools, stages, faqItems } from '../data/schools.js'
@@ -77,10 +77,10 @@ export default function School() {
       {/* Hero */}
       <section className="hero-school">
         {s.heroImg
-          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" style={{ objectPosition: s.heroPosition || 'center' }} />
+          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" style={{ objectFit: s.heroFit || 'cover', objectPosition: s.heroPosition || 'center', ...(s.heroHeight ? { height: s.heroHeight } : {}) }} />
           : <div className="img-ph hero-school-img" />}
         <div className="hero-school-overlay" />
-        <div className="container hero-school-logo">
+        <div className="container hero-school-logo" style={s.logoRight ? { justifyContent: 'flex-end' } : {}}>
           {s.logoImg
             ? <img src={s.logoImg} alt={`Logo ReinventED ${s.name}`} className="school-hero-logo-img" />
             : <><Smiley className="smiley smiley-lg" /><SchoolLogo ed={s.ed} name={s.name} nameColor="#fff" base="#fff" size={48} /></>}
@@ -112,7 +112,11 @@ export default function School() {
               {s.locText.map((t, i) => <p key={i} style={{ color: 'rgba(255,255,255,.92)' }}>{t}</p>)}
             </div>
             {s.locImg
-              ? <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" style={s.locImgFit ? { objectFit: s.locImgFit } : {}} />
+              ? s.locImgBg
+                ? <div className="loc-img loc-img-real" style={{ background: s.locImgBg, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28, borderRadius: 18, flexShrink: 0 }}>
+                    <img src={s.locImg} alt={`ReinventED ${s.name}`} style={{ width: '100%', objectFit: s.locImgFit || 'contain', display: 'block' }} />
+                  </div>
+                : <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" style={s.locImgFit ? { objectFit: s.locImgFit } : {}} />
               : <div className="img-ph loc-img" />}
           </div>
         </div>
@@ -120,7 +124,7 @@ export default function School() {
 
       {/* Sección extra + Los estudiantes desarrollan (IDV) */}
       {s.sectionImg && (
-        <section className="band-soft section">
+        <section className={s.sectionNoBg ? 'section' : 'band-soft section'}>
           <div className="container">
             <div className="school-extra-grid">
               <img src={s.sectionImg} alt={s.sectionTitle} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
@@ -141,7 +145,9 @@ export default function School() {
                 <div className="students-develop-grid">
                   {s.studentsDevelop.map((item, i) => (
                     <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
-                      <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--magenta)', flexShrink: 0 }} />
+                      {s.studentsDevelopIcons?.[i]
+                        ? <img src={s.studentsDevelopIcons[i]} alt="" style={{ width: 64, height: 64, objectFit: 'contain' }} />
+                        : <div style={{ width: 14, height: 14, borderRadius: '50%', background: 'var(--magenta)', flexShrink: 0 }} />}
                       <p style={{ color: 'var(--ink-soft)', margin: 0, fontSize: 15, lineHeight: 1.5 }}>{item}</p>
                     </div>
                   ))}
@@ -156,7 +162,7 @@ export default function School() {
       {!s.hideCamino && <section className="section">
         <div className="container">
           <div className="camino-head">
-            <img src={imgCamino} alt="Tu camino en ReinventED" className="camino-img" />
+            <img src={s.caminoImg || imgCamino} alt="Tu camino en ReinventED" className="camino-img" />
             <div>
               <SectionHead title={<span style={{ color: 'var(--ink)', fontWeight: 600, fontSize: 'clamp(26px, 3vw, 38px)' }}>Tu camino en ReinventED</span>} badge={s.arrow} light={false} />
               <p style={{ color: 'var(--ink-soft)', maxWidth: 560 }}>
@@ -187,7 +193,7 @@ export default function School() {
               : s.grades}
           </p>
           <div style={{ marginTop: 40, textAlign: 'center' }}>
-            <Link to="/transforma" className="btn-propuesta">
+            <Link to="/transforma" className="btn-propuesta" style={s.propuestaColor ? { background: s.propuestaColor } : {}}>
               CONOCE MÁS DE NUESTRA PROPUESTA
             </Link>
           </div>
@@ -197,32 +203,18 @@ export default function School() {
       {/* Cómo aplicar */}
       {!s.hideCamino && <section className="band-soft section">
         <div className="container">
-          <div className="apply-layout">
-            <div className="apply-head">
-              <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>¿Cómo aplicar?</span>} badge={s.arrow} />
-            </div>
-            <div className="apply-cards">
-              <div className="apply-top-row">
-                {applyCards.slice(0, 2).map((c, i) => (
-                  <div className="apply-step" key={i}>
-                    <div className="apply-step-icon" style={{ background: s.circle }}>
-                      <ApplyIcon name={c.icon} />
-                    </div>
-                    <span>{c.t}</span>
-                  </div>
-                ))}
+          <div style={{ textAlign: 'center', marginBottom: 32 }}>
+            <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>¿Cómo aplicar?</span>} badge={s.arrow} align="center" />
+          </div>
+          <div className="apply-steps">
+            {applyCards.map((c, i) => (
+              <div className="apply-step" key={i}>
+                <div className="apply-step-icon" style={{ background: s.circle }}>
+                  <ApplyIcon name={c.icon} />
+                </div>
+                <span>{c.t}</span>
               </div>
-              <div className="apply-bottom-row">
-                {applyCards.slice(2).map((c, i) => (
-                  <div className="apply-step" key={i + 2}>
-                    <div className="apply-step-icon" style={{ background: s.circle }}>
-                      <ApplyIcon name={c.icon} />
-                    </div>
-                    <span>{c.t}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>}
