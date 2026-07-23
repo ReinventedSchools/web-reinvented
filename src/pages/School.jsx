@@ -107,7 +107,7 @@ export default function School() {
             <div className="loc-text">
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
                 <Badge color={s.arrow} />
-                <h2 style={{ color: '#fff', fontWeight: 600, fontSize: 'clamp(22px,3vw,30px)' }}>{s.locTitle}</h2>
+                <h2 style={{ color: '#fff', fontWeight: 600, fontSize: 'clamp(22px,3vw,30px)', whiteSpace: 'pre-line' }}>{s.locTitle}</h2>
               </div>
               {s.locText.map((t, i) => <p key={i} style={{ color: 'rgba(255,255,255,.92)' }}>{t}</p>)}
             </div>

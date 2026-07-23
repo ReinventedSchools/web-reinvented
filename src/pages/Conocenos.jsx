@@ -46,7 +46,7 @@ export default function Conocenos() {
       {/* Nuestra historia */}
       <section className="band-soft section">
         <div className="container">
-          <SectionHead title="Nuestra historia" />
+          <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 300 }}>Nuestra historia</span>} />
           <div className="prose">
             <p>
               ReinventED Schools nace de una visión clara y ambiciosa: transformar la educación

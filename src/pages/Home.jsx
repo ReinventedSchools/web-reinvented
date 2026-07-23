@@ -52,8 +52,8 @@ const campusDots = [
 
 const stats = [
   { n: '4', label: 'Campus' },
-  { n: '700', label: 'Estudiantes' },
-  { n: '120', label: 'Graduados' },
+  { n: '720', label: 'Estudiantes' },
+  { n: '136', label: 'Graduados' },
   { n: '2', label: 'Países' },
 ]
 
@@ -182,7 +182,6 @@ export default function Home() {
       <section className="section formula-sec">
         <div className="container">
           <h2 className="formula-title" style={{ fontFamily: "'Aller Display'", fontWeight: 300 }}>every student succeeds</h2>
-          <p className="formula-sub">Cónoce nuestra fórmula</p>
           <div className="formula-cards">
             <div className="formula-card">
               <img src={imgSchoolJoy} alt="School Joy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
@@ -198,7 +197,11 @@ export default function Home() {
               <img src={imgAcademic} alt="Academic Growth" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
               <div className="formula-card-label">Academic Growth</div>
             </div>
+          </div><br></br>
+          <div style={{ textAlign: 'center', marginTop: 8 }}>
+            <Link to="/transforma" className="btn" style={{ fontSize: 20 }}>Conoce nuestra fórmula</Link>
           </div>
+
         </div>
       </section>
 

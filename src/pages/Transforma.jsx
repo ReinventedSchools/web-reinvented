@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
 import imgSistema from '../assets/sistema/sistema.webp'
@@ -10,7 +11,7 @@ import imgLogical from '../assets/habilidades/logical reasoner.webp'
 import imgLoveLearning from '../assets/habilidades/Love for learning.webp'
 import imgRealWorld from '../assets/habilidades/real world.webp'
 import imgWellbeing from '../assets/habilidades/wellbeing.webp'
-import imgPersonal from '../assets/transforma/progresoMedible.webp'
+import imgPersonal from '../assets/sistema/progresomeible.jpeg'
 import imgTransformaArt from '../assets/sistema/transforma.png'
 import imgSchoolJoy from '../assets/schoolJoy.webp'
 import imgPersonalGro from '../assets/Home/personalgro.webp'
@@ -92,9 +93,9 @@ export default function Transforma() {
       </div>
 
       {/* Por qué repensar */}
-      <section className="section">
+      <section className="section" style={{ paddingTop: 24 }}>
         <div className="container">
-          <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 300 }}>¿Por qué repensar la educación?</span>} badge="red" />
+          <SectionHead title={<span style={{ fontSize: 'clamp(38px, 5vw, 54px)', fontWeight: 300 }}>¿Por qué repensar la educación?</span>} badge="red" />
           <div className="repensar">
             <div className="prose" style={{ fontSize: 'clamp(16px, 5vw, 18px)' ,marginLeft: '10%', maxWidth: 600, textAlign: 'justify' }}>
               <p><b>El mundo cambió. La forma en que aprendemos, trabajamos y nos relacionamos también.</b></p>
@@ -217,6 +218,9 @@ export default function Transforma() {
                 <p>{d.d}</p>
               </div>
             ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <Link to="/conocenos" className="btn" style={{ fontSize: 20 }}>Conoce nuestras sedes</Link>
           </div>
         </div>
       </section>

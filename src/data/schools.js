@@ -40,6 +40,7 @@ import imgR3 from '../assets/sedes/rimac/r3.jpg'
 import imgR4 from '../assets/sedes/rimac/r4.jpg'
 import imgR5 from '../assets/sedes/rimac/r5.jpg'
 import imgR6 from '../assets/sedes/rimac/r6.jpg'
+import imgRimacImg from '../assets/sedes/rimac/Rimac.png'
 import imgPC1 from '../assets/sedes/puembo/c1.jpeg'
 import imgPC2 from '../assets/sedes/puembo/c2.jpeg'
 import imgPC3 from '../assets/sedes/puembo/c3.jpeg'
@@ -70,7 +71,7 @@ export const schools = {
     galleryImgs: [imgPC1, imgPC2, imgPC3, imgPC4, imgPC5, imgPC6, imgPC7, imgPC8, imgPC9],
     intro:
       'ReinventED Puembo fue el primer campus de la red. Nació en 2020, en un momento que obligó al mundo a cuestionar muchas de sus certezas, incluida la educación. Esta fue la oportunidad de diseñar desde cero un sistema de aprendizaje personalizado, estructurado y conectado con la realidad de cada estudiante. Desde el inicio, hemos crecido de manera intencional, cuidando aquello que define nuestra propuesta: conocer profundamente a cada estudiante, ofrecer experiencias de aprendizaje relevantes a sus intereses y necesidades, y sostener un sistema que combina autonomía, acompañamiento cercano y altos estándares. Porque creemos que la calidad de una experiencia educativa no se mide por cuántos estudiantes alcanza, sino por el impacto que tiene en cada uno de ellos.',
-    locTitle: 'Ubicado en Puembo,',
+    locTitle: 'Ubicado en Puembo',
     locText: [  
       'El campus está rodeado de naturaleza y espacios abiertos que amplían las posibilidades de aprendizaje.',
       'La naturaleza es recurso pedagógico. El movimiento, la exploración y el contacto con el entorno forman parte de la experiencia diaria.',
@@ -116,7 +117,7 @@ export const schools = {
     since: 'Desde 2021',
     intro:
       'ReinventED IDV nació a partir de la alianza entre ReinventED Schools y el club Independiente del Valle, con un objetivo claro: integrar un sistema académico personalizado dentro de un entorno de alto rendimiento deportivo. Aquí la exigencia académica y la excelencia deportiva no compiten entre sí, sino que se fortalecen y permiten un desarrollo integral de los estudiantes. ReinventED IDV no es un colegio tradicional adaptado al deporte. Es la implementación del Sistema ReinventED dentro de un contexto de formación profesional, donde disciplina, estructura y autonomía son esenciales.',
-    locTitle: 'El colegio opera dentro del complejo deportivo de Independiente del Valle,',
+    locTitle: 'El colegio opera dentro del complejo deportivo \n de Independiente del Valle,',
     locText: [
       'y es exclusivo para las formativas del equipo, lo que permite a los estudiantes estar cerca de sus entrenamientos y compromisos deportivos.',
       'Además, el plan de estudios flexible permite a los jóvenes futbolistas adaptarse a sus viajes y competencias internacionales sin interrumpir su proceso educativo.',
@@ -124,11 +125,11 @@ export const schools = {
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th, 11th y 12th grade se incorporarán de forma progresiva.',
     faqItems: [
+      { q: '¿Puedo aplicar a ReinventED IDV?', a: 'ReinventED IDV es exclusivo para los chicos que son parte de las formativas de Independiente del Valle. El colegio no cuenta con un proceso propio de admisión.' },
       { q: '¿Qué hace diferente a ReinventED IDV?', a: 'ReinventED IDV integra aprendizaje personalizado, excelencia académica y desarrollo deportivo, permitiendo que los estudiantes persigan sus metas sin sacrificar su educación.' },
       { q: '¿Cómo compatibilizan el deporte y los estudios?', a: 'Nuestra metodología flexible permite que los estudiantes gestionen su tiempo, mantengan el ritmo académico y avancen en sus metas deportivas y personales.' },
       { q: '¿Qué habilidades desarrollan los estudiantes?', a: 'Además de los aprendizajes académicos, fortalecen autonomía, disciplina, pensamiento crítico, trabajo en equipo, comunicación y bienestar integral.' },
       { q: '¿Cómo es el acompañamiento de los educadores?', a: 'Los educadores actúan como mentores que acompañan de cerca el progreso académico, personal y emocional de cada estudiante.' },
-      { q: '¿Puedo aplicar a ReinventED IDV?', a: 'ReinventED IDV es exclusivo para los chicos que son parte de las formativas de Independiente del Valle. El colegio no cuenta con un proceso propio de admisión.' },
     ],
   },
   'santa-clara': {
@@ -139,7 +140,7 @@ export const schools = {
     locImg: imgSantaClaraLoc,
     caminoImg: imgSantaClaraJardin,
     propuestaColor: '#9fc131',
-    stageColors: ['#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131'],
+    stageColors: ['#9fc131', '#c2218f', '#9fc131', '#c2218f', '#9fc131', '#c2218f', '#b0b0b0'],
     faqDot: 'var(--magenta)',
     galleryImgs: [imgSC1, imgSC2, imgSC3, imgSC4, imgSC5, imgSC6, imgSC7, imgSC8, imgSC9],
     ed: '#9fc131',
@@ -173,9 +174,9 @@ export const schools = {
     heroImg: imgR3,
     heroPosition: 'center',
     logoImg: imgRimacLogo,
-    locImg: imgRimacLogo,
+    locImg: imgRimacImg,
     locImgFit: 'contain',
-    locImgBg: '#f4c20d',
+    locImgBg: '#fff',
     hideCamino: true,
     hideFaq: true,
     galleryImgs: [imgR1, imgR2, imgR3, imgR4, imgR5, imgR6],
@@ -188,7 +189,7 @@ export const schools = {
     since: 'Desde 2024',
     intro:
       'ReinventED Rímac nace como una propuesta educativa innovadora para los futbolistas del Club Sporting Cristal, proporcionando un espacio con un sistema académico estructurado que les permite continuar su formación mientras desarrollan su carrera deportiva de alto rendimiento. Su apertura marca además la expansión regional de ReinventED desde Ecuador hacia Perú, consolidando un sistema educativo diseñado para adaptarse a nuevos contextos sin perder estructura, estándares ni enfoque en la autonomía.',
-    locTitle: 'Ubicado en Lima, en la Ciudad Deportiva La Florida,',
+    locTitle: 'Ubicado en Lima, en la Ciudad Deportiva\nLa Florida,',
     locText: [
       'el colegio ofrece un modelo flexible que permite a los jóvenes deportistas adaptarse a sus viajes y competencias, sin que su educación se vea comprometida.',
       'El colegio sigue la propuesta educativa de ReinventED con un enfoque en el desarrollo de habilidades socioemocionales, autonomía y bilingüismo. El colegio se abrió en 2024.',
@@ -204,7 +205,7 @@ export const schools = {
 }
 
 export const stages = [
-  { n: 1, name: 'Playschool',    grade: 'Nest, PreK, Kínder',  sub: '2 a 5 años',   color: '#7b6fcf' },
+  { n: 1, name: 'Playschool',    grade: 'Nest, PreK, Kínder',  sub: '3 a 5 años',   color: '#7b6fcf' },
   { n: 2, name: 'Explorers',     grade: '1st & 2nd grade',      sub: '6 a 8 años',   color: '#2bae8c' },
   { n: 3, name: 'Imagineers',    grade: '3th & 4th grade',      sub: '8 a 10 años',  color: '#7b6fcf' },
   { n: 4, name: 'Researchers',   grade: '5th & 6th grade',      sub: '10 a 12 años', color: '#2bae8c' },

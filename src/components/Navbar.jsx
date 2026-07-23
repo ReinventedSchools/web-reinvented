@@ -16,8 +16,8 @@ const conocenos = [
 ]
 
 const transforma = [
-  { to: '/transforma/colegio', label: 'Asesorias para colegios' },
   { to: '/transforma/club', label: 'Colegios para clubes deportivos' },
+  { to: '/transforma/colegio', label: 'Asesorias para colegios' },
 ]
 
 export default function Navbar() {
