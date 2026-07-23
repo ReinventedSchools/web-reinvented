@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
-import { SectionHead, ContactForm } from '../components/UI.jsx'
+import { SectionHead, ContactForm, Faq } from '../components/UI.jsx'
 import imgHero from '../assets/club/club.jpg'
 import imgClub1 from '../assets/club/club2.jpg'
 import imgClub5 from '../assets/club/club5.jpg'
@@ -12,6 +12,41 @@ import imgRimac from '../assets/sedes/rimac/r3.jpg'
 import imgLogoIDV from '../assets/IDV.webp'
 import imgLogoRimac from '../assets/Rimac.webp'
 import './pages.css'
+
+const clubFaq = [
+  {
+    q: '¿Cómo iniciamos un proyecto con ReinventED?',
+    a: 'El primer paso es una reunión de diagnóstico. Analizamos los objetivos del club, su infraestructura, el perfil de los deportistas y las oportunidades de desarrollo para diseñar una propuesta personalizada y un plan de implementación.',
+  },
+  {
+    q: '¿ReinventED impone un modelo o lo adapta a cada club?',
+    a: 'Nuestro modelo no se copia ni se instala como un producto estándar. Trabajamos junto al club para diseñar un proyecto educativo alineado con su identidad, sus objetivos deportivos y las necesidades de su comunidad. Compartimos una misma filosofía, pero cada implementación es única.',
+  },
+  {
+    q: '¿Es posible combinar una educación de excelencia con el alto rendimiento deportivo?',
+    a: 'Sí. El modelo está diseñado específicamente para deportistas de alto rendimiento. La planificación académica se integra con los entrenamientos, competencias y procesos de recuperación, permitiendo que los estudiantes progresen sin tener que elegir entre su desarrollo académico y deportivo.',
+  },
+  {
+    q: '¿Cómo funciona el aprendizaje personalizado?',
+    a: 'Cada estudiante cuenta con un plan de aprendizaje adaptado a su nivel, ritmo de avance, objetivos académicos y realidad deportiva. Los educadores acompañan el proceso mediante espacios flexibles de aprendizaje y seguimiento permanente, priorizando el desarrollo de competencias antes que la memorización de contenidos.',
+  },
+  {
+    q: '¿Qué sucede cuando un deportista viaja para competir?',
+    a: 'La agenda deportiva se planifica junto con la académica. Los estudiantes pueden continuar avanzando durante concentraciones o competencias mediante un modelo flexible que evita retrasos y reduce la sobrecarga académica.',
+  },
+  {
+    q: '¿Qué pasa si un deportista no llega al profesionalismo?',
+    a: 'Nuestra filosofía es clara: Every Student Succeeds. El objetivo es que cada estudiante construya un proyecto de vida exitoso, dentro o fuera del deporte. Por eso el modelo desarrolla competencias para la vida, dominio del inglés, orientación vocacional y una formación académica sólida que abre oportunidades en la educación superior y el mundo laboral.',
+  },
+  {
+    q: '¿El colegio cumple con la normativa educativa de cada país?',
+    a: 'Sí. Todos los proyectos cumplen con el currículo oficial y la normativa educativa correspondiente. La innovación está en la forma de enseñar y aprender, no en la validez de los estudios o de la titulación obtenida.',
+  },
+  {
+    q: '¿Puede un club de menor tamaño implementar este modelo?',
+    a: 'Sí. No es necesario tener la escala de un gran club profesional. Diseñamos proyectos ajustados a la realidad de cada institución, siempre respetando los estándares esenciales que garantizan la calidad del modelo.',
+  },
+]
 
 const niveles = [
   { t: 'Estudiante', d: 'metas académicas claras y seguimiento constante.' },
@@ -36,9 +71,9 @@ export default function TransformaClub() {
         <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
         <div className="hero-school-overlay light" />
         <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
-          <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2 }}>
-            <b style={{ color: 'var(--blue)' }}>Implementa ReinventED</b><br/>
-            <span style={{ color: 'var(--blue-deep)', fontWeight: 400 }}>en tu club deportivo</span>
+          <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2, background: 'var(--blue)' }}>
+            <b style={{ color: '#fff' }}>Implementa ReinventED</b><br/>
+            <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}>en tu club deportivo</span>
           </div>
         </div>
       </section>
@@ -73,7 +108,7 @@ export default function TransformaClub() {
       <section className="section-tight">
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-          <img src={imgClub8} alt="Colegios para deportistas" style={{ aspectRatio: '4/5', borderRadius: 18, objectFit: 'cover', width: '100%', display: 'block' }} />
+          <img src={imgClub8} alt="Colegios para deportistas" style={{ aspectRatio: '4/3', borderRadius: 18, objectFit: 'cover', width: '100%', display: 'block' }} />
           <div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 20 }}>
               <Badge />
@@ -189,6 +224,14 @@ export default function TransformaClub() {
             <p>Si tu institución busca integrar educación académica de calidad con formación deportiva de alto rendimiento, podemos trabajar juntos en el diseño de un sistema que responda a esa realidad.</p>
             <p>Contáctanos para explorar cómo implementar el modelo ReinventED en tu club o institución.</p>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section">
+        <div className="container">
+          <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--muted)', fontSize: 'clamp(30px,4vw,46px)', marginBottom: 30 }}>FAQ</h2>
+          <Faq items={clubFaq} dotColor="var(--blue)" />
         </div>
       </section>
     </div>
