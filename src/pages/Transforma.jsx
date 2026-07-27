@@ -124,7 +124,7 @@ export default function Transforma() {
       </section>
 
       {/* Every student succeeds */}
-      <section className="band-soft section">
+      <section id="every-student" className="band-soft section">
         <div className="container">
           <SectionHead title={<span style={{ fontSize: 'clamp(42px, 5vw, 62px)', fontWeight: 100, fontFamily: "'Aller Display', sans-serif" }}>Every student succeeds</span>} badge="red" />
           <div style={{ textAlign: 'left', marginBottom: 40 }}>
@@ -220,7 +220,7 @@ export default function Transforma() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 32 }}>
-            <Link to="/conocenos" className="btn" style={{ fontSize: 20 }}>Conoce nuestras sedes</Link>
+            <a href="#every-student" className="btn" style={{ fontSize: 20 }}>Conoce nuestras sedes</a>
           </div>
         </div>
       </section>

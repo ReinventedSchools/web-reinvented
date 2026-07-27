@@ -27,16 +27,16 @@ export default function TransformaColegio() {
       <section className="hero-school">
         <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectPosition: 'center' }} />
         <div className="hero-school-overlay light" />
-        <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
+        {/* <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2 }}>
             <b style={{ color: 'var(--blue)' }}>Implementa ReinventED</b><br/>
             <span style={{ color: 'var(--blue-deep)', fontWeight: 400 }}>en tu institución</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Asesorías para colegios */}
-      <section className="band-blue section" style={{ paddingTop: 140 }}>
+      <section className="band-blue section" style={{ paddingTop: 15 }}>
         <div className="container">
           <div className="contacto-text">
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, marginTop: 32 }}>

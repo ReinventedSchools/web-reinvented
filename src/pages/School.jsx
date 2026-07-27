@@ -122,15 +122,33 @@ export default function School() {
         </div>
       </section>
 
+      {/* Nominación */}
+      {s.nominacionImg && (
+        <section className="section">
+          <div className="container">
+            <div className="school-extra-grid">
+              <img src={s.nominacionImg} alt="Nominación" style={{ width: '100%', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <Badge color={s.arrow} />
+                  <h2 style={{ fontWeight: 600, fontSize: 'clamp(24px,3vw,34px)', color: 'var(--ink)' }}>Nominación</h2>
+                </div>
+                <p style={{ color: 'var(--ink-soft)', lineHeight: 1.7, paddingLeft: 50 }}>{s.nominacionText}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Sección extra + Los estudiantes desarrollan (IDV) */}
       {s.sectionImg && (
         <section className={s.sectionNoBg ? 'section' : 'band-soft section'}>
           <div className="container">
-            <div className="school-extra-grid">
+            <div className="school-extra-grid" style={s.sectionImgRight ? { direction: 'rtl' } : {}}>
               <img src={s.sectionImg} alt={s.sectionTitle} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
-              <div>
+              <div style={{ direction: 'ltr' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                  <Badge color="magenta" />
+                  <Badge color={s.arrow} />
                   <h2 style={{ fontWeight: 600, fontSize: 'clamp(24px,3vw,34px)', color: 'var(--ink)' }}>{s.sectionTitle}</h2>
                 </div>
                 <p style={{ color: 'var(--ink-soft)', lineHeight: 1.7, paddingLeft: 50 }}>{s.sectionText}</p>
@@ -139,7 +157,7 @@ export default function School() {
             {s.studentsDevelop && (
               <>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14, marginBottom: 40 }}>
-                  <Badge color="magenta" />
+                  <Badge color={s.arrow} />
                   <h2 style={{ fontWeight: 400, fontSize: 'clamp(24px,3vw,36px)', color: 'var(--ink)' }}>Los estudiantes desarrollan</h2>
                 </div>
                 <div className="students-develop-grid">

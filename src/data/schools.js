@@ -97,6 +97,9 @@ export const schools = {
     hideCamino: true,
     hideStudents: true,
     sectionNoBg: true,
+    sectionImgRight: true,
+    nominacionImg: imgRedefiniendo,
+    nominacionText: 'ReinventED IDV ha sido nominado entre los 10 mejores colegios del mundo en los World\'s Best School Prizes 2026 de T4 Education, un reconocimiento internacional que destaca el impacto de nuestro modelo educativo y nuestro compromiso con el bienestar, el crecimiento integral y el éxito de cada estudiante.',
     sectionImg: imgIdvSection,
     sectionTitle: 'Educación y deporte de alto rendimiento',
     sectionText: 'ReinventED IDV integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
@@ -200,6 +203,13 @@ export const schools = {
     sectionImg: imgR2,
     sectionTitle: 'Educación y deporte de alto rendimiento',
     sectionText: 'ReinventED Rimac integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',
+    studentsDevelop: [
+      'Responsabilidad sobre su proceso académico',
+      'Gestión del tiempo',
+      'Disciplina y planificación',
+      'Competencias académicas con estándares altos',
+    ],
+    studentsDevelopIcons: [imgIdvResponsabilidad, imgIdvTiempo, imgIdvDiciplina, imgIdvCompetencia],
     hideStudents: true,
   },
 }

@@ -17,15 +17,15 @@ export default function Noticias() {
       <section className="hero-school" style={{ height: 320 }}>
         <img src={imgHero} alt="Noticias ReinventED" className="hero-school-img" style={{ height: 320, objectFit: 'contain', objectPosition: 'center', background: '#fff', padding: '80px 400px' }} />
         <div className="hero-school-overlay" />
-        <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
+        {/* <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2, width: 'fit-content', margin: '0 auto' }}>
             <strong style={{ fontSize: 'clamp(28px,4vw,42px)', display: 'block', color: 'var(--blue)' }}>Noticias</strong>
             <span style={{ color: 'var(--blue-deep)', fontWeight: 400, fontSize: 'clamp(15px,2vw,18px)' }}>Lo último de la red ReinventED</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
-      <section className="section" style={{ paddingTop: 100 }}>
+      <section className="section" style={{ paddingTop: 50 }}>
         <div className="container">
           <SectionHead title="Últimas publicaciones" />
 

@@ -52,7 +52,7 @@ const campusDots = [
 
 const stats = [
   { n: '4', label: 'Campus' },
-  { n: '720', label: 'Estudiantes' },
+  { n: '723', label: 'Estudiantes' },
   { n: '136', label: 'Graduados' },
   { n: '2', label: 'Países' },
 ]
