@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* ---------------- APLICA A COLEGIOS PRIVADOS ---------------- */}
-      <section className="section">
+      <section id="habilidades-futuro" className="section">
         <div className="container">
           <div className="apply-band">
             <div className="heading-row" style={{ marginBottom: 28 }}>

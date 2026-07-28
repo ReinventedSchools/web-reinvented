@@ -131,7 +131,7 @@ export default function School() {
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <Badge color={s.arrow} />
-                  <h2 style={{ fontWeight: 600, fontSize: 'clamp(24px,3vw,34px)', color: 'var(--ink)' }}>Nominación</h2>
+                  <h2 style={{ fontWeight: 600, fontSize: 'clamp(24px,3vw,34px)', color: 'var(--ink)' }}>Top 10 World's Best School Prizes</h2>
                 </div>
                 <p style={{ color: 'var(--ink-soft)', lineHeight: 1.7, paddingLeft: 50 }}>{s.nominacionText}</p>
               </div>
@@ -225,14 +225,21 @@ export default function School() {
             <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>¿Cómo aplicar?</span>} badge={s.arrow} align="center" />
           </div>
           <div className="apply-steps">
-            {applyCards.map((c, i) => (
-              <div className="apply-step" key={i}>
-                <div className="apply-step-icon" style={{ background: s.circle }}>
-                  <ApplyIcon name={c.icon} />
-                </div>
-                <span>{c.t}</span>
-              </div>
-            ))}
+            {applyCards.map((c, i) => {
+              const href = (i === 0 && s.calendlyUrl) ? s.calendlyUrl : (i === 1 && s.formUrl) ? s.formUrl : null
+              const isCalendly = !!href
+              const inner = (
+                <>
+                  <div className="apply-step-icon" style={{ background: s.circle }}>
+                    <ApplyIcon name={c.icon} />
+                  </div>
+                  <span>{c.t}</span>
+                </>
+              )
+              return isCalendly
+                ? <a key={i} className="apply-step" href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', cursor: 'pointer' }}>{inner}</a>
+                : <div key={i} className="apply-step">{inner}</div>
+            })}
           </div>
         </div>
       </section>}

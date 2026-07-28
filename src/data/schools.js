@@ -48,7 +48,7 @@ import imgPC4 from '../assets/sedes/puembo/c4.jpeg'
 import imgPC5 from '../assets/sedes/puembo/c5.jpeg'
 import imgPC6 from '../assets/sedes/puembo/c6.jpeg'
 import imgPC7 from '../assets/sedes/puembo/c7.jpeg'
-import imgPC8 from '../assets/sedes/puembo/c8.jpeg'
+// import imgPC8 from '../assets/sedes/puembo/c8.jpeg'
 import imgPC9 from '../assets/sedes/puembo/c9.jpeg'
 
 export const schools = {
@@ -68,7 +68,7 @@ export const schools = {
     circle: '#2bae8c',
     propuestaColor: '#7b6fcf',
     since: 'Desde 2020',
-    galleryImgs: [imgPC1, imgPC2, imgPC3, imgPC4, imgPC5, imgPC6, imgPC7, imgPC8, imgPC9],
+    galleryImgs: [imgPC1, imgPC2, imgPC3, imgPC4, imgPC5, imgPC6, imgPC7, imgPC9],
     intro:
       'ReinventED Puembo fue el primer campus de la red. Nació en 2020, en un momento que obligó al mundo a cuestionar muchas de sus certezas, incluida la educación. Esta fue la oportunidad de diseñar desde cero un sistema de aprendizaje personalizado, estructurado y conectado con la realidad de cada estudiante. Desde el inicio, hemos crecido de manera intencional, cuidando aquello que define nuestra propuesta: conocer profundamente a cada estudiante, ofrecer experiencias de aprendizaje relevantes a sus intereses y necesidades, y sostener un sistema que combina autonomía, acompañamiento cercano y altos estándares. Porque creemos que la calidad de una experiencia educativa no se mide por cuántos estudiantes alcanza, sino por el impacto que tiene en cada uno de ellos.',
     locTitle: 'Ubicado en Puembo',
@@ -82,6 +82,8 @@ export const schools = {
       { t: '11th grade', b: true }, { t: ' en el período 2027 - 2028 y ' },
       { t: '12th grade', b: true }, { t: ' en 2028 - 2029.' },
     ],
+    calendlyUrl: 'https://calendly.com/visitas-reinventedpuembo/agendamiento',
+    formUrl: 'https://form.123formbuilder.com/6033053/formulario-de-admisiones-reinvented-puembo',
   },
   idv: {
     slug: 'idv',
@@ -162,6 +164,8 @@ export const schools = {
     ],
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th grade en el período 2027 - 2028, 11th grade en 2028 - 2029 y 12th grade en 2029 - 2030.',
+    calendlyUrl: 'https://calendly.com/visitas-reinventedpuembo/agendamiento',
+    formUrl: 'https://form.123formbuilder.com/6159960/formulario-de-admisiones-reinvented-santa-clara',
     faqItems: [
       { q: '¿Qué hace diferente a ReinventED Santa Clara?', a: 'Somos un colegio bilingüe ubicado en el Valle de los Chillos que combina aprendizaje personalizado, bienestar y desarrollo de habilidades para la vida. Con una comunidad cercana donde cada estudiante es reconocido, acompañado y desafiado a crecer.' },
       { q: '¿Cómo acompañan el bienestar de los estudiantes?', a: 'Creemos que el bienestar es fundamental para aprender. Por eso trabajamos intencionalmente en el desarrollo socioemocional, las relaciones positivas y la construcción de una cultura de respeto y pertenencia.' },
@@ -181,7 +185,6 @@ export const schools = {
     locImgFit: 'contain',
     locImgBg: '#fff',
     hideCamino: true,
-    hideFaq: true,
     galleryImgs: [imgR1, imgR2, imgR3, imgR4, imgR5, imgR6],
     ed: '#f4c20d',
     nameColor: '#4fa3d1',
@@ -211,6 +214,14 @@ export const schools = {
     ],
     studentsDevelopIcons: [imgIdvResponsabilidad, imgIdvTiempo, imgIdvDiciplina, imgIdvCompetencia],
     hideStudents: true,
+    faqDot: 'var(--yellow)',
+    faqItems: [
+      { q: '¿Puedo aplicar a ReinventED Rímac?', a: 'ReinventED Rímac es exclusivo para los chicos que son parte de las formativas del Club Sporting Cristal. El colegio no cuenta con un proceso propio de admisión.' },
+      { q: '¿Qué hace diferente a ReinventED Rímac?', a: 'ReinventED Rímac integra aprendizaje personalizado, excelencia académica y desarrollo deportivo, permitiendo que los estudiantes persigan sus metas sin sacrificar su educación.' },
+      { q: '¿Cómo compatibilizan el deporte y los estudios?', a: 'Nuestra metodología flexible permite que los estudiantes gestionen su tiempo, mantengan el ritmo académico y avancen en sus metas deportivas y personales.' },
+      { q: '¿Qué habilidades desarrollan los estudiantes?', a: 'Además de los aprendizajes académicos, fortalecen autonomía, disciplina, pensamiento crítico, trabajo en equipo, comunicación y bienestar integral.' },
+      { q: '¿Cómo es el acompañamiento de los educadores?', a: 'Los educadores actúan como mentores que acompañan de cerca el progreso académico, personal y emocional de cada estudiante.' },
+    ],
   },
 }
 

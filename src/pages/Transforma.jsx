@@ -220,7 +220,7 @@ export default function Transforma() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: 32 }}>
-            <a href="#every-student" className="btn" style={{ fontSize: 20 }}>Conoce nuestras sedes</a>
+            <a href="/#habilidades-futuro" className="btn" style={{ fontSize: 20 }}>Conoce nuestras sedes</a>
           </div>
         </div>
       </section>
