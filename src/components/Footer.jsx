@@ -1,6 +1,7 @@
+import { memo } from 'react'
 import { Logo } from './Brand.jsx'
 
-export default function Footer() {
+export default memo(function Footer() {
   return (
     <footer className="footer">
       <div className="container">
@@ -25,4 +26,4 @@ export default function Footer() {
       </div>
     </footer>
   )
-}
+})

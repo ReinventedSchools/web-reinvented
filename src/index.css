@@ -40,7 +40,9 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   margin: 0;
@@ -102,6 +104,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
   align-items: center;
   gap: 16px;
   margin-bottom: 34px;
+  flex-wrap: wrap;
 }
 
 /* ---------- Buttons ---------- */
@@ -209,8 +212,10 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
 .footer-legal span { color: #c5c9d1; }
 
 /* ---------- Page enter animation ---------- */
-.page { animation: fade .4s ease; }
-@keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .page { animation: fade .3s ease; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+}
 
 @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
 
@@ -222,4 +227,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
   body { font-size: 16px; }
   .grid-2, .grid-3, .grid-4, .grid-5 { grid-template-columns: 1fr; }
   .section { padding: 48px 0; }
+  .section-tight { padding: 32px 0; }
+}
+@media (max-width: 400px) {
+  .container { padding: 0 14px; }
 }

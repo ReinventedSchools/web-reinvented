@@ -74,7 +74,7 @@ export default function TransformaClub() {
       />
       {/* Hero */}
       <section className="hero-school">
-        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchpriority="high" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
         <div className="hero-school-overlay light" />
         <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2, background: 'var(--blue)' }}>
@@ -87,7 +87,7 @@ export default function TransformaClub() {
       {/* No solo opera colegios */}
       <section className="section" style={{ paddingTop: 140 }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40 }}>
+          <div className="tc-intro-grid">
           <div className="intro-soft">
             <Badge />
             <p style={{ marginTop: 16 }}>
@@ -100,10 +100,10 @@ export default function TransformaClub() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, height: 360 }}>
-            <img src={imgClub1} alt="" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: 0 }} />
+            <img src={imgClub1} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: 0 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, flex: 1 }}>
-              <img src={imgClub5} alt="" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
-              <img src={imgClub6} alt="" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
+              <img src={imgClub5} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
+              <img src={imgClub6} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
             </div>
           </div>
           </div>
@@ -113,8 +113,8 @@ export default function TransformaClub() {
       {/* Colegios para deportistas */}
       <section className="section-tight">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
-          <img src={imgClub8} alt="Colegios para deportistas" style={{ aspectRatio: '4/3', borderRadius: 18, objectFit: 'cover', width: '100%', display: 'block' }} />
+          <div className="tc-2col-grid">
+          <img src={imgClub8} alt="Colegios para deportistas" loading="lazy" style={{ aspectRatio: '4/3', borderRadius: 18, objectFit: 'cover', width: '100%', display: 'block' }} />
           <div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 20 }}>
               <Badge />
@@ -136,7 +136,7 @@ export default function TransformaClub() {
             <Badge color="red" />
             <h2 style={{ color: 'var(--ink)', fontWeight: 600, fontSize: 'clamp(26px,3vw,36px)' }}>Personalización</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'start' }}>
+          <div className="tc-2col-grid" style={{ alignItems: 'start' }}>
             <div className="prose">
               <p style={{ marginTop: 0 }}>La personalización en ReinventED no se limita al estudiante. También se aplica al contexto institucional.</p>
               <p>Cuando trabajamos con clubes deportivos, el sistema se adapta a las dinámicas propias de cada organización: calendarios de competencia, cargas de entrenamiento, viajes y procesos de formación deportiva.</p>
@@ -194,7 +194,7 @@ export default function TransformaClub() {
       {/* Nuestra propuesta */}
       <section className="band-soft section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center' }}>
+          <div className="tc-2col-grid">
             <img src={imgClub6} alt="Nuestra propuesta ReinventED" style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 12 }}>

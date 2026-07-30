@@ -1,3 +1,6 @@
+/* ---------- Page loader spinner ---------- */
+@keyframes spin { to { transform: rotate(360deg); } }
+
 /* ---------- FAQ ---------- */
 .faq { max-width: 880px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--line); }

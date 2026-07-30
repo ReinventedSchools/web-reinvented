@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm install *)",
       "WebSearch",
-      "WebFetch(domain:reinventedschools.com)"
+      "WebFetch(domain:reinventedschools.com)",
+      "Bash(xargs ls -lh)",
+      "Bash(sort -k5 -rh)"
     ]
   }
 }

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import emailjs from '@emailjs/browser'
 
 const EMAILJS_SERVICE  = 'service_zsv8mj8'   // reemplaza con tu Service ID de EmailJS
@@ -21,18 +21,29 @@ export function SectionHead({ title, badge = '', light = true, align = 'left', c
 /* Gallery: real images carousel (3 per page) or placeholder */
 export function Gallery({ images = [], count = 5, dotColor }) {
   const [page, setPage] = useState(0)
+  const containerRef = useRef(null)
   const PER_PAGE = 3
   const pages = images.length ? Math.ceil(images.length / PER_PAGE) : 3
 
   useEffect(() => {
     if (!images.length) return
-    const id = setInterval(() => setPage(p => (p + 1) % pages), 3000)
-    return () => clearInterval(id)
+    const el = containerRef.current
+    if (!el) return
+    let id
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        id = setInterval(() => setPage(p => (p + 1) % pages), 3000)
+      } else {
+        clearInterval(id)
+      }
+    })
+    obs.observe(el)
+    return () => { obs.disconnect(); clearInterval(id) }
   }, [images.length, pages])
 
   if (!images.length) {
     return (
-      <div>
+      <div ref={containerRef}>
         <div className="grid" style={{ gridTemplateColumns: `repeat(${count}, 1fr)` }}>
           {Array.from({ length: count }).map((_, i) => (
             <div key={i} className="img-ph" style={{ aspectRatio: '4/3' }} />
@@ -50,13 +61,14 @@ export function Gallery({ images = [], count = 5, dotColor }) {
   const visible = images.slice(page * PER_PAGE, page * PER_PAGE + PER_PAGE)
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
         {visible.map((src, i) => (
           <img
             key={page * PER_PAGE + i}
             src={src}
             alt=""
+            loading="lazy"
             style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 12, display: 'block' }}
           />
         ))}
@@ -106,7 +118,10 @@ export function ContactForm({ btn = 'var(--blue)', btnText = '#fff' }) {
   const [fields, setFields] = useState({ nombre: '', telefono: '', email: '', comentario: '' })
   const [status, setStatus] = useState('idle') // idle | sending | ok | error
 
-  const set = key => e => setFields(f => ({ ...f, [key]: e.target.value }))
+  const handleChange = useCallback(e => {
+    const { name, value } = e.target
+    setFields(f => ({ ...f, [name]: value }))
+  }, [])
 
   const submit = async e => {
     e.preventDefault()
@@ -134,11 +149,11 @@ export function ContactForm({ btn = 'var(--blue)', btnText = '#fff' }) {
   return (
     <form className="cform" onSubmit={submit} ref={formRef}>
       <div className="cform-row">
-        <input type="text"  placeholder="Nombre"    value={fields.nombre}     onChange={set('nombre')}     required />
-        <input type="tel"   placeholder="Teléfono"  value={fields.telefono}   onChange={set('telefono')}   required />
+        <input type="text"  name="nombre"     placeholder="Nombre"    value={fields.nombre}     onChange={handleChange} required />
+        <input type="tel"   name="telefono"   placeholder="Teléfono"  value={fields.telefono}   onChange={handleChange} required />
       </div>
-      <input type="email" placeholder="Email"     value={fields.email}      onChange={set('email')}      required />
-      <textarea           placeholder="Comentario" value={fields.comentario} onChange={set('comentario')} rows={4} />
+      <input type="email" name="email"      placeholder="Email"     value={fields.email}      onChange={handleChange} required />
+      <textarea           name="comentario" placeholder="Comentario" value={fields.comentario} onChange={handleChange} rows={4} />
       <button className="btn" type="submit" disabled={status === 'sending'}
         style={{ background: btn, color: btnText, alignSelf: 'flex-end', opacity: status === 'sending' ? .7 : 1 }}>
         {status === 'sending' ? 'Enviando…' : 'Enviar'}

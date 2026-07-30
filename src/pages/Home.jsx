@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
@@ -103,8 +103,10 @@ export default function Home() {
     return () => obs.disconnect()
   }, [])
 
-  const start = alliesPage * ALLIES_PER_PAGE
-  const visibleAllies = Array.from({ length: ALLIES_PER_PAGE }, (_, i) => allies[(start + i) % allies.length])
+  const visibleAllies = useMemo(() => {
+    const start = alliesPage * ALLIES_PER_PAGE
+    return Array.from({ length: ALLIES_PER_PAGE }, (_, i) => allies[(start + i) % allies.length])
+  }, [alliesPage])
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -125,7 +127,7 @@ export default function Home() {
       />
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
-        <img src={imgHero} alt="ReinventED" className="hero-img" />
+        <img src={imgHero} alt="ReinventED" className="hero-img" fetchpriority="high" />
         <div className="hero-overlay" />
         <div className="container hero-content">
           <h1 className="hero-title" style={{ fontFamily: "'Aller Display', sans-serif" }}>every student succeeds</h1>
@@ -153,7 +155,7 @@ export default function Home() {
           <div className="campus-row">
             {campusDots.map(c => (
               <Link to={c.to} key={c.name} className="campus-link">
-                <img src={c.img} alt={`ReinventED ${c.name}`} className="campus-logo-img" />
+                <img src={c.img} alt={`ReinventED ${c.name}`} className="campus-logo-img" loading="lazy" />
               </Link>
             ))}
           </div>
@@ -165,7 +167,7 @@ export default function Home() {
         <div className="container">
           <SectionHead title="Redefiniendo el éxito" align="center" />
           <div className="redefine">
-            <img src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img" />
+            <img src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img" loading="lazy" />
             <div className="redefine-card">
               <h3>El mundo se reinventa, la educación también.</h3>
               <p>
@@ -207,17 +209,17 @@ export default function Home() {
           <h2 className="formula-title" style={{ fontFamily: "'Aller Display'", fontWeight: 300 }}>every student succeeds</h2>
           <div className="formula-cards">
             <div className="formula-card">
-              <img src={imgSchoolJoy} alt="School Joy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <img src={imgSchoolJoy} alt="School Joy" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
               <div className="formula-card-label">School Joy</div>
             </div>
             <div className="formula-plus">+</div>
             <div className="formula-card">
-              <img src={imgPersonal} alt="Personal Growth" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <img src={imgPersonal} alt="Personal Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
               <div className="formula-card-label">Personal Growth</div>
             </div>
             <div className="formula-plus">+</div>
             <div className="formula-card">
-              <img src={imgAcademic} alt="Academic Growth" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <img src={imgAcademic} alt="Academic Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
               <div className="formula-card-label">Academic Growth</div>
             </div>
           </div><br></br>
@@ -234,8 +236,8 @@ export default function Home() {
           <SectionHead title={<>Nuestros <b style={{ color: 'var(--ink)', fontWeight: 600 }}>aliados en transformación</b> educativa</>} />
           <div className="allies" key={alliesPage}>
             {visibleAllies.map((ally, i) => (
-              <div className="ally" key={i}>
-                <img src={ally.img} alt={ally.name} className="ally-img" />
+              <div className="ally" key={ally.name}>
+                <img src={ally.img} alt={ally.name} className="ally-img" loading="lazy" />
               </div>
             ))}
           </div>

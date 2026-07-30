@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { SectionHead } from '../components/UI.jsx'
 import { blogs } from '../data/blogs.js'
@@ -10,7 +10,10 @@ const cats = ['Todas', 'Red', 'Académico', 'Deporte', 'Eventos']
 
 export default function Noticias() {
   const [active, setActive] = useState('Todas')
-  const list = active === 'Todas' ? blogs : blogs.filter(n => n.cat === active)
+  const list = useMemo(
+    () => active === 'Todas' ? blogs : blogs.filter(n => n.cat === active),
+    [active]
+  )
 
   return (
     <div className="page">
@@ -21,7 +24,7 @@ export default function Noticias() {
       />
       {/* Hero */}
       <section className="hero-school" style={{ height: 320 }}>
-        <img src={imgHero} alt="Noticias ReinventED" className="hero-school-img" style={{ height: 320, objectFit: 'contain', objectPosition: 'center', background: '#fff', padding: '80px 400px' }} />
+        <img src={imgHero} alt="Noticias ReinventED" className="hero-school-img" style={{ height: 320, objectFit: 'contain', objectPosition: 'center', background: '#fff', padding: '60px clamp(16px, 28vw, 400px)' }} />
         <div className="hero-school-overlay" />
         {/* <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2, width: 'fit-content', margin: '0 auto' }}>
@@ -45,7 +48,7 @@ export default function Noticias() {
           {list[0] && (
             <article className="news-feature">
               {list[0].img
-                ? <img src={list[0].img} alt={list[0].title} style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
+                ? <img src={list[0].img} alt={list[0].title} fetchpriority="high" style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
                 : <div className="img-ph" style={{ aspectRatio: '16/10' }} />}
               <div className="news-feature-body">
                 <span className="news-tag">{list[0].cat}</span>
@@ -59,10 +62,10 @@ export default function Noticias() {
 
           {/* Grid */}
           <div className="news-grid">
-            {list.slice(1).map((n, i) => (
-              <article className="news-card" key={i}>
+            {list.slice(1).map((n) => (
+              <article className="news-card" key={n.slug}>
                 {n.img
-                  ? <img src={n.img} alt={n.title} style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
+                  ? <img src={n.img} alt={n.title} loading="lazy" style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
                   : <div className="img-ph" style={{ aspectRatio: '16/10' }} />}
                 <div className="news-card-body">
                   <div className="news-meta">

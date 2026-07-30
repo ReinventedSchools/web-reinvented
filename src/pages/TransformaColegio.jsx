@@ -31,7 +31,7 @@ export default function TransformaColegio() {
       />
       {/* Hero */}
       <section className="hero-school">
-        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectPosition: 'center' }} />
+        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchpriority="high" style={{ objectPosition: 'center' }} />
         <div className="hero-school-overlay light" />
         {/* <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2 }}>
@@ -103,7 +103,7 @@ export default function TransformaColegio() {
       {/* Oferta ReinventED + Nuestra propuesta */}
       <section className="section-tight">
         <div className="container">
-          <div style={{ background: 'rgba(0,0,0,0.04)', border: '1.5px solid rgba(0,0,0,0.08)', borderRadius: 16, padding: '36px 48px' }}>
+          <div className="oferta-box">
             <div className="oferta-head" style={{ justifyContent: 'center', gap: 40 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
                 <Badge />
@@ -117,7 +117,7 @@ export default function TransformaColegio() {
               <div style={{ marginBottom: 24 }}>
                 <h3 style={{ fontWeight: 600, fontSize: 22 }}>Nuestra propuesta puede incluir:</h3>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px 32px' }}>
+              <div className="oferta-items">
                 {oferta.map((o, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
                     <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0, marginTop: 6 }} />

@@ -86,7 +86,7 @@ export default function Transforma() {
       />
       {/* Hero quote */}
       <section className="hero-school">
-        <img src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" />
+        <img src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" fetchpriority="high" />
         <div className="hero-school-overlay" />
       </section>
 
@@ -110,7 +110,7 @@ export default function Transforma() {
               <p>En ReinventED creemos que todos los estudiantes pueden <b>alcanzar altos estándares cuando el aprendizaje está diseñado con intención, estructura y propósito.</b></p>
             </div>
             <div className="repensar-art repensar-shift">
-              <img src={imgTransformaArt} alt="Transforma" style={{ width: '100%', maxWidth: 320, height: 'auto', display: 'block', margin: '0 auto' }} />
+              <img src={imgTransformaArt} alt="Transforma" loading="lazy" style={{ width: '100%', maxWidth: 320, height: 'auto', display: 'block', margin: '0 auto' }} />
             </div>
           </div>
 
@@ -140,7 +140,7 @@ export default function Transforma() {
           <div className="exito">
             {exito.map((e, i) => (
               <div className="exito-card" key={i}>
-                <img src={exitoImgs[i]} alt={e.t} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }} />
+                <img src={exitoImgs[i]} alt={e.t} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }} />
                 <div style={{ padding: '24px 28px 32px' }}>
                   <h4 className="display">{e.t}</h4>
                   <p>{e.d}</p>
@@ -165,7 +165,7 @@ export default function Transforma() {
           </h2>
           <div className="skills-row" key={habPage}>
             {visibleHab.map((h, i) => (
-              <img src={h.img} alt={h.name} className="skill-img" key={i} />
+              <img src={h.img} alt={h.name} className="skill-img" loading="lazy" key={i} />
             ))}
           </div>
           <div className="dots-row">
@@ -184,7 +184,7 @@ export default function Transforma() {
             <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Progreso medible</h2>
           </div>
           <div className="medible">
-            <img src={imgPersonal} alt="Progreso medible ReinventED" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+            <img src={imgPersonal} alt="Progreso medible ReinventED" loading="lazy" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
             <div className="medible-text">
               <p style={{ color: '#fff', fontWeight: 400, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite

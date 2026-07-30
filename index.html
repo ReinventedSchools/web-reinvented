@@ -10,13 +10,11 @@
     <!-- DNS prefetch + preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://db.onlinewebfonts.com" />
+    <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
 
-    <!-- Fonts: Lato loaded with display=swap to avoid FOIT -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Lato: async load to avoid render-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>

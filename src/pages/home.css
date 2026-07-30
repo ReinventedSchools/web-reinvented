@@ -229,17 +229,30 @@
   .campus-row, .stats { grid-template-columns: repeat(2, 1fr); }
   .allies { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .stats::before { display: none; }
-  .formula-cards { grid-template-columns: 1fr; max-width: 360px; }
+  .formula-cards { flex-direction: column; max-width: 360px; margin: 0 auto; }
   .implementa { grid-template-columns: 1fr; }
   .hero { height: 420px; }
   .hero-content { bottom: 120px; }
 }
 @media (max-width: 600px) {
-  .hero-tabs { grid-template-columns: 1fr; }
+  /* Hero */
+  .hero { height: 300px; }
+  .hero-content { bottom: 80px; }
+  .hero-title { font-size: clamp(28px, 9vw, 52px); }
+  /* Tabs: keep 3 columns but compact */
+  .hero-tabs { grid-template-columns: 1fr 1fr 1fr; }
+  .htab { font-size: 12px; padding: 10px 6px; gap: 4px; text-align: center; line-height: 1.2; }
+  .htab .badge { display: none; }
+  .htab.active { padding-top: 14px; border-radius: 8px 8px 0 0; box-shadow: none; }
+  /* Redefine */
+  .redefine-card { padding: 80px 18px 28px; }
+  /* Sección conoce */
+  .conoce { padding-top: 64px; }
+  /* Otros */
   .campus-row { grid-template-columns: 1fr 1fr; }
   .apply-band .apply-cards { grid-template-columns: 1fr; max-width: 360px; }
-  .apply-band { padding: 28px 20px; }
-  .formula-labels { font-size: 22px; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .apply-band { padding: 28px 18px; }
   .formula-sub { font-size: 20px; }
-  .implementa-img { height: auto; max-height: 360px; }
+  .implementa-img { height: auto; max-height: 320px; }
+  .btn-conoce-sistema { font-size: 16px; padding: 12px 22px; }
 }

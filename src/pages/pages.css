@@ -299,6 +299,12 @@
 .repensar-shift { margin-left: -200px; }
 .medible-text { padding-left: 60px; }
 
+/* ---- Inline-grid replacements (allow CSS media queries to override) ---- */
+.tc-intro-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
+.tc-2col-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.oferta-items  { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px; }
+.oferta-box    { background: rgba(0,0,0,.04); border: 1.5px solid rgba(0,0,0,.08); border-radius: 16px; padding: clamp(20px,4vw,36px) clamp(16px,4vw,48px); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 960px) {
   .conoce-intro, .repensar, .medible, .club-deport, .contacto, .news-feature { grid-template-columns: 1fr; }
@@ -318,9 +324,13 @@
   .oferta-3col { grid-template-columns: 1fr 1fr; }
   .repensar-shift { margin-left: 0; }
   .medible-text { padding-left: 0; }
+  /* Inline-grid replacements */
+  .tc-intro-grid, .tc-2col-grid { grid-template-columns: 1fr; gap: 28px; }
+  /* camino-head (School) */
+  .camino-head { grid-template-columns: 1fr; gap: 30px; margin-bottom: 36px; }
 }
 @media (max-width: 600px) {
-  .hero-school-img { height: 340px; }
+  .hero-school-img { height: 280px; }
   .timeline, .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .jobs, .club-gallery, .person-grid { grid-template-columns: 1fr; }
   .conoce-intro { grid-template-columns: 1fr; }
   .found-band { padding: 24px 22px; font-size: 17px; }
@@ -330,9 +340,13 @@
   .students-develop-grid { grid-template-columns: 1fr; }
   .student-carousel-grid { grid-template-columns: repeat(2, 1fr); }
   .oferta-4col, .oferta-3col { grid-template-columns: 1fr; }
+  .oferta-items { grid-template-columns: 1fr; }
   .hero-quote { padding: 24px 20px; border-radius: 24px; }
-  .hero-yellow { padding: 18px 22px; }
+  .hero-yellow { padding: 14px 18px; font-size: clamp(20px, 5vw, 34px); }
   .loc-img-real { height: 200px; }
+  /* News featured card full-column on mobile */
+  .news-feature-body { padding: 20px 18px 24px; }
+  .news-feature-body h3 { font-size: 20px; }
 }
 
 /* ---------- Propuesta button ---------- */
