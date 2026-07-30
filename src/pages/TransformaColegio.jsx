@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
+import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/implementa/Jardín.png'
 import './pages.css'
 
@@ -23,6 +24,11 @@ const oferta = [
 export default function TransformaColegio() {
   return (
     <div className="page">
+      <SEO
+        title="Asesorías para Colegios"
+        description="ReinventED implementa su modelo educativo en colegios privados. Transforma tu institución con un sistema personalizado, estructurado y de alto impacto académico."
+        path="/transforma/colegio"
+      />
       {/* Hero */}
       <section className="hero-school">
         <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectPosition: 'center' }} />

@@ -1,0 +1,4 @@
+/* Tailwind CSS — utilities only (base/preflight disabled in config) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

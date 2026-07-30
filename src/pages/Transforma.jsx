@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
+import SEO from '../components/SEO.jsx'
 import imgSistema from '../assets/sistema/sistema.webp'
 import imgAutonomous from '../assets/habilidades/Autonomous.webp'
 import imgCollaborator from '../assets/habilidades/collaborator.webp'
@@ -78,6 +79,11 @@ export default function Transforma() {
 
   return (
     <div className="page">
+      <SEO
+        title="Sistema ReinventED"
+        description="El Sistema ReinventED combina personalización, autonomía y altos estándares académicos para que every student succeeds. Descubre nuestro modelo educativo innovador."
+        path="/transforma"
+      />
       {/* Hero quote */}
       <section className="hero-school">
         <img src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" />

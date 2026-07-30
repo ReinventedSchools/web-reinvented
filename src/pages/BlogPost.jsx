@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { blogs } from '../data/blogs.js'
+import SEO from '../components/SEO.jsx'
 import './pages.css'
 import './blogpost.css'
 
@@ -61,8 +62,26 @@ export default function BlogPost() {
   const post = blogs.find(b => b.slug === slug)
   if (!post) return <Navigate to="/noticias" replace />
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.img,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: 'ReinventED Schools' },
+    publisher: { '@type': 'Organization', name: 'ReinventED Schools', url: 'https://reinventedschools.com' },
+  }
+
   return (
     <div className="page">
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        image={post.img}
+        path={`/noticias/${post.slug}`}
+        jsonLd={jsonLd}
+      />
       {/* Hero */}
       {post.img && (
         <section className="hero-school" style={{ height: 420 }}>

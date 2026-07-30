@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
+import SEO from '../components/SEO.jsx'
 import imgSchoolJoy from '../assets/schoolJoy.webp'
 import imgPersonal from '../assets/Home/personalgro.webp'
 import imgAcademic from '../assets/academic.webp'
@@ -75,6 +76,13 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
+    if (window.location.hash === '#habilidades-futuro') {
+      const el = document.getElementById('habilidades-futuro')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
+  useEffect(() => {
     const el = statsRef.current
     if (!el) return
     const targets = stats.map(s => parseInt(s.n, 10))
@@ -98,8 +106,23 @@ export default function Home() {
   const start = alliesPage * ALLIES_PER_PAGE
   const visibleAllies = Array.from({ length: ALLIES_PER_PAGE }, (_, i) => allies[(start + i) % allies.length])
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'ReinventED Schools',
+    url: 'https://reinventedschools.com',
+    description: 'Red de colegios bilingüe con aprendizaje personalizado y desarrollo de habilidades del siglo XXI.',
+    sameAs: ['https://www.instagram.com/reinventedschools'],
+  }
+
   return (
     <div className="page">
+      <SEO
+        title="Educación personalizada de alto rendimiento"
+        description="ReinventED Schools es una red de colegios bilingüe que combina aprendizaje personalizado, excelencia académica y desarrollo de habilidades para la vida. Every student succeeds."
+        path="/"
+        jsonLd={jsonLd}
+      />
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
         <img src={imgHero} alt="ReinventED" className="hero-img" />

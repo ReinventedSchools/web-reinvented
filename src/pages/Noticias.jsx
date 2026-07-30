@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SectionHead } from '../components/UI.jsx'
 import { blogs } from '../data/blogs.js'
+import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/Schools1.webp'
 import './pages.css'
 
@@ -13,6 +14,11 @@ export default function Noticias() {
 
   return (
     <div className="page">
+      <SEO
+        title="Noticias"
+        description="Últimas noticias, artículos y novedades de ReinventED Schools sobre educación innovadora, bienestar estudiantil y el crecimiento de nuestra red de colegios."
+        path="/noticias"
+      />
       {/* Hero */}
       <section className="hero-school" style={{ height: 320 }}>
         <img src={imgHero} alt="Noticias ReinventED" className="hero-school-img" style={{ height: 320, objectFit: 'contain', objectPosition: 'center', background: '#fff', padding: '80px 400px' }} />

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
+import SEO from '../components/SEO.jsx'
 // import imgCamino from '../assets/implementa.webp'
 import imgCamino from '../assets/sedes/puembo/c9.jpeg'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
@@ -67,13 +68,45 @@ function ApplyIcon({ name }) {
   return <svg {...common}>{paths[name]}</svg>
 }
 
+const schoolMeta = {
+  puembo: {
+    description: 'ReinventED Puembo, colegio bilingüe en Ecuador con aprendizaje personalizado, desarrollo de autonomía y altos estándares académicos desde 2020.',
+  },
+  idv: {
+    description: 'ReinventED IDV, colegio de alto rendimiento junto a Independiente del Valle. Educación personalizada integrada con la formación deportiva profesional en Ecuador.',
+  },
+  'santa-clara': {
+    description: 'ReinventED Santa Clara, colegio bilingüe en el Valle de los Chillos. Aprendizaje personalizado, bienestar integral y desarrollo de habilidades para la vida.',
+  },
+  rimac: {
+    description: 'ReinventED Rímac, colegio en alianza con Sporting Cristal en Lima, Perú. Educación académica de calidad integrada con la formación deportiva de alto rendimiento.',
+  },
+}
+
 export default function School() {
   const { slug } = useParams()
   const s = schools[slug]
   if (!s) return <Navigate to="/" replace />
 
+  const meta = schoolMeta[slug] || {}
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'School',
+    name: `ReinventED ${s.name}`,
+    url: `https://reinventedschools.com/colegios/${slug}`,
+    description: meta.description,
+    parentOrganization: { '@type': 'EducationalOrganization', name: 'ReinventED Schools' },
+  }
+
   return (
     <div className="page">
+      <SEO
+        title={`ReinventED ${s.name}`}
+        description={meta.description}
+        image={s.heroImg}
+        path={`/colegios/${slug}`}
+        jsonLd={jsonLd}
+      />
       {/* Hero */}
       <section className="hero-school">
         {s.heroImg

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm, Faq } from '../components/UI.jsx'
+import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/club/club.jpg'
 import imgClub1 from '../assets/club/club2.jpg'
 import imgClub5 from '../assets/club/club5.jpg'
@@ -66,6 +67,11 @@ const propuesta = [
 export default function TransformaClub() {
   return (
     <div className="page">
+      <SEO
+        title="Colegios para Clubes Deportivos"
+        description="Diseñamos sistemas educativos para clubes deportivos de alto rendimiento. Educación académica de calidad integrada con la formación deportiva profesional."
+        path="/transforma/club"
+      />
       {/* Hero */}
       <section className="hero-school">
         <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" style={{ objectFit: 'cover', objectPosition: 'top center' }} />

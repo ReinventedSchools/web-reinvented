@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead } from '../components/UI.jsx'
+import SEO from '../components/SEO.jsx'
 import { schools } from '../data/schools.js'
 import { Link } from 'react-router-dom'
 import imgPuembo from '../assets/logos/puemboB.png'
@@ -27,6 +28,11 @@ export default function Conocenos() {
   const [expanded, setExpanded] = useState(false)
   return (
     <div className="page">
+      <SEO
+        title="Nuestra Historia"
+        description="Conoce la historia, misión y valores de ReinventED Schools, una red de colegios comprometida con transformar la educación en Ecuador y Perú."
+        path="/conocenos"
+      />
       {/* Intro */}
       <section className="section">
         <div className="container conoce-intro">
