@@ -1,10 +1,10 @@
 import imgBlo1 from '../assets/noticias/blo1.jpg'
 import imgBlo2 from '../assets/noticias/blo2.jpg'
-import imgBlo3 from '../assets/noticias/blo3.jpg'
+import imgBlo3 from '../assets/noticias/blo3.min.webp'
 import imgBlo5 from '../assets/noticias/blo5.jpg'
 import imgBlo6 from '../assets/noticias/blo6.jpg'
-import imgBlo7 from '../assets/noticias/blo7.jpg'
-import imgRedefiniendo from '../assets/home/Redefiniendo.webp'
+import imgBlo7 from '../assets/noticias/blo7.min.webp'
+import imgRedefiniendo from '../assets/home/Redefiniendo.min.webp'
 
 export const blogs = [
   {

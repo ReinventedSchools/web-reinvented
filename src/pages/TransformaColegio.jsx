@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
 import { SectionHead, ContactForm } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
-import imgHero from '../assets/implementa/Jardín.png'
+import imgHero from '../assets/implementa/Jardín.min.webp'
 import './pages.css'
 
 const personaliza = [

@@ -8,7 +8,7 @@ import imgPuembo from '../assets/logos/puemboB.png'
 import imgIDV from '../assets/logos/idcB.png'
 import imgSantaClara from '../assets/logos/scb.png'
 import imgRimac from '../assets/logos/rimacB.png'
-import imgHistoria1 from '../assets/historia/historia1.webp'
+import imgHistoria1 from '../assets/historia/historia1.min.webp'
 import imgLogoSchools from '../assets/historia/logo_schools.webp'
 import './pages.css'
 
