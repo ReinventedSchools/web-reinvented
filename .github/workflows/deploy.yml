@@ -1,0 +1,25 @@
+name: Deploy VPS
+
+on:
+  push:
+    branches: [reinvented]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy site on VPS
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            cd /var/www/reinvented-schools
+            git fetch origin
+            git checkout reinvented
+            git pull origin reinvented
+            npm ci
+            npm run build
