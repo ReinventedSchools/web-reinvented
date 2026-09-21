@@ -15,7 +15,7 @@ import imgWellbeing from '../assets/habilidades/wellbeing.webp'
 import imgPersonal from '../assets/sistema/progresomeible.jpeg'
 import imgTransformaArt from '../assets/sistema/transforma.png'
 import imgSchoolJoy from '../assets/schoolJoy.min.webp'
-import imgPersonalGro from '../assets/home/personalgro.min.webp'
+import imgPersonalGro from '../assets/Home/personalgro.min.webp'
 import imgAcademic from '../assets/academic.min.webp'
 import './pages.css'
 

@@ -4,7 +4,7 @@ import imgBlo3 from '../assets/noticias/blo3.min.webp'
 import imgBlo5 from '../assets/noticias/blo5.jpg'
 import imgBlo6 from '../assets/noticias/blo6.jpg'
 import imgBlo7 from '../assets/noticias/blo7.min.webp'
-import imgRedefiniendo from '../assets/home/Redefiniendo.min.webp'
+import imgRedefiniendo from '../assets/Home/Redefiniendo.min.webp'
 
 export const blogs = [
   {
