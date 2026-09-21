@@ -93,6 +93,33 @@
 .feat h4 { font-size: 17px; color: var(--ink); font-weight: 600; }
 .feat p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
 
+/* ---------- Campus apply cards (Home + Transforma Club) ---------- */
+.apply-band {
+  background: var(--blue);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+}
+.apply-band .apply-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.apply-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform .2s;
+}
+.apply-card:hover { transform: translateY(-5px); }
+.apply-card-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.apply-card-foot { display: flex; align-items: center; justify-content: center; padding: 16px 20px; }
+.apply-card-logo { max-height: 48px; max-width: 160px; width: auto; object-fit: contain; }
+
 @media (max-width: 600px) {
   .cform-row { grid-template-columns: 1fr; }
+  .apply-band { padding: 28px 18px; }
+  .apply-band .apply-cards { grid-template-columns: 1fr; max-width: 360px; }
 }
