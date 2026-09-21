@@ -15,6 +15,7 @@ const School           = lazy(() => import('./pages/School.jsx'))
 const Noticias         = lazy(() => import('./pages/Noticias.jsx'))
 const BlogPost         = lazy(() => import('./pages/BlogPost.jsx'))
 const Buscar           = lazy(() => import('./pages/Buscar.jsx'))
+const Legal            = lazy(() => import('./pages/Legal.jsx'))
 
 function ScrollTop() {
   const { pathname } = useLocation()
@@ -47,6 +48,9 @@ export default function App() {
             <Route path="/noticias" element={<Noticias />} />
             <Route path="/noticias/:slug" element={<BlogPost />} />
             <Route path="/buscar" element={<Buscar />} />
+            <Route path="/politica-de-privacidad" element={<Legal page="privacidad" />} />
+            <Route path="/terminos-y-condiciones" element={<Legal page="terminos" />} />
+            <Route path="/aviso-legal" element={<Legal page="aviso" />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </Suspense>

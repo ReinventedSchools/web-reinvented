@@ -11,6 +11,26 @@
 .prose p b { color: var(--ink); }
 .prose { max-width: 920px; }
 
+.legal-doc { max-width: 920px; margin: 0 auto; }
+.legal-doc h2 {
+  color: var(--ink);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  margin: 36px 0 14px;
+}
+.legal-doc h3 {
+  color: var(--ink);
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  margin: 26px 0 10px;
+}
+.legal-doc p { color: var(--ink-soft); margin: 0 0 16px; line-height: 1.7; }
+.legal-doc ol,
+.legal-doc ul { color: var(--ink-soft); line-height: 1.7; margin: 0 0 16px; padding-left: 22px; }
+.legal-doc li { margin: 0 0 8px; }
+.legal-doc a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.legal-doc .legal-meta { margin-top: 8px; }
+
 .prose-expand {
   max-height: 0;
   overflow: hidden;
@@ -92,7 +112,7 @@
   max-height: 350px;
 }
 .loc-text { padding: 10px 36px; }
-.loc-text p { margin: 0 0 14px; font-size: 15.5px; }
+.loc-text p { margin: 0 0 14px; font-size: 17px; }
 .loc-img { min-height: 280px; border-radius: 18px; margin: 20px; }
 .loc-img-real {
   width: calc(100% + 12px);

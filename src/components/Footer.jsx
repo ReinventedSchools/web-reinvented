@@ -1,7 +1,17 @@
 import { memo } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { Logo } from './Brand.jsx'
 
+const PDF_BY_SCHOOL = {
+  puembo: '/docs/Politica-Proteccion-de-Datos-Reinvented-Puembo.pdf',
+  'santa-clara': '/docs/Politica-Proteccion-de-Datos-Reinvented-Santa-Clara.pdf',
+}
+
 export default memo(function Footer() {
+  const { pathname } = useLocation()
+  const schoolSlug = pathname.match(/^\/colegios\/([^/]+)/)?.[1]
+  const pdfHref = PDF_BY_SCHOOL[schoolSlug]
+
   return (
     <footer className="footer">
       <div className="container">
@@ -18,9 +28,14 @@ export default memo(function Footer() {
           </div>
         </div>
         <div className="footer-legal">
-          <a href="#">Política de privacidad</a><span>|</span>
-          <a href="#">Términos y condiciones</a><span>|</span>
-          <a href="#">Aviso legal</a><span>|</span>
+          <Link to="/politica-de-privacidad">Política de privacidad</Link><span>|</span>
+          <Link to="/terminos-y-condiciones">Términos y condiciones</Link><span>|</span>
+          <Link to="/aviso-legal">Aviso legal</Link><span>|</span>
+          {pdfHref && (
+            <>
+              <a href={pdfHref} target="_blank" rel="noopener noreferrer">Política de protección de datos personales</a><span>|</span>
+            </>
+          )}
           <span style={{ color: 'var(--muted)' }}>© 2026 ReinventED. Todos los derechos reservados.</span>
         </div>
       </div>

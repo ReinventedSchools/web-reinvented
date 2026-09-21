@@ -164,7 +164,7 @@ export const schools = {
     ],
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th grade en el período 2027 - 2028, 11th grade en 2028 - 2029 y 12th grade en 2029 - 2030.',
-    calendlyUrl: 'https://calendly.com/visitas-reinventedpuembo/agendamiento',
+    calendlyUrl: 'https://calendly.com/admisiones-reinvented-santaclara/agendamiento',
     formUrl: 'https://form.123formbuilder.com/6159960/formulario-de-admisiones-reinvented-santa-clara',
     faqItems: [
       { q: '¿Qué hace diferente a ReinventED Santa Clara?', a: 'Somos un colegio bilingüe ubicado en el Valle de los Chillos que combina aprendizaje personalizado, bienestar y desarrollo de habilidades para la vida. Con una comunidad cercana donde cada estudiante es reconocido, acompañado y desafiado a crecer.' },
@@ -195,7 +195,7 @@ export const schools = {
     since: 'Desde 2024',
     intro:
       'ReinventED Rímac nace como una propuesta educativa innovadora para los futbolistas del Club Sporting Cristal, proporcionando un espacio con un sistema académico estructurado que les permite continuar su formación mientras desarrollan su carrera deportiva de alto rendimiento. Su apertura marca además la expansión regional de ReinventED desde Ecuador hacia Perú, consolidando un sistema educativo diseñado para adaptarse a nuevos contextos sin perder estructura, estándares ni enfoque en la autonomía.',
-    locTitle: 'Ubicado en Lima, en la Ciudad Deportiva\nLa Florida,',
+    locTitle: 'Ubicado en Lima, en la Ciudad Deportiva La Florida',
     locText: [
       'el colegio ofrece un modelo flexible que permite a los jóvenes deportistas adaptarse a sus viajes y competencias, sin que su educación se vea comprometida.',
       'El colegio sigue la propuesta educativa de ReinventED con un enfoque en el desarrollo de habilidades socioemocionales, autonomía y bilingüismo. El colegio se abrió en 2024.',

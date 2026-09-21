@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import emailjs from '@emailjs/browser'
 
-const EMAILJS_SERVICE  = 'service_zsv8mj8'   // reemplaza con tu Service ID de EmailJS
-const EMAILJS_TEMPLATE = 'template_5mtt25b'  // reemplaza con tu Template ID de EmailJS
-const EMAILJS_KEY      = 'FKqtO3aGcxQ1GkgHq'   // reemplaza con tu Public Key de EmailJS
+const EMAILJS_SERVICE  = 'service_crx21jm'   // reemplaza con tu Service ID de EmailJS
+const EMAILJS_TEMPLATE = 'template_uxxniwf'  // reemplaza con tu Template ID de EmailJS
+const EMAILJS_KEY      = 'zsAt5XlIx1lPeqHQR'   // reemplaza con tu Public Key de EmailJS
 import { Badge, ArrowDR } from './Brand.jsx'
 
 /* Section heading: arrow badge + light title (optionally bold accent inside) */
@@ -135,7 +135,7 @@ export function ContactForm({ btn = 'var(--blue)', btnText = '#fff' }) {
           telefono:   fields.telefono,
           reply_to:   fields.email,
           message:    fields.comentario,
-          to_email:   'torres.thalia31@gmail.com',
+          to_email:   'jeronimo.hernandez@reinventedschools.com',
         },
         EMAILJS_KEY
       )

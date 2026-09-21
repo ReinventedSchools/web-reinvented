@@ -13,6 +13,9 @@ const index = [
   { title: 'ReinventED Santa Clara', path: '/colegios/santa-clara', tag: 'Colegio', text: 'En el Valle de los Chillos, desde 2022. Comunidad, accesibilidad y altos estándares.' },
   { title: 'ReinventED Rímac', path: '/colegios/rimac', tag: 'Colegio', text: 'Alianza con Sporting Cristal en Perú, desde 2024. Expansión regional de la red.' },
   { title: 'Noticias', path: '/noticias', tag: 'Página', text: 'Lo último de la red ReinventED: nuevos campus, grados y eventos.' },
+  { title: 'Política de privacidad', path: '/politica-de-privacidad', tag: 'Legal', text: 'Aviso de privacidad conforme a la LOPDP. Tratamiento de datos personales, finalidades y derechos.' },
+  { title: 'Términos y condiciones', path: '/terminos-y-condiciones', tag: 'Legal', text: 'Condiciones de uso del sitio web, obligaciones del usuario, propiedad intelectual y legislación aplicable.' },
+  { title: 'Aviso legal', path: '/aviso-legal', tag: 'Legal', text: 'Aviso de privacidad. Al usar el sitio aceptas la Política de privacidad y los Términos y condiciones.' },
 ]
 
 export default function Buscar() {

@@ -210,6 +210,8 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.15; font-weight: 600; }
   display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
 }
 .footer-legal span { color: #c5c9d1; }
+.footer-legal a { color: var(--muted); }
+.footer-legal a:hover { color: var(--ink-soft); }
 
 /* ---------- Page enter animation ---------- */
 @media (prefers-reduced-motion: no-preference) {
