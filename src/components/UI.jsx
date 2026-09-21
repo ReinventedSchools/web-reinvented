@@ -18,6 +18,37 @@ export function SectionHead({ title, badge = '', light = true, align = 'left', c
   )
 }
 
+/* Photo with shimmer placeholder + fade-in when loaded */
+export function FadeImg({ className = '', style, alt = '', onLoad, ...props }) {
+  const [loaded, setLoaded] = useState(false)
+  const ref = useRef(null)
+  const { objectFit, objectPosition, ...wrapStyle } = style || {}
+
+  useEffect(() => {
+    setLoaded(false)
+    const el = ref.current
+    if (el?.complete && el.naturalWidth) setLoaded(true)
+  }, [props.src])
+
+  return (
+    <span className={`fade-img-wrap${loaded ? ' is-loaded' : ''}${className ? ` ${className}` : ''}`} style={wrapStyle}>
+      <img
+        ref={ref}
+        alt={alt}
+        style={{
+          ...(objectFit ? { objectFit } : {}),
+          ...(objectPosition ? { objectPosition } : {}),
+        }}
+        {...props}
+        onLoad={(e) => {
+          setLoaded(true)
+          onLoad?.(e)
+        }}
+      />
+    </span>
+  )
+}
+
 /* Gallery: real images carousel (3 per page) or placeholder */
 export function Gallery({ images = [], count = 5, dotColor }) {
   const [page, setPage] = useState(0)
@@ -64,12 +95,12 @@ export function Gallery({ images = [], count = 5, dotColor }) {
     <div ref={containerRef}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
         {visible.map((src, i) => (
-          <img
-            key={page * PER_PAGE + i}
+          <FadeImg
+            key={`${page}-${i}-${src}`}
             src={src}
             alt=""
             loading="lazy"
-            style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 12, display: 'block' }}
+            style={{ width: '100%', aspectRatio: '4/3', borderRadius: 12 }}
           />
         ))}
       </div>

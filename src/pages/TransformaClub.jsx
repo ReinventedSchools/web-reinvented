@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
-import { SectionHead, ContactForm, Faq } from '../components/UI.jsx'
+import { SectionHead, ContactForm, Faq, FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/club/club.min.webp'
 import imgClub1 from '../assets/club/club2.jpg'
@@ -74,7 +74,7 @@ export default function TransformaClub() {
       />
       {/* Hero */}
       <section className="hero-school">
-        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchpriority="high" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
+        <FadeImg src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchPriority="high" style={{ objectFit: 'cover', objectPosition: 'top center' }} />
         <div className="hero-school-overlay light" />
         <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2, background: 'var(--blue)' }}>
@@ -100,10 +100,10 @@ export default function TransformaClub() {
             </p>
           </div>
           <div style={{ display: 'flex', gap: 12, height: 360 }}>
-            <img src={imgClub1} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: 0 }} />
+            <FadeImg src={imgClub1} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, width: 0, height: '100%' }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, flex: 1 }}>
-              <img src={imgClub5} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
-              <img src={imgClub6} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, objectFit: 'cover', width: '100%', minHeight: 0 }} />
+              <FadeImg src={imgClub5} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, width: '100%', minHeight: 0 }} />
+              <FadeImg src={imgClub6} alt="" loading="lazy" style={{ flex: 1, borderRadius: 12, width: '100%', minHeight: 0 }} />
             </div>
           </div>
           </div>
@@ -114,7 +114,7 @@ export default function TransformaClub() {
       <section className="section-tight">
         <div className="container">
           <div className="tc-2col-grid">
-          <img src={imgClub8} alt="Colegios para deportistas" loading="lazy" style={{ aspectRatio: '4/3', borderRadius: 18, objectFit: 'cover', width: '100%', display: 'block' }} />
+          <FadeImg src={imgClub8} alt="Colegios para deportistas" loading="lazy" style={{ aspectRatio: '4/3', borderRadius: 18, width: '100%' }} />
           <div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 20 }}>
               <Badge />
@@ -170,7 +170,7 @@ export default function TransformaClub() {
             <div className="apply-cards">
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <Link to="/colegios/idv" className="apply-card">
-                  <img src={imgIDV} alt="ReinventED IDV" className="apply-card-img" />
+                  <FadeImg src={imgIDV} alt="ReinventED IDV" className="apply-card-img" />
                   <div className="apply-card-foot">
                     <img src={imgLogoIDV} alt="Logo IDV" className="apply-card-logo" />
                   </div>
@@ -179,7 +179,7 @@ export default function TransformaClub() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 <Link to="/colegios/rimac" className="apply-card">
-                  <img src={imgRimac} alt="ReinventED Rímac" className="apply-card-img" />
+                  <FadeImg src={imgRimac} alt="ReinventED Rímac" className="apply-card-img" />
                   <div className="apply-card-foot">
                     <img src={imgLogoRimac} alt="Logo Rímac" className="apply-card-logo" />
                   </div>
@@ -195,7 +195,7 @@ export default function TransformaClub() {
       <section className="band-soft section">
         <div className="container">
           <div className="tc-2col-grid">
-            <img src={imgClub6} alt="Nuestra propuesta ReinventED" style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+            <FadeImg src={imgClub6} alt="Nuestra propuesta ReinventED" style={{ width: '100%', aspectRatio: '4/5', borderRadius: 18 }} />
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 12 }}>
                 <Badge />

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
-import { SectionHead, ContactForm } from '../components/UI.jsx'
+import { SectionHead, ContactForm, FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/implementa/Jardín.min.webp'
 import './pages.css'
@@ -31,7 +31,7 @@ export default function TransformaColegio() {
       />
       {/* Hero */}
       <section className="hero-school">
-        <img src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchpriority="high" style={{ objectPosition: 'center' }} />
+        <FadeImg src={imgHero} alt="Implementa ReinventED" className="hero-school-img" fetchPriority="high" style={{ objectPosition: 'center' }} />
         <div className="hero-school-overlay light" />
         {/* <div className="container" style={{ alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 0 }}>
           <div className="hero-yellow" style={{ fontSize: 'clamp(34px, 4.8vw, 58px)', textAlign: 'center', transform: 'translateY(50%)', position: 'relative', zIndex: 2 }}>

@@ -55,6 +55,9 @@
 /* ---------- School / inner hero ---------- */
 .hero-school { position: relative; }
 .hero-school-img { width: 100%; height: 600px; object-fit: cover; object-position: center; display: block; border-radius: 0; }
+.hero-school-img.fade-img-wrap > img { object-position: inherit; }
+.loc-img-real.fade-img-wrap > img { object-fit: cover; }
+.camino-img.fade-img-wrap > img { height: auto; object-fit: contain; }
 
 .hero-school-overlay.light {
   background: linear-gradient(180deg, rgba(30, 40, 70, 0.752), rgba(30,40,70,.15));

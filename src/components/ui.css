@@ -1,6 +1,46 @@
 /* ---------- Page loader spinner ---------- */
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ---------- Image fade-in ---------- */
+@keyframes img-shimmer {
+  to { background-position: -200% 0; }
+}
+.fade-img-wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #e6e9ef;
+}
+.fade-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.65) 50%, transparent 80%);
+  background-size: 200% 100%;
+  animation: img-shimmer 1.15s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity .35s ease;
+}
+.fade-img-wrap.is-loaded::after {
+  opacity: 0;
+  animation: none;
+}
+.fade-img-wrap > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .55s ease;
+}
+.fade-img-wrap.is-loaded > img { opacity: 1; }
+.fade-img-wrap.fit-contain > img { object-fit: contain; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .fade-img-wrap::after { display: none; }
+  .fade-img-wrap > img { opacity: 1; transition: none; }
+}
+
 /* ---------- FAQ ---------- */
 .faq { max-width: 880px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--line); }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { Smiley, Logo, Badge } from '../components/Brand.jsx'
-import { SectionHead, ContactForm } from '../components/UI.jsx'
+import { SectionHead, ContactForm, FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import imgSchoolJoy from '../assets/schoolJoy.min.webp'
 import imgPersonal from '../assets/Home/personalgro.min.webp'
@@ -126,7 +126,7 @@ export default function Home() {
       />
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
-        <img src={imgHero} alt="ReinventED" className="hero-img" fetchpriority="high" />
+        <FadeImg src={imgHero} alt="ReinventED" className="hero-img" fetchPriority="high" />
         <div className="hero-overlay" />
         <div className="container hero-content">
           <h1 className="hero-title" style={{ fontFamily: "'Aller Display', sans-serif" }}>every student succeeds</h1>
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="container">
           <SectionHead title="Redefiniendo el éxito" align="center" />
           <div className="redefine">
-            <img src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img" loading="lazy" />
+            <FadeImg src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img fit-contain" loading="lazy" />
             <div className="redefine-card">
               <h3>El mundo se reinventa, la educación también.</h3>
               <p>
@@ -208,17 +208,17 @@ export default function Home() {
           <h2 className="formula-title" style={{ fontFamily: "'Aller Display'", fontWeight: 300 }}>every student succeeds</h2>
           <div className="formula-cards">
             <div className="formula-card">
-              <img src={imgSchoolJoy} alt="School Joy" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <FadeImg src={imgSchoolJoy} alt="School Joy" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05' }} />
               <div className="formula-card-label">School Joy</div>
             </div>
             <div className="formula-plus">+</div>
             <div className="formula-card">
-              <img src={imgPersonal} alt="Personal Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <FadeImg src={imgPersonal} alt="Personal Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05' }} />
               <div className="formula-card-label">Personal Growth</div>
             </div>
             <div className="formula-plus">+</div>
             <div className="formula-card">
-              <img src={imgAcademic} alt="Academic Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05', objectFit: 'cover', display: 'block' }} />
+              <FadeImg src={imgAcademic} alt="Academic Growth" loading="lazy" style={{ width: '100%', aspectRatio: '1 / 1.05' }} />
               <div className="formula-card-label">Academic Growth</div>
             </div>
           </div><br></br>
@@ -289,7 +289,7 @@ export default function Home() {
               </div>
               <ContactForm />
             </div>
-            <img src={imgformulario} alt="Implementa ReinventED" className="implementa-img" />
+            <FadeImg src={imgformulario} alt="Implementa ReinventED" className="implementa-img" />
           </div>
         </div>
       </section>
@@ -300,7 +300,7 @@ export default function Home() {
 function ApplyCard({ ed, name, to, img, logo }) {
   return (
     <Link to={to} className="apply-card">
-      <img src={img} alt={`ReinventED ${name}`} className="apply-card-img" />
+      <FadeImg src={img} alt={`ReinventED ${name}`} className="apply-card-img" />
       <div className="apply-card-foot">
         <img src={logo} alt={`Logo ${name}`} className="apply-card-logo" />
       </div>

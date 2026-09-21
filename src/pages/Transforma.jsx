@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Badge } from '../components/Brand.jsx'
-import { SectionHead } from '../components/UI.jsx'
+import { SectionHead, FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import imgSistema from '../assets/sistema/sistema.webp'
 import imgAutonomous from '../assets/habilidades/Autonomous.webp'
@@ -86,7 +86,7 @@ export default function Transforma() {
       />
       {/* Hero quote */}
       <section className="hero-school">
-        <img src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" fetchpriority="high" />
+        <FadeImg src={imgSistema} alt="Sistema ReinventED" className="hero-school-img" fetchPriority="high" />
         <div className="hero-school-overlay" />
       </section>
 
@@ -140,7 +140,7 @@ export default function Transforma() {
           <div className="exito">
             {exito.map((e, i) => (
               <div className="exito-card" key={i}>
-                <img src={exitoImgs[i]} alt={e.t} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover', display: 'block' }} />
+                <FadeImg src={exitoImgs[i]} alt={e.t} loading="lazy" style={{ width: '100%', aspectRatio: '4 / 3' }} />
                 <div style={{ padding: '24px 28px 32px' }}>
                   <h4 className="display">{e.t}</h4>
                   <p>{e.d}</p>
@@ -184,7 +184,7 @@ export default function Transforma() {
             <h2 style={{ color: '#fff', fontWeight: 300, fontSize: 'clamp(46px,3vw,34px)' }}>Progreso medible</h2>
           </div>
           <div className="medible">
-            <img src={imgPersonal} alt="Progreso medible ReinventED" loading="lazy" style={{ width: '100%', aspectRatio: '3/4', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+            <FadeImg src={imgPersonal} alt="Progreso medible ReinventED" loading="lazy" style={{ width: '100%', aspectRatio: '3/4', borderRadius: 18 }} />
             <div className="medible-text">
               <p style={{ color: '#fff', fontWeight: 400, marginTop: 0 }}>
                 El Sistema ReinventED integra una plataforma de medición propia que permite

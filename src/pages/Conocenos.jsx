@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Badge } from '../components/Brand.jsx'
-import { SectionHead } from '../components/UI.jsx'
+import { SectionHead, FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import { schools } from '../data/schools.js'
 import { Link } from 'react-router-dom'
@@ -36,7 +36,7 @@ export default function Conocenos() {
       {/* Intro */}
       <section className="section">
         <div className="container conoce-intro">
-          <img src={imgHistoria1} alt="El mundo se reinventa" style={{ aspectRatio: '3/4', borderRadius: 24, width: '100%', objectFit: 'cover' }} />
+          <FadeImg src={imgHistoria1} alt="El mundo se reinventa" style={{ aspectRatio: '3/4', borderRadius: 24, width: '100%' }} />
           <div>
             <img src={imgLogoSchools} alt="ReinventED Schools" style={{ height: 120, objectFit: 'contain', display: 'block', marginBottom: 24, marginLeft: 'auto', marginRight: 'auto' }} />
              <div className="intro-card">

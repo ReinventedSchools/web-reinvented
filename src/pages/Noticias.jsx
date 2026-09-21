@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { SectionHead } from '../components/UI.jsx'
+import { SectionHead, FadeImg } from '../components/UI.jsx'
 import { blogs } from '../data/blogs.js'
 import SEO from '../components/SEO.jsx'
 import imgHero from '../assets/Schools1.webp'
@@ -48,7 +48,7 @@ export default function Noticias() {
           {list[0] && (
             <article className="news-feature">
               {list[0].img
-                ? <img src={list[0].img} alt={list[0].title} fetchpriority="high" style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
+                ? <FadeImg src={list[0].img} alt={list[0].title} fetchPriority="high" style={{ aspectRatio: '16/10', width: '100%' }} />
                 : <div className="img-ph" style={{ aspectRatio: '16/10' }} />}
               <div className="news-feature-body">
                 <span className="news-tag">{list[0].cat}</span>
@@ -65,7 +65,7 @@ export default function Noticias() {
             {list.slice(1).map((n) => (
               <article className="news-card" key={n.slug}>
                 {n.img
-                  ? <img src={n.img} alt={n.title} loading="lazy" style={{ aspectRatio: '16/10', objectFit: 'cover', width: '100%', display: 'block' }} />
+                  ? <FadeImg src={n.img} alt={n.title} loading="lazy" style={{ aspectRatio: '16/10', width: '100%' }} />
                   : <div className="img-ph" style={{ aspectRatio: '16/10' }} />}
                 <div className="news-card-body">
                   <div className="news-meta">

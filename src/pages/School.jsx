@@ -4,7 +4,7 @@ import SEO from '../components/SEO.jsx'
 // import imgCamino from '../assets/implementa.webp'
 import imgCamino from '../assets/sedes/puembo/c9.jpeg'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
-import { SectionHead, Gallery, Faq } from '../components/UI.jsx'
+import { SectionHead, Gallery, Faq, FadeImg } from '../components/UI.jsx'
 import { schools, stages, faqItems } from '../data/schools.js'
 import './pages.css'
 
@@ -39,7 +39,7 @@ function StudentCarousel({ dotColor, images }) {
         <div className="student-carousel-grid">
           {visible.map((src, i) =>
             typeof src === 'string'
-              ? <img key={i} src={src} alt="" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 16, display: 'block' }} />
+              ? <FadeImg key={src} src={src} alt="" style={{ width: '100%', aspectRatio: '4/3', borderRadius: 16 }} />
               : <div key={i} className="img-ph" style={{ aspectRatio: '4/3', borderRadius: 16 }} />
           )}
         </div>
@@ -110,7 +110,7 @@ export default function School() {
       {/* Hero */}
       <section className="hero-school">
         {s.heroImg
-          ? <img src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" fetchpriority="high" style={{ objectFit: s.heroFit || 'cover', objectPosition: s.heroPosition || 'center', ...(s.heroHeight ? { height: s.heroHeight } : {}) }} />
+          ? <FadeImg src={s.heroImg} alt={`ReinventED ${s.name}`} className="hero-school-img" fetchPriority="high" style={{ ...(s.heroFit ? { objectFit: s.heroFit } : {}), objectPosition: s.heroPosition || 'center', ...(s.heroHeight ? { height: s.heroHeight } : {}) }} />
           : <div className="img-ph hero-school-img" />}
         <div className="hero-school-overlay" />
         <div className="container hero-school-logo" style={s.logoRight ? { justifyContent: 'flex-end' } : {}}>
@@ -147,9 +147,9 @@ export default function School() {
             {s.locImg
               ? s.locImgBg
                 ? <div className="loc-img loc-img-real" style={{ background: s.locImgBg, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 28, borderRadius: 18, flexShrink: 0 }}>
-                    <img src={s.locImg} alt={`ReinventED ${s.name}`} style={{ width: '100%', objectFit: s.locImgFit || 'contain', display: 'block' }} />
+                    <FadeImg src={s.locImg} alt={`ReinventED ${s.name}`} style={{ width: '100%', objectFit: s.locImgFit || 'contain' }} />
                   </div>
-                : <img src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" style={s.locImgFit ? { objectFit: s.locImgFit } : {}} />
+                : <FadeImg src={s.locImg} alt={`ReinventED ${s.name}`} className="loc-img loc-img-real" style={s.locImgFit ? { objectFit: s.locImgFit } : {}} />
               : <div className="img-ph loc-img" />}
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function School() {
         <section className="section">
           <div className="container">
             <div className="school-extra-grid">
-              <img src={s.nominacionImg} alt="Nominación" style={{ width: '100%', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+              <FadeImg src={s.nominacionImg} alt="Nominación" style={{ width: '100%', aspectRatio: '2 / 1', borderRadius: 18 }} />
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 16 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <Badge color={s.arrow} />
@@ -178,7 +178,7 @@ export default function School() {
         <section className={s.sectionNoBg ? 'section' : 'band-soft section'}>
           <div className="container">
             <div className="school-extra-grid" style={s.sectionImgRight ? { direction: 'rtl' } : {}}>
-              <img src={s.sectionImg} alt={s.sectionTitle} style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
+              <FadeImg src={s.sectionImg} alt={s.sectionTitle} style={{ width: '100%', aspectRatio: '4/3', borderRadius: 18 }} />
               <div style={{ direction: 'ltr' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
                   <Badge color={s.arrow} />
@@ -213,7 +213,7 @@ export default function School() {
       {!s.hideCamino && <section className="section">
         <div className="container">
           <div className="camino-head">
-            <img src={s.caminoImg || imgCamino} alt="Tu camino en ReinventED" className="camino-img" />
+            <FadeImg src={s.caminoImg || imgCamino} alt="Tu camino en ReinventED" className="camino-img fit-contain" />
             <div>
               <SectionHead title={<span style={{ color: 'var(--ink)', fontWeight: 600, fontSize: 'clamp(26px, 3vw, 38px)' }}>Tu camino en ReinventED</span>} badge={s.arrow} light={false} />
               <p style={{ color: 'var(--ink-soft)', maxWidth: 560 }}>

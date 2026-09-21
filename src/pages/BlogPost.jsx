@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { blogs } from '../data/blogs.js'
+import { FadeImg } from '../components/UI.jsx'
 import SEO from '../components/SEO.jsx'
 import './pages.css'
 import './blogpost.css'
@@ -85,7 +86,7 @@ export default function BlogPost() {
       {/* Hero */}
       {post.img && (
         <section className="hero-school" style={{ height: 420 }}>
-          <img src={post.img} alt={post.title} className="hero-school-img" fetchpriority="high" style={{ height: 420, objectPosition: 'center' }} />
+          <FadeImg src={post.img} alt={post.title} className="hero-school-img" fetchPriority="high" style={{ height: 420, objectPosition: 'center' }} />
           <div className="hero-school-overlay" style={{ background: 'linear-gradient(180deg, rgba(10,20,50,.55) 0%, rgba(10,20,50,.15) 100%)' }} />
         </section>
       )}
