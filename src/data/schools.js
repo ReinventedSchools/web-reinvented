@@ -165,7 +165,7 @@ export const schools = {
     grades:
       '9th grade se abrirá en el período 2026 - 2027. 10th grade en el período 2027 - 2028, 11th grade en 2028 - 2029 y 12th grade en 2029 - 2030.',
     calendlyUrl: 'https://calendly.com/admisiones-reinvented-santaclara/agendamiento',
-    formUrl: 'https://form.123formbuilder.com/6159960/formulario-de-admisiones-reinvented-santa-clara',
+    formUrl: 'https://form.123formbuilder.com/6765329/formulario-de-admisiones-reinvented-santa-clara',
     faqItems: [
       { q: '¿Qué hace diferente a ReinventED Santa Clara?', a: 'Somos un colegio bilingüe ubicado en el Valle de los Chillos que combina aprendizaje personalizado, bienestar y desarrollo de habilidades para la vida. Con una comunidad cercana donde cada estudiante es reconocido, acompañado y desafiado a crecer.' },
       { q: '¿Cómo acompañan el bienestar de los estudiantes?', a: 'Creemos que el bienestar es fundamental para aprender. Por eso trabajamos intencionalmente en el desarrollo socioemocional, las relaciones positivas y la construcción de una cultura de respeto y pertenencia.' },
