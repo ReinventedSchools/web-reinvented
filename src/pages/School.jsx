@@ -6,6 +6,7 @@ import imgCamino from '../assets/sedes/puembo/c9.jpeg'
 import { Badge, SchoolLogo, Smiley } from '../components/Brand.jsx'
 import { SectionHead, Gallery, Faq, FadeImg } from '../components/UI.jsx'
 import { schools, stages, faqItems } from '../data/schools.js'
+import { trackPixel } from '../lib/metaPixel.js'
 import './pages.css'
 
 const applyCards = [
@@ -260,7 +261,11 @@ export default function School() {
           <div className="apply-steps">
             {applyCards.map((c, i) => {
               const href = (i === 0 && s.calendlyUrl) ? s.calendlyUrl : (i === 1 && s.formUrl) ? s.formUrl : null
-              const isCalendly = !!href
+              const isLink = !!href
+              const onTrack = () => {
+                if (i === 0) trackPixel('Schedule', { content_name: `agenda_visita_${s.slug}` })
+                if (i === 1) trackPixel('SubmitApplication', { content_name: `admisiones_${s.slug}` })
+              }
               const inner = (
                 <>
                   <div className="apply-step-icon" style={{ background: s.circle }}>
@@ -269,8 +274,8 @@ export default function School() {
                   <span>{c.t}</span>
                 </>
               )
-              return isCalendly
-                ? <a key={i} className="apply-step" href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', cursor: 'pointer' }}>{inner}</a>
+              return isLink
+                ? <a key={i} className="apply-step" href={href} target="_blank" rel="noopener noreferrer" onClick={onTrack} style={{ textDecoration: 'none', cursor: 'pointer' }}>{inner}</a>
                 : <div key={i} className="apply-step">{inner}</div>
             })}
           </div>

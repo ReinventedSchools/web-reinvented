@@ -1,6 +1,5 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import './components/ui.css'
@@ -23,6 +22,24 @@ function ScrollTop() {
   return null
 }
 
+/** PageView en cada navegación SPA (la primera carga ya la marca index.html). */
+function MetaPixelPageView() {
+  const { pathname, search } = useLocation()
+  const isFirst = useRef(true)
+
+  useEffect(() => {
+    if (isFirst.current) {
+      isFirst.current = false
+      return
+    }
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView')
+    }
+  }, [pathname, search])
+
+  return null
+}
+
 function PageLoader() {
   return (
     <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -35,6 +52,7 @@ export default function App() {
   return (
     <>
       <ScrollTop />
+      <MetaPixelPageView />
       <Navbar />
       <main>
         <Suspense fallback={<PageLoader />}>

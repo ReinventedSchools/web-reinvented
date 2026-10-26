@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import emailjs from '@emailjs/browser'
+import { trackPixel } from '../lib/metaPixel.js'
 
 const EMAILJS_SERVICE  = 'service_crx21jm'   // reemplaza con tu Service ID de EmailJS
 const EMAILJS_TEMPLATE = 'template_uxxniwf'  // reemplaza con tu Template ID de EmailJS
@@ -170,6 +171,7 @@ export function ContactForm({ btn = 'var(--blue)', btnText = '#fff' }) {
         },
         EMAILJS_KEY
       )
+      trackPixel('Lead', { content_name: 'contact_form' })
       setStatus('ok')
       setFields({ nombre: '', telefono: '', email: '', comentario: '' })
     } catch {
