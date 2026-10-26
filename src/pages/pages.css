@@ -156,15 +156,66 @@
 .apply-bottom-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .apply-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
 .apply-step {
-  background: #fff; border-radius: var(--radius); padding: 28px 26px;
+  background: #fff; border-radius: var(--radius); padding: 20px 18px;
   box-shadow: var(--shadow-sm); display: flex; flex-direction: column;
-  justify-content: space-between; aspect-ratio: 1 / 1;
+  justify-content: space-between; align-items: flex-start; aspect-ratio: 6 / 4;
+  transition: transform .2s;
+}
+a.apply-step:hover { transform: translateY(-5px); }
+.school-contacts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.school-contact-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: transform .2s;
+  min-width: 0;
+}
+.school-contact-card:hover { transform: translateY(-5px); }
+.school-contact-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.school-contact-value {
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
 }
 .apply-step-icon {
   width: 66px; height: 66px; border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
 }
-.apply-step span { color: var(--ink-soft); font-size: 17px; line-height: 1.4; }
+.apply-step span {
+  color: var(--ink-soft); font-size: 17px; line-height: 1.4;
+  align-self: flex-end; text-align: right;
+  /* Alto fijo de 2 líneas: 1 línea queda centrada en ese bloque (= sobre la guía);
+     2 líneas llenan el bloque y se ven igual que antes. */
+  height: calc(1.4em * 2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+a.apply-step span {
+  color: var(--ink);
+  font-weight: 700;
+}
 
 /* ---------- Conócenos ---------- */
 .conoce-intro { display: grid; grid-template-columns: 360px 1fr; gap: 50px; align-items: center; }
@@ -333,7 +384,7 @@
   .conoce-intro, .repensar, .medible, .club-deport, .contacto, .news-feature { grid-template-columns: 1fr; }
   .timeline { grid-template-columns: repeat(4, 1fr); row-gap: 26px; }
   .timeline-line { display: none; }
-  .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .person-grid { grid-template-columns: repeat(2, 1fr); }
+  .apply-steps, .sedes, .combine, .exito, .diff, .propuesta, .grad-strip, .news-grid, .person-grid, .school-contacts { grid-template-columns: repeat(2, 1fr); }
   .loc-band { grid-template-columns: 1fr; max-height: none; }
   .loc-img-real { width: 100%; height: 280px; margin: 16px 0 0; }
   .sedes-line { display: none; }
@@ -360,6 +411,7 @@
   .camino-img { max-height: 280px; }
   .apply-top-row, .apply-bottom-row { grid-template-columns: 1fr; }
   .apply-step { aspect-ratio: auto; }
+  .school-contacts { grid-template-columns: 1fr; }
   .students-develop-grid { grid-template-columns: 1fr; }
   .student-carousel-grid { grid-template-columns: repeat(2, 1fr); }
   .oferta-4col, .oferta-3col { grid-template-columns: 1fr; }

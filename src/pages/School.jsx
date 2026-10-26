@@ -282,6 +282,42 @@ export default function School() {
         </div>
       </section>}
 
+      {/* Contactos — Puembo y Santa Clara */}
+      {(s.contactEmail || s.contactPhone || s.contactWhatsapp) && (
+        <section className="section">
+          <div className="container">
+            <div style={{ textAlign: 'center', marginBottom: 32 }}>
+              <SectionHead title={<span style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 300 }}>Contactos</span>} badge={s.arrow} align="center" />
+            </div>
+            <div className="school-contacts">
+              {s.contactEmail && (
+                <a className="school-contact-card" href={`mailto:${s.contactEmail}`}>
+                  <span className="school-contact-label">Correo electrónico</span>
+                  <span className="school-contact-value">{s.contactEmail}</span>
+                </a>
+              )}
+              {s.contactPhone && (
+                <a className="school-contact-card" href={`tel:${s.contactPhoneTel || s.contactPhone}`}>
+                  <span className="school-contact-label">Teléfono convencional</span>
+                  <span className="school-contact-value">{s.contactPhone}</span>
+                </a>
+              )}
+              {s.contactWhatsapp && (
+                <a
+                  className="school-contact-card"
+                  href={`https://wa.me/${s.contactWhatsappWa || s.contactWhatsapp.replace(/\D/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="school-contact-label">WhatsApp</span>
+                  <span className="school-contact-value">{s.contactWhatsapp}</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Estudiantes ReinventED (IDV) */}
       {s.sectionImg && !s.hideStudents && (
         <section className="section">
@@ -296,7 +332,7 @@ export default function School() {
 
       {/* FAQ */}
       {!s.hideFaq && (
-        <section className="section">
+        <section className={(s.contactEmail || s.contactPhone || s.contactWhatsapp) ? 'band-soft section' : 'section'}>
           <div className="container">
             <h2 style={{ textAlign: 'center', fontWeight: 300, color: 'var(--muted)', fontSize: 'clamp(30px,4vw,46px)', marginBottom: 30 }}>FAQ</h2>
             <Faq items={s.faqItems || faqItems} dotColor={s.faqDot} />

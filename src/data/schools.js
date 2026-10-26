@@ -84,6 +84,11 @@ export const schools = {
     ],
     calendlyUrl: 'https://calendly.com/visitas-reinventedpuembo/agendamiento',
     formUrl: 'https://form.123formbuilder.com/6033053/formulario-de-admisiones-reinvented-puembo',
+    contactEmail: 'admisiones@reinventedpuembo.edu.ec',
+    contactPhone: '(02) 475 8615',
+    contactPhoneTel: '+59324758615',
+    contactWhatsapp: '+593 98 303 9520',
+    contactWhatsappWa: '593983039520',
   },
   idv: {
     slug: 'idv',
@@ -166,6 +171,11 @@ export const schools = {
       '9th grade se abrirá en el período 2026 - 2027. 10th grade en el período 2027 - 2028, 11th grade en 2028 - 2029 y 12th grade en 2029 - 2030.',
     calendlyUrl: 'https://calendly.com/admisiones-reinvented-santaclara/agendamiento',
     formUrl: 'https://form.123formbuilder.com/6765329/formulario-de-admisiones-reinvented-santa-clara',
+    contactEmail: 'admisiones@reinventedsantaclara.edu.ec',
+    contactPhone: '(02) 392 3532',
+    contactPhoneTel: '+59323923532',
+    contactWhatsapp: '+593 95 892 2276',
+    contactWhatsappWa: '593958922276',
     faqItems: [
       { q: '¿Qué hace diferente a ReinventED Santa Clara?', a: 'Somos un colegio bilingüe ubicado en el Valle de los Chillos que combina aprendizaje personalizado, bienestar y desarrollo de habilidades para la vida. Con una comunidad cercana donde cada estudiante es reconocido, acompañado y desafiado a crecer.' },
       { q: '¿Cómo acompañan el bienestar de los estudiantes?', a: 'Creemos que el bienestar es fundamental para aprender. Por eso trabajamos intencionalmente en el desarrollo socioemocional, las relaciones positivas y la construcción de una cultura de respeto y pertenencia.' },
