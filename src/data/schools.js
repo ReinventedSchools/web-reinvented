@@ -4,6 +4,7 @@ import imgPuemboCampus from '../assets/sedes/puemboJardin.min.webp'
 import imgIdvLogo from '../assets/logos/idcB.png'
 import imgIdvHero from '../assets/sedes/idv/portadaiv.jpg'
 import imgRedefiniendo from '../assets/Home/Redefiniendo.min.webp'
+import imgIdvBannerTop3 from '../assets/noticias/banner-top3.png'
 import imgIdvSection from '../assets/sedes/idv/idv_seccion.webp'
 import imgIDVC1 from '../assets/sedes/idv/c1.min.webp'
 import imgIDVC2 from '../assets/sedes/idv/c2.min.webp'
@@ -93,8 +94,8 @@ export const schools = {
   idv: {
     slug: 'idv',
     name: 'IDV',
-    heroImg: imgRedefiniendo,
-    heroPosition: 'bottom',
+    heroImg: imgIdvBannerTop3,
+    heroPosition: '50% 20%',
     heroHeight: '610px',
     logoRight: true,
     logoImg: imgIdvLogo,
@@ -105,8 +106,8 @@ export const schools = {
     hideStudents: true,
     sectionNoBg: true,
     sectionImgRight: true,
-    nominacionImg: imgRedefiniendo,
-    nominacionText: 'ReinventED IDV ha sido nominado entre los 10 mejores colegios del mundo en los World\'s Best School Prizes 2026 de T4 Education, un reconocimiento internacional que destaca el impacto de nuestro modelo educativo y nuestro compromiso con el bienestar, el crecimiento integral y el éxito de cada estudiante.',
+    nominacionImg: imgIdvBannerTop3,
+    nominacionText: 'ReinventED IDV está entre los 3 mejores colegios del mundo en los World\'s Best School Prizes 2026 de T4 Education, en la categoría Supporting Healthy Lives, un reconocimiento internacional que destaca el impacto de nuestro modelo educativo y nuestro compromiso con el bienestar, el crecimiento integral y el éxito de cada estudiante.',
     sectionImg: imgIdvSection,
     sectionTitle: 'Educación y deporte de alto rendimiento',
     sectionText: 'ReinventED IDV integra el desarrollo académico con la formación deportiva profesional. El sistema permite adaptar horarios, ritmos y planificación sin sacrificar profundidad académica. La personalización es clave en un entorno donde los calendarios de competencia, viajes y cargas físicas requieren flexibilidad estructurada.',

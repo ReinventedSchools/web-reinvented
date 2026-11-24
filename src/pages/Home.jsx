@@ -10,8 +10,8 @@ import imgPuembo from '../assets/Puembo.webp'
 import imgSantaClara from '../assets/Santa Clara.webp'
 import imgRimac from '../assets/Rimac.webp'
 import imgIDV from '../assets/IDV.webp'
-import imgHero from '../assets/Home/Foto principal.min.webp'
-import imgRedefiniendo from '../assets/Home/Redefiniendo.min.webp'
+import imgHero from '../assets/Home/homepicture.jpg'
+import imgRedefiniendo from '../assets/noticias/banner-top-3.png'
 import imgformulario from '../assets/Home/formulario.min.webp'
 import imgPuemboJardin from '../assets/sedes/puemboJardin.min.webp'
 import imgSantaClaraShoot from '../assets/sedes/ReinventEDSantaClaraShoot.min.webp'
@@ -126,7 +126,7 @@ export default function Home() {
       />
       {/* ---------------- HERO ---------------- */}
       <section className="hero">
-        <FadeImg src={imgHero} alt="ReinventED" className="hero-img" fetchPriority="high" />
+        <FadeImg src={imgHero} alt="ReinventED" className="hero-img" fetchPriority="high" style={{ objectPosition: '50% 58%' }} />
         <div className="hero-overlay" />
         <div className="container hero-content">
           <h1 className="hero-title" style={{ fontFamily: "'Aller Display', sans-serif" }}>every student succeeds</h1>
@@ -166,15 +166,15 @@ export default function Home() {
         <div className="container">
           <SectionHead title="Redefiniendo el éxito" align="center" />
           <div className="redefine">
-            <FadeImg src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img fit-contain" loading="lazy" />
+            <FadeImg src={imgRedefiniendo} alt="Redefiniendo el éxito" className="redefine-img" loading="lazy" style={{ objectFit: 'cover', objectPosition: 'center center' }} />
             <div className="redefine-card">
-              <h3>El mundo se reinventa, la educación también.</h3>
+              <h3>¡Estamos entre los 3 mejores colegios del mundo!</h3>
               <p>
-                Somos una red de colegios que combina personalización, autonomía y altos estándares
-                académicos para preparar a niños y jóvenes para el futuro. Nuestro modelo educativo ha
-                sido reconocido internacionalmente y hoy forma parte del Top 10 de los World’s Best
-                School Prizes en la categoría Supporting Healthy Lives, uno de los reconocimientos más
-                prestigiosos de la educación a nivel mundial.
+              Somos una red de colegios que combina personalización, autonomía y altos estándares académicos para preparar a niños y jóvenes para el futuro.
+              </p>
+              <p>
+              Nuestro modelo educativo ha sido reconocido entre los 3 mejores colegios del mundo en los World’s Best School Prizes 2026, en la categoría Supporting Healthy Lives, uno de los reconocimientos internacionales más importantes a la innovación y el impacto educativo.
+              Un reconocimiento que pone en evidencia nuestro compromiso con el bienestar, el crecimiento personal y el desarrollo académico de cada estudiante.
               </p>
             </div>
           </div>
